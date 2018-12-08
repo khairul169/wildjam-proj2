@@ -18,8 +18,8 @@
 [node name="sprite" type="Node2D" parent="."]
 
 [node name="tail" type="Sprite" parent="sprite"]
-position = Vector2( -74.8714, 49.9094 )
-rotation = -0.00580516
+position = Vector2( -74.8714, 54.6072 )
+rotation = -0.0296629
 texture = ExtResource( 1 )
 offset = Vector2( -77.3698, -35.2002 )
 
@@ -35,17 +35,17 @@ texture = ExtResource( 2 )
 offset = Vector2( 9.47156, 45.3857 )
 
 [node name="hand_l" type="Sprite" parent="sprite"]
-position = Vector2( 59.8483, -53.2846 )
+position = Vector2( 59.8483, -47.9589 )
 rotation = -0.355997
 texture = ExtResource( 3 )
 offset = Vector2( 6.30899, 68.1843 )
 
 [node name="body" type="Sprite" parent="sprite"]
-position = Vector2( 0, 0.77752 )
+position = Vector2( 0, 3.97293 )
 texture = ExtResource( 4 )
 
 [node name="hand_r" type="Sprite" parent="sprite"]
-position = Vector2( -101.535, -34.2394 )
+position = Vector2( -101.535, -28.9137 )
 rotation = 0.202864
 z_index = 2
 z_as_relative = false
@@ -65,7 +65,7 @@ z_as_relative = false
 texture = ExtResource( 5 )
 
 [node name="head" type="Sprite" parent="sprite"]
-position = Vector2( 27.7003, -75.8927 )
+position = Vector2( 27.7003, -68.4368 )
 texture = ExtResource( 6 )
 offset = Vector2( -18.3313, -193.86 )
 
