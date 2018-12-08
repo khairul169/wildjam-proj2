@@ -127,17 +127,17 @@ texture = ExtResource( 1 )
 offset = Vector2( 9.47156, 45.3857 )
 
 [node name="hand_l" type="Sprite" parent="world/character/sprite"]
-position = Vector2( 59.8483, -45.4675 )
+position = Vector2( 59.8483, -54.0506 )
 rotation = -0.501641
 texture = ExtResource( 2 )
 offset = Vector2( 6.30899, 68.1843 )
 
 [node name="body" type="Sprite" parent="world/character/sprite"]
-position = Vector2( 0, 5.46781 )
+position = Vector2( 0, 0.317979 )
 texture = ExtResource( 3 )
 
 [node name="hand_r" type="Sprite" parent="world/character/sprite"]
-position = Vector2( -101.535, -26.4223 )
+position = Vector2( -101.535, -35.0053 )
 z_index = 2
 z_as_relative = false
 texture = ExtResource( 2 )
@@ -152,7 +152,7 @@ z_as_relative = false
 texture = ExtResource( 4 )
 
 [node name="head" type="Sprite" parent="world/character/sprite"]
-position = Vector2( 27.7003, -64.9488 )
+position = Vector2( 27.7003, -76.965 )
 texture = ExtResource( 5 )
 offset = Vector2( -18.3313, -193.86 )
 
