@@ -1,9 +1,111 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://sprites/characters/cat/leg.png" type="Texture" id=1]
 [ext_resource path="res://sprites/characters/cat/hand.png" type="Texture" id=2]
 [ext_resource path="res://sprites/characters/cat/body.png" type="Texture" id=3]
 [ext_resource path="res://sprites/characters/cat/head.png" type="Texture" id=4]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "idle"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite/head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 27.7003, -77.7069 ), Vector2( 27.7003, -64.0709 ), Vector2( 27.7003, -77.7069 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sprite/hand_r:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -101.535, -35.5353 ), Vector2( -101.535, -25.7952 ), Vector2( -101.535, -35.5353 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("sprite/body:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 5.84406 ), Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("sprite/hand_l:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 59.8483, -54.5805 ), Vector2( 59.8483, -44.8404 ), Vector2( 59.8483, -54.5805 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("sprite/hand_l:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -28.7419 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("sprite/body:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("sprite/hand_r:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("sprite/head:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
 
 [node name="game" type="Node"]
 
@@ -11,36 +113,38 @@
 
 [node name="character" type="Node2D" parent="world"]
 
-[node name="body" type="Node2D" parent="world/character"]
+[node name="sprite" type="Node2D" parent="world/character"]
 
-[node name="leg_l" type="Sprite" parent="world/character/body"]
+[node name="leg_l" type="Sprite" parent="world/character/sprite"]
 position = Vector2( 51.3443, 52.2318 )
 texture = ExtResource( 1 )
 offset = Vector2( 9.47156, 45.3857 )
 
-[node name="leg_r" type="Sprite" parent="world/character/body"]
+[node name="leg_r" type="Sprite" parent="world/character/sprite"]
 position = Vector2( -40.6922, 67.3213 )
 texture = ExtResource( 1 )
 offset = Vector2( 9.47156, 45.3857 )
 
-[node name="hand_l" type="Sprite" parent="world/character/body"]
-position = Vector2( 59.8483, -54.5805 )
+[node name="hand_l" type="Sprite" parent="world/character/sprite"]
+position = Vector2( 59.8483, -47.2878 )
+rotation = -0.501641
 texture = ExtResource( 2 )
 offset = Vector2( 6.30899, 68.1843 )
 
-[node name="body" type="Sprite" parent="world/character/body"]
+[node name="body" type="Sprite" parent="world/character/sprite"]
+position = Vector2( 0, 4.37566 )
 texture = ExtResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
 
-[node name="hand_r" type="Sprite" parent="world/character/body"]
-position = Vector2( -101.535, -35.5353 )
+[node name="hand_r" type="Sprite" parent="world/character/sprite"]
+position = Vector2( -101.535, -28.2425 )
 texture = ExtResource( 2 )
 offset = Vector2( 6.30899, 68.1843 )
 
-[node name="head" type="Sprite" parent="world/character/body"]
-position = Vector2( 27.7003, -77.7069 )
+[node name="head" type="Sprite" parent="world/character/sprite"]
+position = Vector2( 27.7003, -67.4971 )
 texture = ExtResource( 4 )
 offset = Vector2( -18.3313, -193.86 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="world/character"]
+anims/idle = SubResource( 1 )
 
