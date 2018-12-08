@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sprites/characters/cat/leg.png" type="Texture" id=1]
+[ext_resource path="res://sprites/characters/cat/hand.png" type="Texture" id=2]
+[ext_resource path="res://sprites/characters/cat/body.png" type="Texture" id=3]
+[ext_resource path="res://sprites/characters/cat/head.png" type="Texture" id=4]
+
+[node name="game" type="Node"]
+
+[node name="world" type="Node2D" parent="."]
+
+[node name="character" type="Node2D" parent="world"]
+
+[node name="body" type="Node2D" parent="world/character"]
+
+[node name="leg_l" type="Sprite" parent="world/character/body"]
+position = Vector2( 51.3443, 52.2318 )
+texture = ExtResource( 1 )
+offset = Vector2( 9.47156, 45.3857 )
+
+[node name="leg_r" type="Sprite" parent="world/character/body"]
+position = Vector2( -40.6922, 67.3213 )
+texture = ExtResource( 1 )
+offset = Vector2( 9.47156, 45.3857 )
+
+[node name="hand_l" type="Sprite" parent="world/character/body"]
+position = Vector2( 59.8483, -54.5805 )
+texture = ExtResource( 2 )
+offset = Vector2( 6.30899, 68.1843 )
+
+[node name="body" type="Sprite" parent="world/character/body"]
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="hand_r" type="Sprite" parent="world/character/body"]
+position = Vector2( -101.535, -35.5353 )
+texture = ExtResource( 2 )
+offset = Vector2( 6.30899, 68.1843 )
+
+[node name="head" type="Sprite" parent="world/character/body"]
+position = Vector2( 27.7003, -77.7069 )
+texture = ExtResource( 4 )
+offset = Vector2( -18.3313, -193.86 )
+
