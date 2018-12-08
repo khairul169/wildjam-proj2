@@ -8,5 +8,5 @@
 
 [node name="character" parent="world" instance=ExtResource( 1 )]
 position = Vector2( 464.071, 423.06 )
-scale = Vector2( 0.582499, 0.582499 )
+scale = Vector2( 0.245905, 0.245905 )
 
