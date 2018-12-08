@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hand.png-e2bf817c9b66d089927eb8828a5adbab.stex"
+path="res://.import/hand.png-df09c11f57b122bafdf78bfb674fdb65.stex"
 
 [deps]
 
-source_file="res://sprites/characters/cat/hand.png"
-dest_files=[ "res://.import/hand.png-e2bf817c9b66d089927eb8828a5adbab.stex" ]
+source_file="res://characters/cat/sprites/hand.png"
+dest_files=[ "res://.import/hand.png-df09c11f57b122bafdf78bfb674fdb65.stex" ]
 
 [params]
 

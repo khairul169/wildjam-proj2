@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/leg.png-039697562a2f34fbbb3be01e972bacc4.stex"
+path="res://.import/tail.png-b336a35ac981d3a3374664316cf5e817.stex"
 
 [deps]
 
-source_file="res://sprites/characters/cat/leg.png"
-dest_files=[ "res://.import/leg.png-039697562a2f34fbbb3be01e972bacc4.stex" ]
+source_file="res://characters/cat/sprites/tail.png"
+dest_files=[ "res://.import/tail.png-b336a35ac981d3a3374664316cf5e817.stex" ]
 
 [params]
 
