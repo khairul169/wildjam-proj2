@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.1182084"
-     inkscape:cx="206.67492"
-     inkscape:cy="275.59475"
+     inkscape:zoom="0.7795521"
+     inkscape:cx="373.78253"
+     inkscape:cy="408.27662"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -54,6 +54,13 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <ellipse
+       style="opacity:0.374;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.39999998;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="path4609"
+       cx="46.919037"
+       cy="118.56366"
+       rx="24.839491"
+       ry="8.27983" />
     <g
        id="g4617"
        transform="translate(41.766369,-8.3154762)">
@@ -727,5 +734,15 @@
            id="path4678" />
       </g>
     </g>
+    <ellipse
+       ry="8.27983"
+       rx="24.839491"
+       cy="197.98427"
+       cx="123.285"
+       id="ellipse4611"
+       style="opacity:0.37400004;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.39999998;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       inkscape:export-filename="D:\Projects\GodotProjects\wildjam-proj2\characters\cat\sprites\shadow.png"
+       inkscape:export-xdpi="158.56"
+       inkscape:export-ydpi="158.56" />
   </g>
 </svg>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg4754"
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="level_sprites.svg">
+  <defs
+     id="defs4748" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8"
+     inkscape:cx="146.1706"
+     inkscape:cy="1047.5832"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:snap-nodes="false" />
+  <metadata
+     id="metadata4751">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g5414"
+       inkscape:export-filename="D:\Projects\GodotProjects\wildjam-proj2\sprites\level\tiles\grass.png"
+       inkscape:export-xdpi="203.2"
+       inkscape:export-ydpi="203.2">
+      <rect
+         inkscape:export-ydpi="203.2"
+         inkscape:export-xdpi="203.2"
+         inkscape:export-filename="D:\Projects\GodotProjects\wildjam-proj2\sprites\level\tiles\grass_tile.png"
+         y="3.0224829"
+         x="2.4846611"
+         height="32"
+         width="32"
+         id="rect5299"
+         style="opacity:1;fill:#a8cc41;fill-opacity:1;stroke:none;stroke-width:0.95585477;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+      <path
+         inkscape:export-ydpi="203.2"
+         inkscape:export-xdpi="203.2"
+         inkscape:export-filename="D:\Projects\GodotProjects\wildjam-proj2\sprites\level\tiles\grass_tile.png"
+         id="path5351"
+         d="M 9.8326961,6.7954508 C 9.978004,7.76904 10.057228,8.7426135 10.053354,9.7162026 9.7867544,9.0115791 9.49652,8.3739436 9.1660702,7.8480996 9.3327024,8.7163864 9.5645126,9.5120811 9.5438248,10.588501 l 0.4836912,-0.02842 c -0.0039,0.07033 -0.0065,0.140512 -0.01137,0.21084 l 0.330729,-0.229444 C 10.420764,9.2153588 10.179484,7.9887222 9.8326961,6.7954508 Z m 1.1358479,0.4676717 c -0.339789,1.2100679 -0.672075,2.4197482 -0.467672,3.6080485 l 0.501262,0.116789 C 10.651361,9.762443 10.880544,8.509533 10.968544,7.2631225 Z"
+         style="fill:#97b833;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:connector-curvature="0" />
+      <path
+         inkscape:export-ydpi="203.2"
+         inkscape:export-xdpi="203.2"
+         inkscape:export-filename="D:\Projects\GodotProjects\wildjam-proj2\sprites\level\tiles\grass_tile.png"
+         inkscape:connector-curvature="0"
+         style="fill:#97b833;fill-opacity:1;stroke:none;stroke-width:0.14462452;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 26.495744,20.809061 c 0.210151,1.408048 0.324727,2.816075 0.319126,4.224123 -0.385569,-1.019058 -0.805319,-1.941236 -1.28323,-2.701735 0.24099,1.255756 0.576244,2.406526 0.546326,3.963292 l 0.699536,-0.0411 c -0.0056,0.101715 -0.0094,0.203215 -0.01644,0.304927 l 0.478315,-0.331831 c 0.106863,-1.91789 -0.24209,-3.691907 -0.74363,-5.41767 z m 1.642715,0.676368 c -0.491418,1.750055 -0.971987,3.499549 -0.676368,5.218123 l 0.724947,0.168904 c -0.507303,-1.772396 -0.175849,-3.584411 -0.04858,-5.387027 z"
+         id="path5358" />
+      <path
+         inkscape:export-ydpi="203.2"
+         inkscape:export-xdpi="203.2"
+         inkscape:export-filename="D:\Projects\GodotProjects\wildjam-proj2\sprites\level\tiles\grass_tile.png"
+         id="path5360"
+         d="m 8.5097796,29.757504 c 0.145308,0.973589 0.224531,1.947163 0.220658,2.920752 -0.2666,-0.704623 -0.556834,-1.342259 -0.887284,-1.868103 0.166632,0.868287 0.398442,1.663982 0.377755,2.740401 l 0.483691,-0.02842 c -0.0039,0.07033 -0.0065,0.140512 -0.01137,0.21084 l 0.330729,-0.229443 c 0.07389,-1.326117 -0.167392,-2.552753 -0.51418,-3.746025 z m 1.135848,0.467672 c -0.339789,1.210068 -0.672076,2.419748 -0.467672,3.608049 l 0.501262,0.116788 c -0.350773,-1.225516 -0.12159,-2.478426 -0.03359,-3.724837 z"
+         style="fill:#97b833;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       id="g5404"
+       inkscape:export-filename="D:\Projects\GodotProjects\wildjam-proj2\sprites\level\tiles\dirt.png"
+       inkscape:export-xdpi="203.2"
+       inkscape:export-ydpi="203.2">
+      <rect
+         style="opacity:1;fill:#b57d3f;fill-opacity:1;stroke:none;stroke-width:0.95585477;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         id="rect5378"
+         width="32"
+         height="32"
+         x="37.258472"
+         y="3.0224829"
+         inkscape:export-filename="D:\Projects\GodotProjects\wildjam-proj2\sprites\level\tiles\grass_tile.png"
+         inkscape:export-xdpi="203.2"
+         inkscape:export-ydpi="203.2" />
+      <circle
+         r="1.1358954"
+         cy="11.288875"
+         cx="46.972622"
+         id="path5394"
+         style="opacity:1;fill:#9d6323;fill-opacity:1;stroke:none;stroke-width:0.12592591;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+      <circle
+         style="opacity:1;fill:#9d6323;fill-opacity:1;stroke:none;stroke-width:0.2962963;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         id="circle5396"
+         cx="60.402916"
+         cy="24.919621"
+         r="2.6726952" />
+      <circle
+         r="0.66817373"
+         cy="28.861847"
+         cx="43.69857"
+         id="circle5398"
+         style="opacity:1;fill:#9d6323;fill-opacity:1;stroke:none;stroke-width:0.07407407;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+    </g>
+  </g>
+</svg>
