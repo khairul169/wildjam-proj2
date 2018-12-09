@@ -52,20 +52,17 @@ texture = ExtResource( 5 )
 [node name="hand_r" type="Sprite" parent="sprite"]
 position = Vector2( -101.535, -28.9137 )
 rotation = 0.202864
-z_index = 2
-z_as_relative = false
 texture = ExtResource( 4 )
 offset = Vector2( 6.30899, 68.1843 )
 
 [node name="attachment" type="Node2D" parent="sprite/hand_r"]
+show_behind_parent = true
 position = Vector2( 6.70124, 119.18 )
 
 [node name="gun" type="Sprite" parent="sprite/hand_r/attachment"]
 position = Vector2( 38.1788, 40.2189 )
 rotation = 1.22601
 scale = Vector2( 0.667678, 0.667678 )
-z_index = 1
-z_as_relative = false
 texture = ExtResource( 6 )
 
 [node name="head" type="Sprite" parent="sprite"]

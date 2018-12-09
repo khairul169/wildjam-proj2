@@ -1,19 +1,21 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/interface/fps_label.gd" type="Script" id=1]
 [ext_resource path="res://sprites/level/tiles/grass.png" type="Texture" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
-[ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sprites/level/props/campfire.png" type="Texture" id=3]
+[ext_resource path="res://sprites/level/props/stones01.png" type="Texture" id=4]
+[ext_resource path="res://sprites/level/props/rocks01.png" type="Texture" id=5]
+[ext_resource path="res://sprites/level/props/bush01.png" type="Texture" id=6]
+[ext_resource path="res://sprites/level/props/bush02.png" type="Texture" id=7]
+[ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/props/tree.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/props/tent.tscn" type="PackedScene" id=10]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="NavigationPolygon" id=1]
 
-extents = Vector2( 32, 32 )
-
-[sub_resource type="NavigationPolygon" id=2]
-
-vertices = PoolVector2Array( 970, 350, 840, 340, 380, 290, 650, 250, 1230, 390, 1210, 650, 980, 490, 1140, 100, 830, 530, 910, 680, 420, 660, 790, 430, 220, 610, 260, 510, 370, 370, 90, 660, 100, 580, 40, 570, 760, 220, 760, 90, 700, 30, 620, 70, 120, 40, 210, 70, 270, 430, 220, 430, 190, 330, 110, 450, 30, 120, 100, 160, 280, 240, 230, 150, 570, 200, 110, 90, 160, 210 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 0, 7 ), PoolIntArray( 8, 6, 5, 9, 10 ), PoolIntArray( 11, 8, 10, 12, 13, 14 ), PoolIntArray( 2, 1, 11, 14 ), PoolIntArray( 12, 10, 15 ), PoolIntArray( 16, 12, 15, 17 ), PoolIntArray( 7, 0, 18, 19 ), PoolIntArray( 20, 7, 19, 21 ), PoolIntArray( 22, 20, 21, 23 ), PoolIntArray( 24, 14, 13 ), PoolIntArray( 24, 13, 25, 26 ), PoolIntArray( 26, 25, 27, 28, 29 ), PoolIntArray( 27, 16, 17, 28 ), PoolIntArray( 30, 31, 23, 21, 32, 2 ), PoolIntArray( 22, 23, 33 ), PoolIntArray( 28, 22, 33 ), PoolIntArray( 28, 33, 29 ), PoolIntArray( 26, 29, 34 ), PoolIntArray( 30, 26, 34, 31 ), PoolIntArray( 2, 32, 3 ), PoolIntArray( 0, 3, 18 ) ]
-outlines = [ PoolVector2Array( 30, 120, 120, 40, 700, 30, 1140, 100, 1230, 390, 1210, 650, 910, 680, 420, 660, 90, 660, 40, 570 ), PoolVector2Array( 100, 160, 160, 210, 230, 150, 210, 70, 110, 90 ), PoolVector2Array( 280, 240, 190, 330, 270, 430, 370, 370, 380, 290 ), PoolVector2Array( 620, 70, 570, 200, 650, 250, 760, 220, 760, 90 ), PoolVector2Array( 840, 340, 790, 430, 830, 530, 980, 490, 970, 350 ), PoolVector2Array( 110, 450, 100, 580, 220, 610, 260, 510, 220, 430 ) ]
+vertices = PoolVector2Array( 32.8574, 30.6606, 1245.92, 34.9775, 742.283, 72.2793, 627.981, 76.9447, 279.243, 78.111, 42.4742, 72.2793, 30.699, 686.834, 41.3079, 346.371, 463.526, 246.065, 723.622, 162.088, 1252.39, 693.31, 801.767, 602.968, 708.459, 605.301, 446.031, 351.037, 611.652, 166.754, 376.05, 244.899, 795.935, 676.448, 697.962, 674.115, 272.245, 345.205, 367.885, 349.87 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ), PoolIntArray( 6, 0, 5, 7 ), PoolIntArray( 8, 9, 1, 10, 11 ), PoolIntArray( 8, 11, 12, 13 ), PoolIntArray( 4, 3, 14, 8, 15 ), PoolIntArray( 16, 11, 10 ), PoolIntArray( 16, 10, 6, 17 ), PoolIntArray( 12, 17, 6, 7, 18, 19 ), PoolIntArray( 9, 2, 1 ), PoolIntArray( 14, 9, 8 ), PoolIntArray( 18, 4, 15, 19 ), PoolIntArray( 12, 19, 13 ) ]
+outlines = [ PoolVector2Array( 32.8574, 30.6606, 1245.92, 34.9775, 1252.39, 693.31, 30.699, 686.834 ), PoolVector2Array( 42.4742, 72.2793, 279.243, 78.111, 272.245, 345.205, 41.3079, 346.371 ), PoolVector2Array( 376.05, 244.899, 463.526, 246.065, 446.031, 351.037, 367.885, 349.87 ), PoolVector2Array( 627.981, 76.9447, 742.283, 72.2793, 723.622, 162.088, 611.652, 166.754 ), PoolVector2Array( 708.459, 605.301, 801.767, 602.968, 795.935, 676.448, 697.962, 674.115 ) ]
 
 [node name="game" type="Node"]
 
@@ -50,63 +52,79 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 1280, 720 )
 
 [node name="props" type="Node2D" parent="world"]
-editor/display_folded = true
 
-[node name="box" type="Sprite" parent="world/props"]
-editor/display_folded = true
-position = Vector2( 156.842, 128.681 )
+[node name="campfire" type="Sprite" parent="world/props"]
+position = Vector2( 140, 380 )
 texture = ExtResource( 3 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="world/props/box"]
+[node name="stones01" type="Sprite" parent="world/props"]
+position = Vector2( 310, 130 )
+texture = ExtResource( 4 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="world/props/box/StaticBody2D"]
-shape = SubResource( 1 )
+[node name="stones02" type="Sprite" parent="world/props"]
+position = Vector2( 670, 580 )
+texture = ExtResource( 4 )
 
-[node name="box2" type="Sprite" parent="world/props"]
-editor/display_folded = true
-position = Vector2( 292.88, 340.613 )
-texture = ExtResource( 3 )
+[node name="stones03" type="Sprite" parent="world/props"]
+position = Vector2( 900, 290 )
+texture = ExtResource( 4 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="world/props/box2"]
+[node name="vegetation" type="Node2D" parent="world"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="world/props/box2/StaticBody2D"]
-shape = SubResource( 1 )
+[node name="rocks01" type="Sprite" parent="world/vegetation"]
+position = Vector2( 900, 70 )
+texture = ExtResource( 5 )
 
-[node name="box3" type="Sprite" parent="world/props"]
-editor/display_folded = true
-position = Vector2( 672.353, 158.752 )
-texture = ExtResource( 3 )
+[node name="rocks02" type="Sprite" parent="world/vegetation"]
+position = Vector2( 1070, 610 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+texture = ExtResource( 5 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="world/props/box3"]
+[node name="bush01" type="Sprite" parent="world/vegetation"]
+position = Vector2( 383, 260 )
+texture = ExtResource( 6 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="world/props/box3/StaticBody2D"]
-shape = SubResource( 1 )
+[node name="bush02" type="Sprite" parent="world/vegetation"]
+position = Vector2( 360, 600 )
+texture = ExtResource( 7 )
 
-[node name="box4" type="Sprite" parent="world/props"]
-editor/display_folded = true
-position = Vector2( 890, 430 )
-texture = ExtResource( 3 )
+[node name="bush03" type="Sprite" parent="world/vegetation"]
+position = Vector2( 960, 400 )
+texture = ExtResource( 7 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="world/props/box4"]
+[node name="bush05" type="Sprite" parent="world/vegetation"]
+position = Vector2( 860, 158.752 )
+texture = ExtResource( 7 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="world/props/box4/StaticBody2D"]
-shape = SubResource( 1 )
-
-[node name="box5" type="Sprite" parent="world/props"]
-editor/display_folded = true
-position = Vector2( 175.458, 522.473 )
-texture = ExtResource( 3 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="world/props/box5"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="world/props/box5/StaticBody2D"]
-shape = SubResource( 1 )
-
-[node name="player" parent="world" instance=ExtResource( 4 )]
-position = Vector2( 640, 320 )
+[node name="bush04" type="Sprite" parent="world/vegetation"]
+position = Vector2( 1070, 130 )
+texture = ExtResource( 6 )
 
 [node name="nav" type="Navigation2D" parent="world"]
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="world/nav"]
-navpoly = SubResource( 2 )
+navpoly = SubResource( 1 )
+
+[node name="sorting" type="YSort" parent="world"]
+
+[node name="player" parent="world/sorting" instance=ExtResource( 8 )]
+position = Vector2( 640, 320 )
+
+[node name="tree" parent="world/sorting" instance=ExtResource( 9 )]
+position = Vector2( 410.832, 295.201 )
+
+[node name="tree2" parent="world/sorting" instance=ExtResource( 9 )]
+position = Vector2( 745.213, 627.529 )
+scale = Vector2( -0.80552, 0.80552 )
+
+[node name="tree3" parent="world/sorting" instance=ExtResource( 9 )]
+position = Vector2( 677.465, 112.911 )
+scale = Vector2( -0.836371, 0.810144 )
+
+[node name="tent" parent="world/sorting" instance=ExtResource( 10 )]
+position = Vector2( 1109.73, 251.123 )
+
+[node name="tent2" parent="world/sorting" instance=ExtResource( 10 )]
+position = Vector2( 137.281, 117.071 )
 

@@ -6,7 +6,7 @@ const SPEED = 250.0;
 # refs
 onready var body: Node2D = $body;
 onready var anims: AnimationPlayer = body.find_node("AnimationPlayer");
-onready var nav: Navigation2D = get_node("../nav");
+onready var nav: Navigation2D = get_node("../../nav");
 onready var space_state: Physics2DDirectSpaceState = get_world_2d().direct_space_state;
 
 # vars
@@ -49,20 +49,6 @@ func _physics_process(delta: float) -> void:
 	var velocity: Vector2 = Vector2.ZERO;
 	var input: Vector2 = Vector2.ZERO;
 	
-	# calculate velocity from nav
-	if (nav_path.size()):
-		var next_path = Vector2.ZERO;
-		if (global_transform.origin.distance_to(nav_path[0]) <= SPEED * delta):
-			if (nav_path.size() > 1):
-				next_path = nav_path[1];
-			nav_path.remove(0);
-		else:
-			next_path = nav_path[0];
-		
-		if (next_path.length() > 0.0):
-			velocity = next_path - global_transform.origin;
-			velocity = velocity.normalized();
-	
 	# player movement
 	if (Input.is_key_pressed(KEY_W)):
 		input.y -= 1;
@@ -77,6 +63,20 @@ func _physics_process(delta: float) -> void:
 	if (input.length() > 0.0):
 		nav_path.clear();
 		velocity = input.normalized();
+	
+	# calculate velocity from nav
+	if (nav_path.size()):
+		var next_path = Vector2.ZERO;
+		if (global_transform.origin.distance_to(nav_path[0]) <= SPEED * delta):
+			if (nav_path.size() > 1):
+				next_path = nav_path[1];
+			nav_path.remove(0);
+		else:
+			next_path = nav_path[0];
+		
+		if (next_path.length() > 0.0):
+			velocity = next_path - global_transform.origin;
+			velocity = velocity.normalized();
 	
 	var is_moving = velocity.length() > 0.0;
 	if (is_moving):
