@@ -1,14 +1,16 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/interface/fps_label.gd" type="Script" id=1]
-[ext_resource path="res://sprites/level/tiles/grass.png" type="Texture" id=2]
-[ext_resource path="res://sprites/level/props/campfire.png" type="Texture" id=3]
-[ext_resource path="res://sprites/level/props/stones01.png" type="Texture" id=4]
-[ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/props/tree.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/props/tent.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/props/rock.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/props/bush.tscn" type="PackedScene" id=9]
+[ext_resource path="res://sprites/white.png" type="Texture" id=2]
+[ext_resource path="res://sprites/level/tiles/grass.png" type="Texture" id=3]
+[ext_resource path="res://sprites/level/props/campfire.png" type="Texture" id=4]
+[ext_resource path="res://sprites/level/props/stones01.png" type="Texture" id=5]
+[ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/props/tree.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/props/tent.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/props/rock.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/props/bush.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/npc/villager.tscn" type="PackedScene" id=11]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -21,13 +23,23 @@ outlines = [ PoolVector2Array( 32.8574, 30.6606, 1245.92, 34.9775, 1252.39, 693.
 [node name="ui_layer" type="CanvasLayer" parent="."]
 layer = 2
 
-[node name="interface" type="Control" parent="ui_layer"]
-visible = false
+[node name="ui" type="Control" parent="ui_layer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="fps_label" type="ColorRect" parent="ui_layer/interface"]
+[node name="hud" type="Control" parent="ui_layer/ui"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="fps_label" type="ColorRect" parent="ui_layer/ui/hud"]
 editor/display_folded = true
 margin_left = 10.0
 margin_top = 10.0
@@ -35,7 +47,7 @@ margin_right = 150.0
 margin_bottom = 40.0
 color = Color( 0, 0, 0, 0.364706 )
 
-[node name="text" type="Label" parent="ui_layer/interface/fps_label"]
+[node name="text" type="Label" parent="ui_layer/ui/hud/fps_label"]
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 110.0
@@ -43,11 +55,26 @@ margin_bottom = 24.0
 text = "FPS Label"
 script = ExtResource( 1 )
 
+[node name="interface" type="Control" parent="ui_layer/ui"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bg" type="TextureRect" parent="ui_layer/ui/interface"]
+modulate = Color( 0, 0, 0, 0.447059 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+
 [node name="world" type="Node2D" parent="."]
 
 [node name="bg" type="Sprite" parent="world"]
 position = Vector2( 640.353, 360 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1280, 720 )
 
@@ -55,19 +82,19 @@ region_rect = Rect2( 0, 0, 1280, 720 )
 
 [node name="campfire" type="Sprite" parent="world/props"]
 position = Vector2( 140, 380 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="stones01" type="Sprite" parent="world/props"]
 position = Vector2( 310, 130 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="stones02" type="Sprite" parent="world/props"]
 position = Vector2( 670, 580 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="stones03" type="Sprite" parent="world/props"]
 position = Vector2( 900, 290 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="nav" type="Navigation2D" parent="world"]
 
@@ -75,71 +102,72 @@ texture = ExtResource( 4 )
 navpoly = SubResource( 1 )
 
 [node name="ysort" type="YSort" parent="world"]
-editor/display_folded = true
 
-[node name="player" parent="world/ysort" instance=ExtResource( 5 )]
+[node name="player" parent="world/ysort" instance=ExtResource( 6 )]
 position = Vector2( 640, 320 )
-camera_limit = Vector2( 1280, 720 )
 
-[node name="tree" parent="world/ysort" instance=ExtResource( 6 )]
+[node name="tree" parent="world/ysort" instance=ExtResource( 7 )]
 position = Vector2( 410.832, 295.201 )
 
-[node name="tree2" parent="world/ysort" instance=ExtResource( 6 )]
+[node name="tree2" parent="world/ysort" instance=ExtResource( 7 )]
 position = Vector2( 745.213, 627.529 )
 scale = Vector2( -0.80552, 0.80552 )
 
-[node name="tree3" parent="world/ysort" instance=ExtResource( 6 )]
+[node name="tree3" parent="world/ysort" instance=ExtResource( 7 )]
 position = Vector2( 677.465, 112.911 )
 scale = Vector2( -0.836371, 0.810144 )
 
-[node name="tent" parent="world/ysort" instance=ExtResource( 7 )]
+[node name="tent" parent="world/ysort" instance=ExtResource( 8 )]
 position = Vector2( 1109.73, 251.123 )
 
-[node name="tent2" parent="world/ysort" instance=ExtResource( 7 )]
+[node name="tent2" parent="world/ysort" instance=ExtResource( 8 )]
 position = Vector2( 137.281, 117.071 )
 
-[node name="rock" parent="world/ysort" instance=ExtResource( 8 )]
+[node name="rock" parent="world/ysort" instance=ExtResource( 9 )]
 position = Vector2( 924.001, 182.994 )
 
-[node name="rock2" parent="world/ysort" instance=ExtResource( 8 )]
+[node name="rock2" parent="world/ysort" instance=ExtResource( 9 )]
 position = Vector2( 990.641, 654.235 )
 
-[node name="bush" parent="world/ysort" instance=ExtResource( 9 )]
+[node name="bush" parent="world/ysort" instance=ExtResource( 10 )]
 position = Vector2( 387.228, 339.407 )
 
-[node name="bush2" parent="world/ysort" instance=ExtResource( 9 )]
+[node name="bush2" parent="world/ysort" instance=ExtResource( 10 )]
 position = Vector2( 651.62, 151.198 )
 scale = Vector2( 0.762428, 0.762428 )
 
-[node name="bush3" parent="world/ysort" instance=ExtResource( 9 )]
+[node name="bush3" parent="world/ysort" instance=ExtResource( 10 )]
 position = Vector2( 824.609, 197.113 )
 scale = Vector2( 0.772243, 0.772243 )
 
-[node name="bush4" parent="world/ysort" instance=ExtResource( 9 )]
+[node name="bush4" parent="world/ysort" instance=ExtResource( 10 )]
 position = Vector2( 771.852, 353.876 )
 scale = Vector2( 0.772243, 0.772243 )
 
-[node name="bush5" parent="world/ysort" instance=ExtResource( 9 )]
+[node name="bush5" parent="world/ysort" instance=ExtResource( 10 )]
 position = Vector2( 496.009, 518.176 )
 scale = Vector2( 0.772243, 0.772243 )
 
-[node name="bush6" parent="world/ysort" instance=ExtResource( 9 )]
+[node name="bush6" parent="world/ysort" instance=ExtResource( 10 )]
 position = Vector2( 235.24, 442.809 )
 scale = Vector2( 0.772243, 0.772243 )
 
-[node name="bush7" parent="world/ysort" instance=ExtResource( 9 )]
+[node name="bush7" parent="world/ysort" instance=ExtResource( 10 )]
 position = Vector2( 694.978, 674.939 )
 scale = Vector2( 0.772243, 0.772243 )
 
-[node name="bush8" parent="world/ysort" instance=ExtResource( 9 )]
+[node name="bush8" parent="world/ysort" instance=ExtResource( 10 )]
 position = Vector2( 749.242, 620.675 )
 scale = Vector2( 0.772243, 0.772243 )
 
-[node name="bush9" parent="world/ysort" instance=ExtResource( 9 )]
+[node name="bush9" parent="world/ysort" instance=ExtResource( 10 )]
 position = Vector2( 792.954, 686.998 )
 scale = Vector2( 0.632796, 0.622663 )
 
-[node name="bush10" parent="world/ysort" instance=ExtResource( 9 )]
+[node name="bush10" parent="world/ysort" instance=ExtResource( 10 )]
 position = Vector2( 954.24, 411.155 )
 scale = Vector2( 0.872822, 0.925852 )
+
+[node name="npc" parent="world/ysort" instance=ExtResource( 11 )]
+position = Vector2( 76.7205, 454.387 )
 

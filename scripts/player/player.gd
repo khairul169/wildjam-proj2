@@ -2,6 +2,8 @@ extends KinematicBody2D
 
 # consts
 const SPEED = 250.0;
+const MIN_ACTION_DISTANCE = 100.0;
+const ACTION_AREA = preload("res://scripts/npc/action_area.gd");
 
 # exports
 export var camera_limit = Vector2();
@@ -11,14 +13,16 @@ onready var body: Node2D = $body;
 onready var anims: AnimationPlayer = body.find_node("AnimationPlayer");
 onready var nav: Navigation2D = get_node("../../nav");
 onready var space_state: Physics2DDirectSpaceState = get_world_2d().direct_space_state;
+onready var camera: Camera2D = $camera;
 
 # vars
 var nav_path = [];
+var action_target: Node2D;
 
 func _ready() -> void:
-	if (camera_limit.length() > 0.0):
-		$camera.limit_right = int(camera_limit.x);
-		$camera.limit_bottom = int(camera_limit.y);
+	if (camera && camera_limit.length() > 0.0):
+		camera.limit_right = int(camera_limit.x);
+		camera.limit_bottom = int(camera_limit.y);
 	
 	if (anims):
 		anims.playback_default_blend_time = 0.1;
@@ -31,16 +35,28 @@ func _unhandled_input(event: InputEvent) -> void:
 		if (event is InputEventMouseButton && event.button_index == BUTTON_LEFT && event.pressed):
 			_calculate_navpath();
 
-func _calculate_navpath() -> void:
-	# mouse global pos
-	var pos = get_global_mouse_position();
+func _reset_navpath() -> void:
+	# reset target action
+	action_target = null;
 	
-	var test_intersect = space_state.intersect_point(pos, 4, [self]);
+	# clear navigation
+	nav_path.clear();
+	
+func _calculate_navpath() -> void:
+	_reset_navpath();
+	
+	# mouse global pos
+	var dest_pos = get_global_mouse_position();
+	
+	var test_intersect = space_state.intersect_point(dest_pos, 4, [self], 2147483647, true, true);
 	if (test_intersect && test_intersect.size()):
-		return;
+		for i in test_intersect:
+			if (i.collider is ACTION_AREA):
+				action_target = i.collider;
+				break;
 	
 	# set path
-	nav_path = get_navpath_to(pos);
+	nav_path = get_navpath_to(dest_pos);
 
 func get_navpath_to(pos: Vector2) -> Array:
 	var path = [];
@@ -68,8 +84,15 @@ func _physics_process(delta: float) -> void:
 	
 	# normalize move dir
 	if (input.length() > 0.0):
-		nav_path.clear();
+		_reset_navpath();
 		velocity = input.normalized();
+	
+	if (action_target && nav_path.size()):
+		var target_distance = global_transform.origin.distance_to(action_target.global_transform.origin);
+		if (target_distance <= MIN_ACTION_DISTANCE):
+			execute_action(action_target.action_type);
+			_reset_navpath();
+			action_target = null;
 	
 	# calculate velocity from nav
 	if (nav_path.size()):
@@ -106,3 +129,16 @@ func set_animation(anim: String, force: bool = false, speed: float = 1.0, blend_
 	
 	if (force || anims.current_animation != anim):
 		anims.play(anim, blend_time, speed);
+
+func execute_action(action_type) -> void:
+	match (action_type):
+		ACTION_AREA.ActionType.ENCHANTMENT:
+			print("ENCHANTMENT");
+		ACTION_AREA.ActionType.SHOP:
+			print("SHOP");
+		ACTION_AREA.ActionType.STATS:
+			print("STATS");
+		ACTION_AREA.ActionType.SKILLS:
+			print("SKILLS");
+		ACTION_AREA.ActionType.HEADQUARTER:
+			print("HEADQUARTER");
