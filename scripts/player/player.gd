@@ -3,6 +3,9 @@ extends KinematicBody2D
 # consts
 const SPEED = 250.0;
 
+# exports
+export var camera_limit = Vector2();
+
 # refs
 onready var body: Node2D = $body;
 onready var anims: AnimationPlayer = body.find_node("AnimationPlayer");
@@ -13,6 +16,10 @@ onready var space_state: Physics2DDirectSpaceState = get_world_2d().direct_space
 var nav_path = [];
 
 func _ready() -> void:
+	if (camera_limit.length() > 0.0):
+		$camera.limit_right = int(camera_limit.x);
+		$camera.limit_bottom = int(camera_limit.y);
+	
 	if (anims):
 		anims.playback_default_blend_time = 0.1;
 
