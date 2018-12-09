@@ -21,6 +21,7 @@ scale = Vector2( 0.15, 0.15 )
 
 [node name="camera" type="Camera2D" parent="."]
 current = true
+zoom = Vector2( 0.6, 0.6 )
 limit_left = 0
 limit_top = 0
 limit_right = 1920

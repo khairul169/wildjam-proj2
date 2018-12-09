@@ -23,6 +23,7 @@ outlines = [ PoolVector2Array( 32.8574, 30.6606, 1245.92, 34.9775, 1252.39, 693.
 layer = 2
 
 [node name="interface" type="Control" parent="ui_layer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -52,6 +53,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 1280, 720 )
 
 [node name="props" type="Node2D" parent="world"]
+editor/display_folded = true
 
 [node name="campfire" type="Sprite" parent="world/props"]
 position = Vector2( 140, 380 )
@@ -70,6 +72,7 @@ position = Vector2( 900, 290 )
 texture = ExtResource( 4 )
 
 [node name="vegetation" type="Node2D" parent="world"]
+editor/display_folded = true
 
 [node name="rocks01" type="Sprite" parent="world/vegetation"]
 position = Vector2( 900, 70 )
