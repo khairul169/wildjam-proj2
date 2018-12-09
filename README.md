@@ -1,4 +1,4 @@
-# wildjam-proj2
+# Cats Attack MkII
 
 Godot Wild Jam #4 Project
 

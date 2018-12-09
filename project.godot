@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="CatsGame"
+config/name="Cats Attack MkII"
 run/main_scene="res://scenes/game.tscn"
 config/icon="res://icon.png"
 

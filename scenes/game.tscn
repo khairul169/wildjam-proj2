@@ -75,6 +75,7 @@ texture = ExtResource( 4 )
 navpoly = SubResource( 1 )
 
 [node name="ysort" type="YSort" parent="world"]
+editor/display_folded = true
 
 [node name="player" parent="world/ysort" instance=ExtResource( 5 )]
 position = Vector2( 640, 320 )
