@@ -11,7 +11,7 @@ radius = 8.0
 
 radius = 64.0
 
-[node name="npc" type="StaticBody2D"]
+[node name="npc_enchanter" type="StaticBody2D"]
 
 [node name="shape" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -16 )
@@ -49,7 +49,7 @@ autoplay = "idle-alt"
 [node name="action_area" type="Area2D" parent="."]
 position = Vector2( 0, -50 )
 script = ExtResource( 2 )
-action_type = 2
+action_type = 1
 
 [node name="shape" type="CollisionShape2D" parent="action_area"]
 shape = SubResource( 2 )

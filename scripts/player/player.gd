@@ -5,26 +5,30 @@ const SPEED = 250.0;
 const MIN_ACTION_DISTANCE = 100.0;
 const ACTION_AREA = preload("res://scripts/npc/action_area.gd");
 
-# exports
-export var camera_limit = Vector2();
-
 # refs
+onready var scene: Node = get_node("/root/scene");
 onready var body: Node2D = $body;
 onready var anims: AnimationPlayer = body.find_node("AnimationPlayer");
-onready var nav: Navigation2D = get_node("../../nav");
 onready var space_state: Physics2DDirectSpaceState = get_world_2d().direct_space_state;
 onready var camera: Camera2D = $camera;
 
 # vars
+var nav: Navigation2D;
 var nav_path = [];
 var action_target: Node2D;
 
 func _ready() -> void:
-	if (camera && camera_limit.length() > 0.0):
-		camera.limit_right = int(camera_limit.x);
-		camera.limit_bottom = int(camera_limit.y);
+	if (camera && scene && scene.level):
+		# get camera limit from level
+		var map_limit = scene.level.map_limit;
+		
+		# set camera limit
+		if (map_limit.length() > 0.0):
+			camera.limit_right = int(map_limit.x);
+			camera.limit_bottom = int(map_limit.y);
 	
 	if (anims):
+		# set default blend time
 		anims.playback_default_blend_time = 0.1;
 
 func _unhandled_input(event: InputEvent) -> void:
