@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/white.png-5ae32056d3cf4dc8fdf3bad7b4b49d90.stex"
+path="res://.import/cloud3.png-78459dea7bc639b952fa22e5d2e1c214.stex"
 
 [deps]
 
-source_file="res://sprites/white.png"
-dest_files=[ "res://.import/white.png-5ae32056d3cf4dc8fdf3bad7b4b49d90.stex" ]
+source_file="res://sprites/level/battle_scene/cloud3.png"
+dest_files=[ "res://.import/cloud3.png-78459dea7bc639b952fa22e5d2e1c214.stex" ]
 
 [params]
 
@@ -16,7 +16,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false

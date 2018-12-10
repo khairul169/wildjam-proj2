@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 # consts
 const SPEED = 250.0;
-const MIN_ACTION_DISTANCE = 100.0;
+const MIN_ACTION_DISTANCE = 120.0;
 const ACTION_AREA = preload("res://scripts/npc/action_area.gd");
 
 # refs
@@ -54,10 +54,14 @@ func _calculate_navpath() -> void:
 	
 	var test_intersect = space_state.intersect_point(dest_pos, 4, [self], 2147483647, true, true);
 	if (test_intersect && test_intersect.size()):
+		var interupt = true;
 		for i in test_intersect:
 			if (i.collider is ACTION_AREA):
 				action_target = i.collider;
+				interupt = false;
 				break;
+		if (interupt):
+			return;
 	
 	# set path
 	nav_path = get_navpath_to(dest_pos);
