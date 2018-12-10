@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cloud3.png-78459dea7bc639b952fa22e5d2e1c214.stex"
+path="res://.import/cloud3.png-44c57f9b6a971285fa7e815a75d48351.stex"
 
 [deps]
 
-source_file="res://sprites/level/battle_scene/cloud3.png"
-dest_files=[ "res://.import/cloud3.png-78459dea7bc639b952fa22e5d2e1c214.stex" ]
+source_file="res://sprites/level/combat/cloud3.png"
+dest_files=[ "res://.import/cloud3.png-44c57f9b6a971285fa7e815a75d48351.stex" ]
 
 [params]
 

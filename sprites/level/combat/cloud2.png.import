@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bushes.png-5685a39d462c2fbde5db2619f8b05873.stex"
+path="res://.import/cloud2.png-491763ec0cbfed07791cd355fcbb8377.stex"
 
 [deps]
 
-source_file="res://sprites/level/battle_scene/bushes.png"
-dest_files=[ "res://.import/bushes.png-5685a39d462c2fbde5db2619f8b05873.stex" ]
+source_file="res://sprites/level/combat/cloud2.png"
+dest_files=[ "res://.import/cloud2.png-491763ec0cbfed07791cd355fcbb8377.stex" ]
 
 [params]
 

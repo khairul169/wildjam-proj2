@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tree_noshadow.png-df0fa05f25904af631be57f72a19598b.stex"
+path="res://.import/bushes.png-38afba4f405eb15dc5aa03c515f3de84.stex"
 
 [deps]
 
-source_file="res://sprites/level/props/tree_noshadow.png"
-dest_files=[ "res://.import/tree_noshadow.png-df0fa05f25904af631be57f72a19598b.stex" ]
+source_file="res://sprites/level/combat/bushes.png"
+dest_files=[ "res://.import/bushes.png-38afba4f405eb15dc5aa03c515f3de84.stex" ]
 
 [params]
 

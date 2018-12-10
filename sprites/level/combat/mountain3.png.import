@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mountain2.png-02d87d12b3c7d9dfd017ea2f92b4b926.stex"
+path="res://.import/mountain3.png-73b5c4acaf04e30abdfbd330b71fbb64.stex"
 
 [deps]
 
-source_file="res://sprites/level/battle_scene/mountain2.png"
-dest_files=[ "res://.import/mountain2.png-02d87d12b3c7d9dfd017ea2f92b4b926.stex" ]
+source_file="res://sprites/level/combat/mountain3.png"
+dest_files=[ "res://.import/mountain3.png-73b5c4acaf04e30abdfbd330b71fbb64.stex" ]
 
 [params]
 
