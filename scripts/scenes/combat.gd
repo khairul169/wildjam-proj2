@@ -29,8 +29,10 @@ func _battler_died(who) -> void:
 		return;
 	
 	# check for team alive member
-	var total_alive = {'player': 0, 'enemy': 0};
+	var player_alive = 0;
+	var enemy_alive = 0;
 	
+	# loop through all battler
 	for i in get_tree().get_nodes_in_group(BATTLER_GROUP):
 		if (!i.has_method('is_alive') || !i.is_alive()):
 			continue;
@@ -40,13 +42,16 @@ func _battler_died(who) -> void:
 		
 		match (i.get_team()):
 			Team.PLAYER:
-				total_alive.player += 1;
+				player_alive += 1;
 			Team.ENEMY:
-				total_alive.enemy += 1;
+				enemy_alive += 1;
 	
-	if (total_alive.enemy <= 0):
+	# enemy wiped out
+	if (enemy_alive <= 0):
 		end_combat(true);
-	elif (total_alive.player <= 0):
+	
+	# player lose
+	elif (player_alive <= 0):
 		end_combat(false);
 
 func end_combat(win: bool) -> void:
