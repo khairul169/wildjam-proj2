@@ -16,12 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Cats Attack MkII"
-run/main_scene="res://scenes/game.tscn"
+run/main_scene="res://scenes/world.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 SceneLoader="*res://scenes/scene_loader.tscn"
+PlayerStats="*res://scripts/singleton/player_stats.gd"
 
 [debug]
 

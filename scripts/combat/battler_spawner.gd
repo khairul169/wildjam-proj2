@@ -40,10 +40,19 @@ func _ready() -> void:
 
 func scene_ready() -> void:
 	# spawn cats
-	for i in range(5):
-		spawn_cat();
+	if (team == Team.PLAYER):
+		spawn_cat({
+			'str': PlayerStats.get_stats_modifier(PlayerStats.STATS_STRENGTH),
+			'pow': PlayerStats.get_stats_modifier(PlayerStats.STATS_POWER),
+			'agi': PlayerStats.get_stats_modifier(PlayerStats.STATS_AGILITY)
+		});
+	
+	if (team == Team.ENEMY && scene && scene.has_method("get_enemies")):
+		var enemies = scene.get_enemies();
+		for i in enemies:
+			spawn_cat(i);
 
-func spawn_cat() -> Node2D:
+func spawn_cat(stats: Dictionary) -> Node2D:
 	if (!scene || spawn_pos.empty() || !team):
 		return null;
 	
@@ -63,9 +72,16 @@ func spawn_cat() -> Node2D:
 	spawn_position = spawn_pos[next_spawn_pos];
 	instance.transform.origin = spawn_position;
 	
-	# set team
+	# set battler stats
 	instance.team = team;
 	instance.range_bonus = abs(spawn_position.x);
+	if (stats.has('str')):
+		instance.health = max(instance.health * float(stats['str']), 0.1);
+	if (stats.has('pow')):
+		instance.damage = max(instance.damage * float(stats['pow']), 0.0);
+		instance.attack_speed = clamp(instance.attack_speed - (float(stats['pow']) * 0.1), 0.1, 5.0);
+	if (stats.has('agi')):
+		instance.evasion = clamp(instance.evasion * float(stats['agi']), 0.0, 0.9);
 	
 	# set camera follow
 	if (set_cam && camera):

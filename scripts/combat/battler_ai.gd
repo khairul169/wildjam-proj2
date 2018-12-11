@@ -14,6 +14,7 @@ export var health = 100.0;
 export var damage = 10.0;
 export var attack_speed = 1.0;
 export var attack_range = 800.0;
+export var evasion = 0.2;
 
 # vars
 var move_dir = Vector2.ZERO;
@@ -39,6 +40,9 @@ func _ready() -> void:
 	# set health to max
 	cur_health = health;
 	update_ui();
+	
+	# wait for a while
+	next_think = 0.5;
 
 func _process(delta: float) -> void:
 	if (next_think > 0.0):
@@ -105,10 +109,7 @@ func cat_think() -> void:
 		set_animation('idle-hg');
 		
 		target = find_enemy();
-		if (target):
-			next_think = 0.5;
-		else:
-			next_think = 0.1;
+		next_think = 0.1;
 		return;
 	else:
 		if (!target.is_alive()):
@@ -138,6 +139,10 @@ func attack_enemy(enemy: Node2D) -> void:
 
 func give_damage(attacker: Node2D, dmg: float) -> void:
 	if (cur_health <= 0.0):
+		return;
+	
+	# evade attack
+	if (randf() < evasion):
 		return;
 	
 	cur_health = max(cur_health - dmg, 0.0);

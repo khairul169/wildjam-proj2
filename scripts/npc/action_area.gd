@@ -3,6 +3,7 @@ extends Area2D
 # enums
 enum ActionType {
 	NONE = 0,
+	COMBAT,
 	ENCHANTMENT,
 	SHOP,
 	STATS,

@@ -41,4 +41,16 @@ func spawn_player(pos: Vector2 = Vector2.ZERO) -> void:
 	
 	# set player pos
 	instance.transform.origin = pos;
+
+func start_combat(object) -> void:
+	if (!object.has_method('get_data')):
+		return;
 	
+	var npc_data = object.get_data();
+	var shared_data = {
+		'enemy_count': npc_data['count'],
+		'enemy_level': npc_data['level']
+	};
+	
+	print("starting combat with ", object);
+	SceneLoader.switch_scene(SceneLoader.SCENE_COMBAT, shared_data);

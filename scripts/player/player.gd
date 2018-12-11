@@ -98,7 +98,7 @@ func _physics_process(delta: float) -> void:
 	if (action_target && nav_path.size()):
 		var target_distance = global_transform.origin.distance_to(action_target.global_transform.origin);
 		if (target_distance <= MIN_ACTION_DISTANCE):
-			execute_action(action_target.action_type);
+			execute_action(action_target.action_type, action_target);
 			_reset_navpath();
 			action_target = null;
 	
@@ -138,15 +138,17 @@ func set_animation(anim: String, force: bool = false, speed: float = 1.0, blend_
 	if (force || anims.current_animation != anim):
 		anims.play(anim, blend_time, speed);
 
-func execute_action(action_type) -> void:
+func execute_action(action_type, object) -> void:
+	if (!scene):
+		return;
+	
 	match (action_type):
-		ACTION_AREA.ActionType.ENCHANTMENT:
-			print("ENCHANTMENT");
+		ACTION_AREA.ActionType.COMBAT:
+			scene.start_combat(object.get_parent());
+		
 		ACTION_AREA.ActionType.SHOP:
 			print("SHOP");
 		ACTION_AREA.ActionType.STATS:
 			print("STATS");
 		ACTION_AREA.ActionType.SKILLS:
 			print("SKILLS");
-		ACTION_AREA.ActionType.HEADQUARTER:
-			print("HEADQUARTER");

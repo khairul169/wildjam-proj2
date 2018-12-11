@@ -3,6 +3,7 @@
 [ext_resource path="res://scenes/combat/player_cat.tscn" type="PackedScene" id=1]
 
 [node name="enemy_cat" index="0" instance=ExtResource( 1 )]
+health = 60.0
 damage = 9.0
 attack_range = 700.0
 
