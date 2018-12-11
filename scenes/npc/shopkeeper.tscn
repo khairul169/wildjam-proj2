@@ -1,58 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://characters/cat/character.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scripts/npc/action_area.gd" type="Script" id=2]
+[ext_resource path="res://scenes/npc/base_npc.tscn" type="PackedScene" id=1]
 
-[sub_resource type="CircleShape2D" id=1]
+[node name="npc_shopkeeper" index="0" instance=ExtResource( 1 )]
 
-radius = 8.0
-
-[sub_resource type="CircleShape2D" id=2]
-
-radius = 64.0
-
-[node name="npc_shopkeeper" type="StaticBody2D"]
-
-[node name="shape" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -16 )
-shape = SubResource( 1 )
-
-[node name="body" type="Node2D" parent="."]
-
-[node name="character" parent="body" instance=ExtResource( 1 )]
-editor/display_folded = true
-position = Vector2( 0, -28 )
-scale = Vector2( 0.15, 0.15 )
-
-[node name="tail" parent="body/character/sprite" index="1"]
-position = Vector2( -74.8714, 57.3581 )
-rotation = -0.0436332
-
-[node name="hand_l" parent="body/character/sprite" index="4"]
-position = Vector2( 59.8483, -44.8404 )
-
-[node name="body" parent="body/character/sprite" index="5"]
-position = Vector2( 0, 5.84406 )
-
-[node name="hand_r" parent="body/character/sprite" index="6"]
-position = Vector2( -101.535, -25.7952 )
-
-[node name="gun" parent="body/character/sprite/hand_r/attachment" index="0"]
-visible = false
-
-[node name="head" parent="body/character/sprite" index="7"]
-position = Vector2( 27.7003, -64.0709 )
-
-[node name="AnimationPlayer" parent="body/character" index="1"]
-autoplay = "idle-alt"
-
-[node name="action_area" type="Area2D" parent="."]
-position = Vector2( 0, -50 )
-script = ExtResource( 2 )
+[node name="action_area" parent="." index="2"]
 action_type = 2
-
-[node name="shape" type="CollisionShape2D" parent="action_area"]
-shape = SubResource( 2 )
 
 
 [editable path="body/character"]

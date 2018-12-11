@@ -20,7 +20,6 @@
 [node name="character" type="Node2D"]
 
 [node name="sprite" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="shadow" type="Sprite" parent="sprite"]
 position = Vector2( 0, 162.633 )
