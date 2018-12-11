@@ -36,7 +36,7 @@ func spawn_player(pos: Vector2 = Vector2.ZERO) -> void:
 			instance.nav = level.navigation;
 		level.add_to_ysort(instance);
 	else:
-		print("Cannot find level ysort!");
+		print("Cannot find level!");
 		world.add_child(instance);
 	
 	# set player pos

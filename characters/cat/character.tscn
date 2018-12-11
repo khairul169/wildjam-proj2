@@ -1,59 +1,109 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=28 format=2]
 
-[ext_resource path="res://characters/cat/sprites/shadow.png" type="Texture" id=1]
-[ext_resource path="res://characters/cat/sprites/tail.png" type="Texture" id=2]
-[ext_resource path="res://characters/cat/sprites/leg.png" type="Texture" id=3]
-[ext_resource path="res://characters/cat/sprites/hand.png" type="Texture" id=4]
-[ext_resource path="res://characters/cat/sprites/body.png" type="Texture" id=5]
-[ext_resource path="res://sprites/gun/handgun.png" type="Texture" id=6]
-[ext_resource path="res://characters/cat/sprites/head.png" type="Texture" id=7]
-[ext_resource path="res://characters/cat/anims/corpse-fadeout.anim" type="Animation" id=8]
-[ext_resource path="res://characters/cat/anims/default.anim" type="Animation" id=9]
-[ext_resource path="res://characters/cat/anims/dying.anim" type="Animation" id=10]
-[ext_resource path="res://characters/cat/anims/idle.anim" type="Animation" id=11]
-[ext_resource path="res://characters/cat/anims/idle-alt.anim" type="Animation" id=12]
-[ext_resource path="res://characters/cat/anims/idle-hg.anim" type="Animation" id=13]
-[ext_resource path="res://characters/cat/anims/run.anim" type="Animation" id=14]
-[ext_resource path="res://characters/cat/anims/run-hg.anim" type="Animation" id=15]
-[ext_resource path="res://characters/cat/anims/shoot-hg.anim" type="Animation" id=16]
+[ext_resource path="res://scripts/player/character_customizer.gd" type="Script" id=1]
+[ext_resource path="res://characters/cat/sprites/shadow.png" type="Texture" id=2]
+[ext_resource path="res://shaders/skin_shader.tres" type="Shader" id=3]
+[ext_resource path="res://characters/cat/sprites/mask_tail.png" type="Texture" id=4]
+[ext_resource path="res://characters/cat/sprites/tail.png" type="Texture" id=5]
+[ext_resource path="res://characters/cat/sprites/mask_leg.png" type="Texture" id=6]
+[ext_resource path="res://characters/cat/sprites/leg.png" type="Texture" id=7]
+[ext_resource path="res://characters/cat/sprites/hand.png" type="Texture" id=8]
+[ext_resource path="res://characters/cat/sprites/mask_body.png" type="Texture" id=9]
+[ext_resource path="res://characters/cat/sprites/body.png" type="Texture" id=10]
+[ext_resource path="res://sprites/gun/handgun.png" type="Texture" id=11]
+[ext_resource path="res://characters/cat/sprites/mask_head.png" type="Texture" id=12]
+[ext_resource path="res://characters/cat/sprites/head.png" type="Texture" id=13]
+[ext_resource path="res://characters/cat/anims/corpse-fadeout.anim" type="Animation" id=14]
+[ext_resource path="res://characters/cat/anims/default.anim" type="Animation" id=15]
+[ext_resource path="res://characters/cat/anims/dying.anim" type="Animation" id=16]
+[ext_resource path="res://characters/cat/anims/idle.anim" type="Animation" id=17]
+[ext_resource path="res://characters/cat/anims/idle-alt.anim" type="Animation" id=18]
+[ext_resource path="res://characters/cat/anims/idle-hg.anim" type="Animation" id=19]
+[ext_resource path="res://characters/cat/anims/run.anim" type="Animation" id=20]
+[ext_resource path="res://characters/cat/anims/run-hg.anim" type="Animation" id=21]
+[ext_resource path="res://characters/cat/anims/shoot-hg.anim" type="Animation" id=22]
+
+[sub_resource type="ShaderMaterial" id=3]
+
+shader = ExtResource( 3 )
+shader_param/skin_color = Color( 1, 1, 1, 1 )
+shader_param/skin_mask = ExtResource( 4 )
+
+[sub_resource type="ShaderMaterial" id=4]
+
+shader = ExtResource( 3 )
+shader_param/skin_color = Color( 1, 1, 1, 1 )
+shader_param/skin_mask = ExtResource( 6 )
+
+[sub_resource type="ShaderMaterial" id=5]
+
+shader = ExtResource( 3 )
+shader_param/skin_color = Color( 1, 1, 1, 1 )
+shader_param/skin_mask = ExtResource( 8 )
+
+[sub_resource type="ShaderMaterial" id=6]
+
+shader = ExtResource( 3 )
+shader_param/skin_color = Color( 1, 1, 1, 1 )
+shader_param/skin_mask = ExtResource( 9 )
+
+[sub_resource type="ShaderMaterial" id=2]
+
+shader = ExtResource( 3 )
+shader_param/skin_color = Color( 1, 1, 1, 1 )
+shader_param/skin_mask = ExtResource( 12 )
 
 [node name="character" type="Node2D"]
+script = ExtResource( 1 )
+_randomize_color = true
+_body = NodePath("sprite/body")
+_head = NodePath("sprite/head")
+_hand_l = NodePath("sprite/hand_l")
+_hand_r = NodePath("sprite/hand_r")
+_leg_l = NodePath("sprite/leg_l")
+_leg_r = NodePath("sprite/leg_r")
+_tail = NodePath("sprite/tail")
 
 [node name="sprite" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="shadow" type="Sprite" parent="sprite"]
 position = Vector2( 0, 162.633 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 
 [node name="tail" type="Sprite" parent="sprite"]
+material = SubResource( 3 )
 position = Vector2( -74.8714, 48.7663 )
-texture = ExtResource( 2 )
+texture = ExtResource( 5 )
 offset = Vector2( -77.3698, -35.2002 )
 
 [node name="leg_l" type="Sprite" parent="sprite"]
+material = SubResource( 4 )
 position = Vector2( 51.3443, 52.2318 )
-texture = ExtResource( 3 )
+texture = ExtResource( 7 )
 offset = Vector2( 9.47156, 45.3857 )
 
 [node name="leg_r" type="Sprite" parent="sprite"]
+material = SubResource( 4 )
 position = Vector2( -40.6922, 67.3213 )
 rotation = 0.0741489
-texture = ExtResource( 3 )
+texture = ExtResource( 7 )
 offset = Vector2( 9.47156, 45.3857 )
 
 [node name="hand_l" type="Sprite" parent="sprite"]
+material = SubResource( 5 )
 position = Vector2( 59.8483, -54.5805 )
 rotation = -0.355997
-texture = ExtResource( 4 )
+texture = ExtResource( 8 )
 offset = Vector2( 6.30899, 68.1843 )
 
 [node name="body" type="Sprite" parent="sprite"]
-texture = ExtResource( 5 )
+material = SubResource( 6 )
+texture = ExtResource( 10 )
 
 [node name="hand_r" type="Sprite" parent="sprite"]
+material = SubResource( 5 )
 position = Vector2( -101.535, -35.5353 )
-texture = ExtResource( 4 )
+texture = ExtResource( 8 )
 offset = Vector2( 6.30899, 68.1843 )
 
 [node name="attachment" type="Node2D" parent="sprite/hand_r"]
@@ -64,22 +114,23 @@ position = Vector2( 6.70124, 119.18 )
 position = Vector2( 38.1788, 40.2189 )
 rotation = 1.22601
 scale = Vector2( 0.667678, 0.667678 )
-texture = ExtResource( 6 )
+texture = ExtResource( 11 )
 
 [node name="head" type="Sprite" parent="sprite"]
+material = SubResource( 2 )
 position = Vector2( 27.7003, -77.7069 )
-texture = ExtResource( 7 )
+texture = ExtResource( 13 )
 offset = Vector2( -18.3313, -193.86 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"
-anims/corpse-fadeout = ExtResource( 8 )
-anims/default = ExtResource( 9 )
-anims/dying = ExtResource( 10 )
-anims/idle = ExtResource( 11 )
-anims/idle-alt = ExtResource( 12 )
-anims/idle-hg = ExtResource( 13 )
-anims/run = ExtResource( 14 )
-anims/run-hg = ExtResource( 15 )
-anims/shoot-hg = ExtResource( 16 )
+anims/corpse-fadeout = ExtResource( 14 )
+anims/default = ExtResource( 15 )
+anims/dying = ExtResource( 16 )
+anims/idle = ExtResource( 17 )
+anims/idle-alt = ExtResource( 18 )
+anims/idle-hg = ExtResource( 19 )
+anims/run = ExtResource( 20 )
+anims/run-hg = ExtResource( 21 )
+anims/shoot-hg = ExtResource( 22 )
 
