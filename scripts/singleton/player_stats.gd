@@ -25,15 +25,13 @@ signal exp_updated();
 
 func _ready():
 	reset_data();
-	load_game();
-	save_game();
 
 func _exit_tree() -> void:
 	save_game();
 
 func reset_data() -> void:
 	player_name = 'Khai';
-	level = 10;
+	level = 1;
 	experience = 0;
 	stats_point = 0;
 	stats[STATS_STRENGTH] = 0;
@@ -60,6 +58,10 @@ func save_game() -> void:
 		return;
 	f.store_string(encoded);
 	f.close();
+
+func has_savegame() -> bool:
+	var f = File.new();
+	return f.file_exists(SAVEGAME_PATH);
 
 func load_game() -> void:
 	var f = File.new();

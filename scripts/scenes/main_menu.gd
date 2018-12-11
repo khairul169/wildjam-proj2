@@ -1,12 +1,15 @@
 extends Control
 
 func _ready() -> void:
+	$button_continue.disabled = !PlayerStats.has_savegame();
 	$button_continue.connect("pressed", self, "_continue");
 	$button_newgame.connect("pressed", self, "_newgame");
 	$button_quit.connect("pressed", self, "_quit");
 
 func _continue() -> void:
-	pass
+	# create new savegame
+	PlayerStats.load_game();
+	SceneLoader.goto_world_level();
 
 func _newgame() -> void:
 	# create new savegame
