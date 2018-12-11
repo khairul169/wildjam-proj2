@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/scenes/main_menu.gd" type="Script" id=1]
+[ext_resource path="res://sprites/level/tiles/grass.png" type="Texture" id=2]
+[ext_resource path="res://sprites/white.png" type="Texture" id=3]
+[ext_resource path="res://fonts/PetitaMedium.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://characters/cat/character.tscn" type="PackedScene" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 76
+outline_size = 5
+outline_color = Color( 0.721569, 0.482353, 0.32549, 1 )
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 24
+use_filter = true
+font_data = ExtResource( 4 )
+
+[node name="main_menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bg" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bg2" type="TextureRect" parent="."]
+modulate = Color( 0, 0, 0, 0.313726 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="title" type="Label" parent="."]
+margin_top = 130.0
+margin_right = 960.0
+margin_bottom = 230.0
+custom_fonts/font = SubResource( 1 )
+text = "CATS! ATTACK"
+align = 2
+valign = 1
+
+[node name="character" parent="." instance=ExtResource( 5 )]
+position = Vector2( 490, 470 )
+scale = Vector2( 0.411066, 0.411066 )
+
+[node name="button_continue" type="Button" parent="."]
+margin_left = 660.0
+margin_top = 290.0
+margin_right = 960.0
+margin_bottom = 362.0
+custom_fonts/font = SubResource( 2 )
+disabled = true
+text = "CONTINUE"
+
+[node name="button_newgame" type="Button" parent="."]
+margin_left = 660.0
+margin_top = 390.0
+margin_right = 960.0
+margin_bottom = 462.0
+custom_fonts/font = SubResource( 2 )
+text = "NEW GAME"
+
+[node name="button_quit" type="Button" parent="."]
+margin_left = 660.0
+margin_top = 480.942
+margin_right = 960.0
+margin_bottom = 552.942
+custom_fonts/font = SubResource( 2 )
+text = "QUIT"
+

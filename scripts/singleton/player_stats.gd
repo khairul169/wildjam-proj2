@@ -33,7 +33,7 @@ func _exit_tree() -> void:
 
 func reset_data() -> void:
 	player_name = 'Khai';
-	level = 1;
+	level = 10;
 	experience = 0;
 	stats_point = 0;
 	stats[STATS_STRENGTH] = 0;

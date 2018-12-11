@@ -17,6 +17,7 @@ signal battler_died(who);
 # vars
 var enemies = [];
 var combat_running = false;
+var world_state;
 
 func _ready() -> void:
 	# set combat as running
@@ -28,11 +29,17 @@ func _ready() -> void:
 		var enemy_count = 0;
 		var enemy_level = 1;
 		
+		# enemy data
 		if (shared_data.has('enemy_count')):
 			enemy_count = int(clamp(shared_data['enemy_count'], 1, 9));
 		if (shared_data.has('enemy_level')):
 			enemy_level = int(clamp(shared_data['enemy_level'], 0, 100));
 		
+		# world state
+		if (shared_data.has('world_state')):
+			world_state = shared_data['world_state'];
+		
+		# add enemies
 		for i in range(enemy_count):
 			enemies.append({
 				'str': 1.0 + (enemy_level / 100.0 * 10.0),
@@ -77,9 +84,14 @@ func get_enemies() -> Array:
 	return enemies;
 
 func end_combat(win: bool) -> void:
-	if (!combat_running):
+	if (!combat_running || !world_state):
 		return;
 	
 	print("Combat end: ", win);
 	
-	SceneLoader.switch_scene(SceneLoader.SCENE_WORLD);
+	if (world_state.size() > 2 && world_state[2].size() > 0):
+		# set win state
+		world_state[2][world_state[2].size()-1][1] = win;
+	
+	# go back to world
+	SceneLoader.goto_world_level(world_state);

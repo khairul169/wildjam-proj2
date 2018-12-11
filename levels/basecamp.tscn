@@ -90,6 +90,7 @@ position = Vector2( 1600, 1200 )
 navpoly = ExtResource( 5 )
 
 [node name="ysort" type="YSort" parent="."]
+editor/display_folded = true
 
 [node name="tree" parent="ysort" instance=ExtResource( 6 )]
 position = Vector2( 455.944, 451.042 )
@@ -246,4 +247,13 @@ position = Vector2( 931.209, 402.804 )
 [node name="npc_enemycat" parent="ysort" instance=ExtResource( 12 )]
 position = Vector2( 1474.03, 886.769 )
 enemy_count = 3
+
+[node name="npc_enemycat2" parent="ysort" instance=ExtResource( 12 )]
+position = Vector2( 1124.33, 1124.93 )
+enemy_level = 2
+enemy_count = 2
+
+[node name="npc_enemycat3" parent="ysort" instance=ExtResource( 12 )]
+position = Vector2( 878.632, 999.819 )
+enemy_level = 3
 

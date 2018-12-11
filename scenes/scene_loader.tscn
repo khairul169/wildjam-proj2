@@ -5,10 +5,10 @@
 [ext_resource path="res://characters/cat/character.tscn" type="PackedScene" id=3]
 [ext_resource path="res://fonts/PetitaMedium.ttf" type="DynamicFontData" id=4]
 
-
 [sub_resource type="DynamicFont" id=1]
 
 size = 32
+use_filter = true
 font_data = ExtResource( 4 )
 
 [node name="scene_loader" type="CanvasLayer"]
@@ -23,7 +23,7 @@ __meta__ = {
 }
 
 [node name="bg" type="TextureRect" parent="ui"]
-modulate = Color( 0.243137, 0.219608, 0.254902, 1 )
+modulate = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 2 )
@@ -31,8 +31,8 @@ expand = true
 
 [node name="character" parent="ui" instance=ExtResource( 3 )]
 editor/display_folded = true
-position = Vector2( 640, 440 )
-scale = Vector2( 0.314301, 0.314301 )
+position = Vector2( 1150, 610 )
+scale = Vector2( 0.2, 0.2 )
 
 [node name="tail" parent="ui/character/sprite" index="1"]
 rotation = -0.118292
@@ -59,17 +59,15 @@ rotation = -0.0225261
 autoplay = "run"
 
 [node name="loading" type="Label" parent="ui"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -640.0
-margin_top = 180.0
-margin_right = 640.0
-margin_bottom = 217.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1070.0
+margin_top = -60.0
+margin_right = -10.0
+margin_bottom = -23.0
 custom_fonts/font = SubResource( 1 )
-text = "Please Wait nyan~"
-align = 1
+text = "Please Wait..."
 
 
 [editable path="ui/character"]

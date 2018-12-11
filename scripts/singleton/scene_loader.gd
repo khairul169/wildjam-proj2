@@ -19,6 +19,9 @@ onready var ui_node: Control = $ui;
 var shared_data;
 var current_scene = -1;
 
+# world levels
+onready var level_basecamp = load_level('basecamp');
+
 func _ready():
 	# load scenes
 	for i in scenes.keys():
@@ -51,5 +54,16 @@ func switch_scene(scene_id: int, data = null) -> void:
 	OS.delay_msec(1000);
 	ui_node.hide();
 
+func goto_world_level(state = null) -> void:
+	if (!state || typeof(state) != TYPE_ARRAY || !state.size()):
+		# start level
+		state = [level_basecamp];
+	
+	# switch to world scene
+	switch_scene(SCENE_WORLD, state);
+
 func get_shared_data():
 	return shared_data;
+
+func load_level(fname: String) -> Resource:
+	return load("res://levels/" + fname + ".tscn");
