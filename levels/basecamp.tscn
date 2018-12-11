@@ -79,7 +79,7 @@ position = Vector2( 1001.78, 425.095 )
 texture = ExtResource( 4 )
 
 [node name="spawn_pos" type="Position2D" parent="."]
-position = Vector2( 590, 1024.68 )
+position = Vector2( 665.875, 512.06 )
 
 [node name="limit" type="Position2D" parent="."]
 position = Vector2( 1600, 1200 )

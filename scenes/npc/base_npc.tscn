@@ -16,6 +16,8 @@ radius = 64.0
 [sub_resource type="DynamicFont" id=3]
 
 size = 18
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 4 )
 
 [node name="base_npc" type="StaticBody2D"]

@@ -7,7 +7,7 @@ func _ready() -> void:
 	$button_quit.connect("pressed", self, "_quit");
 
 func _continue() -> void:
-	# create new savegame
+	# load savegame
 	PlayerStats.load_game();
 	SceneLoader.goto_world_level();
 

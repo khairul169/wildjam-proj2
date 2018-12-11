@@ -87,7 +87,8 @@ func end_combat(win: bool) -> void:
 	if (!combat_running || !world_state):
 		return;
 	
-	print("Combat end: ", win);
+	# give player exp point
+	PlayerStats.add_experience(100 * PlayerStats.get_experience_modifier());
 	
 	if (world_state.size() > 2 && world_state[2].size() > 0):
 		# set win state

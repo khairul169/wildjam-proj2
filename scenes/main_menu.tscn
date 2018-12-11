@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/scenes/main_menu.gd" type="Script" id=1]
-[ext_resource path="res://sprites/level/tiles/grass.png" type="Texture" id=2]
-[ext_resource path="res://sprites/white.png" type="Texture" id=3]
-[ext_resource path="res://fonts/PetitaMedium.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://characters/cat/character.tscn" type="PackedScene" id=5]
+[ext_resource path="res://sprites/white.png" type="Texture" id=2]
+[ext_resource path="res://sprites/level/combat/bushes.png" type="Texture" id=3]
+[ext_resource path="res://sprites/level/combat/cloud.png" type="Texture" id=4]
+[ext_resource path="res://sprites/level/combat/cloud2.png" type="Texture" id=5]
+[ext_resource path="res://fonts/PetitaMedium.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://characters/cat/character.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -12,13 +14,13 @@ size = 76
 outline_size = 5
 outline_color = Color( 0.721569, 0.482353, 0.32549, 1 )
 use_filter = true
-font_data = ExtResource( 4 )
+font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=2]
 
 size = 24
 use_filter = true
-font_data = ExtResource( 4 )
+font_data = ExtResource( 6 )
 
 [node name="main_menu" type="Control"]
 anchor_right = 1.0
@@ -29,60 +31,101 @@ __meta__ = {
 }
 
 [node name="bg" type="TextureRect" parent="."]
+editor/display_folded = true
+modulate = Color( 0.752941, 0.807843, 0.956863, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 2 )
 expand = true
-stretch_mode = 2
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="bg2" type="TextureRect" parent="."]
-modulate = Color( 0, 0, 0, 0.313726 )
+[node name="bush" type="TextureRect" parent="bg"]
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -100.0
+margin_bottom = 18.0
 texture = ExtResource( 3 )
-expand = true
-__meta__ = {
-"_edit_lock_": true
-}
+stretch_mode = 2
+
+[node name="bg2" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="cloud" type="Sprite" parent="bg2"]
+position = Vector2( 350, 180 )
+scale = Vector2( 0.84312, 0.84312 )
+texture = ExtResource( 4 )
+
+[node name="cloud2" type="Sprite" parent="bg2"]
+position = Vector2( 960, 190 )
+texture = ExtResource( 5 )
 
 [node name="title" type="Label" parent="."]
-margin_top = 130.0
+margin_top = 150.0
 margin_right = 960.0
-margin_bottom = 230.0
+margin_bottom = 250.0
 custom_fonts/font = SubResource( 1 )
 text = "CATS! ATTACK"
 align = 2
 valign = 1
 
-[node name="character" parent="." instance=ExtResource( 5 )]
-position = Vector2( 490, 470 )
+[node name="character" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 490, 510 )
 scale = Vector2( 0.411066, 0.411066 )
+
+[node name="shadow" parent="character/sprite" index="0"]
+visible = false
+
+[node name="tail" parent="character/sprite" index="1"]
+position = Vector2( -74.8714, 54.9309 )
+rotation = -0.031307
+
+[node name="hand_l" parent="character/sprite" index="4"]
+position = Vector2( 59.8483, -47.5919 )
+
+[node name="body" parent="character/sprite" index="5"]
+position = Vector2( 0, 4.19313 )
+
+[node name="hand_r" parent="character/sprite" index="6"]
+position = Vector2( -101.535, -28.5467 )
+rotation = 0.202864
+
+[node name="gun" parent="character/sprite/hand_r/attachment" index="0"]
+visible = false
+
+[node name="head" parent="character/sprite" index="7"]
+position = Vector2( 27.7003, -67.923 )
+
+[node name="AnimationPlayer" parent="character" index="1"]
+autoplay = "idle-alt"
 
 [node name="button_continue" type="Button" parent="."]
 margin_left = 660.0
-margin_top = 290.0
+margin_top = 310.0
 margin_right = 960.0
-margin_bottom = 362.0
+margin_bottom = 382.0
 custom_fonts/font = SubResource( 2 )
 disabled = true
 text = "CONTINUE"
 
 [node name="button_newgame" type="Button" parent="."]
 margin_left = 660.0
-margin_top = 390.0
+margin_top = 410.0
 margin_right = 960.0
-margin_bottom = 462.0
+margin_bottom = 482.0
 custom_fonts/font = SubResource( 2 )
 text = "NEW GAME"
 
 [node name="button_quit" type="Button" parent="."]
 margin_left = 660.0
-margin_top = 480.942
+margin_top = 500.942
 margin_right = 960.0
-margin_bottom = 552.942
+margin_bottom = 572.942
 custom_fonts/font = SubResource( 2 )
 text = "QUIT"
 
+
+[editable path="character"]

@@ -23,6 +23,7 @@ config/icon="res://icon.png"
 
 SceneLoader="*res://scenes/scene_loader.tscn"
 PlayerStats="*res://scripts/singleton/player_stats.gd"
+Hotkeys="res://scripts/singleton/hotkeys.gd"
 
 [debug]
 
