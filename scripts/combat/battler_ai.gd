@@ -40,9 +40,6 @@ func _ready() -> void:
 	# set health to max
 	cur_health = health;
 	update_ui();
-	
-	# wait for a while
-	next_think = 0.5;
 
 func _process(delta: float) -> void:
 	if (next_think > 0.0):

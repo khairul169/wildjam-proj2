@@ -19,6 +19,7 @@ var level: int;
 var experience: int;
 var stats_point: int;
 var stats = {};
+var savegame_loaded = false;
 
 # signals
 signal exp_updated();
@@ -27,7 +28,8 @@ func _ready():
 	reset_data();
 
 func _exit_tree() -> void:
-	save_game();
+	if (savegame_loaded):
+		save_game();
 
 func reset_data() -> void:
 	player_name = 'Khai';
@@ -58,6 +60,7 @@ func save_game() -> void:
 		return;
 	f.store_string(encoded);
 	f.close();
+	savegame_loaded = true;
 
 func has_savegame() -> bool:
 	var f = File.new();
@@ -80,6 +83,7 @@ func load_game() -> void:
 	
 	# reset player data
 	reset_data();
+	savegame_loaded = true;
 	
 	# load data
 	if (data.has('character')):
