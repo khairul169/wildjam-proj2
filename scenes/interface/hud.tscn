@@ -1,0 +1,99 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://characters/cat/sprites/head.png" type="Texture" id=1]
+[ext_resource path="res://fonts/PetitaMedium.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://sprites/white.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 28
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 20
+font_data = ExtResource( 2 )
+
+[node name="hud" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="character_info" type="Control" parent="."]
+margin_left = 110.0
+margin_top = 10.0
+margin_right = 460.0
+margin_bottom = 90.0
+mouse_filter = 2
+
+[node name="portrait" type="TextureRect" parent="character_info"]
+margin_left = -90.0
+margin_top = 10.0
+margin_right = 422.0
+margin_bottom = 442.0
+rect_scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 1 )
+expand = true
+
+[node name="name" type="Label" parent="character_info"]
+margin_right = 350.0
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 1 )
+text = "Khai"
+valign = 2
+
+[node name="level" type="Label" parent="character_info"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -350.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 2 )
+text = "Lvl 1"
+align = 2
+valign = 2
+
+[node name="health" type="TextureRect" parent="character_info"]
+self_modulate = Color( 0, 0, 0, 0.431373 )
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -30.0
+margin_bottom = -20.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="bar" type="TextureRect" parent="character_info/health"]
+modulate = Color( 0.65098, 0.941176, 0.266667, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = -1.0
+margin_bottom = -1.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="experience" type="TextureRect" parent="character_info"]
+self_modulate = Color( 0, 0, 0, 0.431373 )
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -15.0
+margin_right = -120.0
+margin_bottom = -5.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="bar" type="TextureRect" parent="character_info/experience"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = -1.0
+margin_bottom = -1.0
+texture = ExtResource( 3 )
+expand = true
+

@@ -19,6 +19,8 @@ var player_battler;
 var enemies = [];
 var combat_running = false;
 var world_state;
+var enemy_count = 0;
+var enemy_level = 1;
 
 func _ready() -> void:
 	# set combat as running
@@ -27,9 +29,6 @@ func _ready() -> void:
 	# load enemy
 	var shared_data = SceneLoader.get_shared_data();
 	if (shared_data && typeof(shared_data) == TYPE_DICTIONARY):
-		var enemy_count = 0;
-		var enemy_level = 1;
-		
 		# enemy data
 		if (shared_data.has('enemy_count')):
 			enemy_count = int(clamp(shared_data['enemy_count'], 1, 9));
@@ -39,14 +38,14 @@ func _ready() -> void:
 		# world state
 		if (shared_data.has('world_state')):
 			world_state = shared_data['world_state'];
-		
-		# add enemies
-		for i in range(enemy_count):
-			enemies.append({
-				'str': 1.0 + (enemy_level / 100.0 * 10.0),
-				'pow': 1.0 + (enemy_level / 100.0 * 8.0),
-				'agi': 1.0 + (enemy_level / 100.0 * 4.0)
-			});
+	
+	# add enemies
+	for i in range(enemy_count):
+		enemies.append({
+			'str': 1.0 + (enemy_level / 100.0 * 10.0),
+			'pow': 1.0 + (enemy_level / 100.0 * 8.0),
+			'agi': 1.0 + (enemy_level / 100.0 * 4.0)
+		});
 	
 	connect("battler_died", self, "_battler_died");
 	emit_signal("scene_ready");
@@ -89,15 +88,16 @@ func end_combat(win: bool) -> void:
 		return;
 	
 	# give player exp point
-	PlayerStats.add_experience(100 * PlayerStats.get_experience_modifier());
+	PlayerStats.add_experience(60.0 * enemy_count * enemy_level);
 	
 	# set player health
 	if (player_battler):
 		PlayerStats.health = player_battler.cur_health;
 	
-	if (world_state.size() > 2 && world_state[2].size() > 0):
+	if (world_state.has('enemy') && world_state.enemy.size() > 0):
 		# set win state
-		world_state[2][world_state[2].size()-1][1] = win;
+		var enemy_id = world_state.enemy.size()-1;
+		world_state.enemy[enemy_id][1] = win;
 	
 	# go back to world
 	SceneLoader.goto_world_level(world_state);

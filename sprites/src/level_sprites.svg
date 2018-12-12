@@ -27,9 +27,9 @@
      showgrid="false"
      inkscape:current-layer="layer1"
      inkscape:document-units="mm"
-     inkscape:cy="738.76826"
-     inkscape:cx="404.1215"
-     inkscape:zoom="1.8744386"
+     inkscape:cy="721.80258"
+     inkscape:cx="542.71153"
+     inkscape:zoom="3.7488772"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -1771,6 +1771,110 @@
            id="path33799"
            inkscape:connector-curvature="0"
            sodipodi:nodetypes="ccccccccccccccccccc" />
+      </g>
+    </g>
+    <g
+       id="g4888"
+       inkscape:export-filename="D:\Projects\GodotProjects\wildjam-proj2\sprites\level\props\quest_board.png"
+       inkscape:export-xdpi="158.56"
+       inkscape:export-ydpi="158.56">
+      <g
+         transform="translate(0.30571625)"
+         id="g4858">
+        <g
+           id="g4843">
+          <rect
+             y="109.35457"
+             x="139.49481"
+             height="5.469871"
+             width="1.4115336"
+             id="rect4807"
+             style="opacity:1;fill:#7c5734;fill-opacity:1;stroke:none;stroke-width:0.09999998;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+          <path
+             inkscape:connector-curvature="0"
+             id="rect4836"
+             d="m 140.53582,109.35456 v 5.46995 h 0.37031 v -5.46995 z"
+             style="opacity:1;fill:#000000;fill-opacity:0.34806632;stroke:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+        </g>
+        <g
+           id="g4850"
+           transform="translate(18.514849)">
+          <rect
+             style="opacity:1;fill:#7c5734;fill-opacity:1;stroke:none;stroke-width:0.09999998;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             id="rect4845"
+             width="1.4115336"
+             height="5.469871"
+             x="139.49481"
+             y="109.35457" />
+          <path
+             style="opacity:1;fill:#000000;fill-opacity:0.34806632;stroke:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 140.53582,109.35456 v 5.46995 h 0.37031 v -5.46995 z"
+             id="path4848"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+      <g
+         id="g4869">
+        <rect
+           style="opacity:1;fill:#503924;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+           id="rect4803"
+           width="25.689915"
+           height="14.397644"
+           x="136.91876"
+           y="95.380394" />
+        <rect
+           y="97.004425"
+           x="138.61256"
+           height="11.149566"
+           width="22.302315"
+           id="rect4805"
+           style="opacity:1;fill:#dbb080;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+        <g
+           id="g4828"
+           transform="translate(0.63519018,0.98807362)">
+          <rect
+             y="98.25605"
+             x="140.44762"
+             height="5.4344049"
+             width="3.599411"
+             id="rect4816"
+             style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+          <rect
+             style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             id="rect4818"
+             width="4.8697915"
+             height="3.7405643"
+             x="147.08183"
+             y="98.25605" />
+          <rect
+             y="102.90184"
+             x="146.94069"
+             height="1.7889656"
+             width="2.3290308"
+             id="rect4820"
+             style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+          <rect
+             style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.09999999;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             id="rect4822"
+             width="4.7286382"
+             height="6.7999105"
+             x="154.21008"
+             y="98.243782" />
+        </g>
+        <rect
+           y="95.531288"
+           x="137.08237"
+           height="14.095861"
+           width="25.36272"
+           id="rect4830"
+           style="opacity:1;fill:none;fill-opacity:1;stroke:#cb925d;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+        <rect
+           style="opacity:1;fill:none;fill-opacity:1;stroke:#a26b38;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+           id="rect4832"
+           width="21.984718"
+           height="10.832016"
+           x="138.77136"
+           y="97.1632" />
       </g>
     </g>
   </g>

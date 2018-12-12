@@ -55,9 +55,9 @@ func switch_scene(scene_id: int, data = null) -> void:
 	ui_node.hide();
 
 func goto_world_level(state = null) -> void:
-	if (!state || typeof(state) != TYPE_ARRAY || !state.size()):
+	if (!state || typeof(state) != TYPE_DICTIONARY || !state.size()):
 		# start level
-		state = [level_basecamp];
+		state = {'level': level_basecamp};
 	
 	# switch to world scene
 	switch_scene(SCENE_WORLD, state);

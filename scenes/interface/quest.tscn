@@ -1,0 +1,171 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/interface/quest.gd" type="Script" id=1]
+[ext_resource path="res://sprites/white.png" type="Texture" id=2]
+[ext_resource path="res://fonts/PetitaMedium.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=4]
+
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+
+size = 24
+font_data = ExtResource( 3 )
+
+[node name="quest" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -190.0
+margin_top = -275.0
+margin_right = 190.0
+margin_bottom = 275.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bg" type="TextureRect" parent="."]
+modulate = Color( 0.388235, 0.294118, 0.215686, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="title" type="Label" parent="."]
+margin_right = 380.0
+margin_bottom = 75.0
+custom_fonts/font = SubResource( 4 )
+text = "QUEST"
+align = 1
+valign = 1
+
+[node name="btn_main" type="Button" parent="."]
+margin_left = 20.0
+margin_top = 485.0
+margin_right = 180.0
+margin_bottom = 525.0
+text = "MAIN"
+
+[node name="btn_side" type="Button" parent="."]
+margin_left = 200.0
+margin_top = 485.0
+margin_right = 360.0
+margin_bottom = 525.0
+disabled = true
+text = "SIDE"
+
+[node name="container" type="ScrollContainer" parent="."]
+margin_left = 20.0
+margin_top = 75.0
+margin_right = 360.0
+margin_bottom = 405.0
+scroll_horizontal_enabled = false
+
+[node name="quest_list" type="VBoxContainer" parent="container"]
+margin_right = 320.0
+margin_bottom = 80.0
+custom_constants/separation = 15
+
+[node name="quest" type="Button" parent="container/quest_list"]
+editor/display_folded = true
+margin_right = 320.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 320, 80 )
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="bg" type="ColorRect" parent="container/quest_list/quest"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+color = Color( 0.462745, 0.403922, 0.305882, 1 )
+
+[node name="bg_lock" type="ColorRect" parent="container/quest_list/quest"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+color = Color( 0.266667, 0.227451, 0.168627, 1 )
+
+[node name="title" type="Label" parent="container/quest_list/quest"]
+margin_left = 20.0
+margin_top = 18.0
+margin_right = 310.0
+margin_bottom = 37.0
+custom_fonts/font = SubResource( 2 )
+text = "Title"
+
+[node name="caption" type="Label" parent="container/quest_list/quest"]
+margin_left = 20.0
+margin_top = 40.0
+margin_right = 310.0
+margin_bottom = 68.0
+custom_fonts/font = SubResource( 3 )
+text = "Quest Caption"
+
+[node name="btn_exit" type="Button" parent="."]
+margin_left = 320.0
+margin_top = 20.0
+margin_right = 360.0
+margin_bottom = 60.0
+text = "X"
+
+[node name="chapters" type="Control" parent="."]
+margin_left = 20.0
+margin_top = 423.0
+margin_right = 360.0
+margin_bottom = 463.0
+
+[node name="chapter_list" type="HBoxContainer" parent="chapters"]
+margin_right = 340.0
+margin_bottom = 40.0
+custom_constants/separation = 15
+alignment = 1
+
+[node name="chap1" type="Button" parent="chapters/chapter_list"]
+margin_left = 40.0
+margin_right = 80.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+text = "1"
+
+[node name="chap2" type="Button" parent="chapters/chapter_list"]
+margin_left = 95.0
+margin_right = 135.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+disabled = true
+text = "2"
+
+[node name="chap3" type="Button" parent="chapters/chapter_list"]
+margin_left = 150.0
+margin_right = 190.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+disabled = true
+text = "3"
+
+[node name="chap4" type="Button" parent="chapters/chapter_list"]
+margin_left = 205.0
+margin_right = 245.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+disabled = true
+text = "4"
+
+[node name="chap5" type="Button" parent="chapters/chapter_list"]
+margin_left = 260.0
+margin_right = 300.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+disabled = true
+text = "5"
+

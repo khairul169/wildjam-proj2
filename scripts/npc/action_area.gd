@@ -8,7 +8,8 @@ enum ActionType {
 	SHOP,
 	STATS,
 	SKILLS,
-	HEADQUARTER
+	HEADQUARTER,
+	QUEST
 };
 
 # exports

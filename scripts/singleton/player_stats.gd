@@ -135,8 +135,10 @@ func get_max_health() -> float:
 	return 100.0 * get_stats_modifier(STATS_STRENGTH);
 
 func add_experience(points: int) -> void:
-	if (level >= MAX_LEVEL):
+	if (level >= MAX_LEVEL || points <= 0):
 		return;
+	
+	print(" exp ", points);
 	
 	# add experience
 	experience = experience + points;

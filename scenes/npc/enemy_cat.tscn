@@ -6,6 +6,15 @@
 [node name="npc_enemycat" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
+[node name="character" parent="body" index="0"]
+editor/display_folded = false
+
+[node name="gun" parent="body/character/sprite/hand_r/attachment" index="0"]
+visible = true
+
+[node name="AnimationPlayer" parent="body/character" index="1"]
+autoplay = "idle"
+
 [node name="action_area" parent="." index="2"]
 action_type = 1
 
