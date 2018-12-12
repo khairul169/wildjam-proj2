@@ -15,6 +15,7 @@ enum {
 
 # player data
 var player_name: String;
+var health = 0.0;
 var level: int;
 var experience: int;
 var stats_point: int;
@@ -34,6 +35,7 @@ func _exit_tree() -> void:
 func reset_data() -> void:
 	player_name = 'Khai';
 	level = 1;
+	health = get_max_health();
 	experience = 0;
 	stats_point = 0;
 	stats[STATS_STRENGTH] = 0;
@@ -44,6 +46,7 @@ func save_game() -> void:
 	var save_data = {};
 	save_data['character'] = {
 		'name': player_name,
+		'hp': health,
 		'level': level,
 		'exp': experience,
 		'sp': stats_point
@@ -90,6 +93,8 @@ func load_game() -> void:
 		var char_data = data['character'];
 		if (char_data.has('name')):
 			player_name = char_data['name'];
+		if (char_data.has('hp')):
+			health = float(char_data['hp']);
 		if (char_data.has('level')):
 			level = int(char_data['level']);
 		if (char_data.has('exp')):
@@ -126,6 +131,9 @@ func get_experience_modifier() -> float:
 func get_level_expcap() -> int:
 	return 200 * (level * level);
 
+func get_max_health() -> float:
+	return 100.0 * get_stats_modifier(STATS_STRENGTH);
+
 func add_experience(points: int) -> void:
 	if (level >= MAX_LEVEL):
 		return;
@@ -138,6 +146,6 @@ func add_experience(points: int) -> void:
 		# level up
 		level = int(min(level + 1, MAX_LEVEL));
 		experience = int(experience - exp_cap);
-		stats_point += 1;
+		stats_point += 2;
 	
 	emit_signal("exp_updated");

@@ -38,7 +38,8 @@ func _ready() -> void:
 		add_child(health_bar);
 	
 	# set health to max
-	cur_health = health;
+	if (cur_health <= 0.0):
+		cur_health = health;
 	update_ui();
 
 func _process(delta: float) -> void:

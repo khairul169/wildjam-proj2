@@ -41,8 +41,7 @@ func _ready() -> void:
 func scene_ready() -> void:
 	# spawn cats
 	if (team == Team.PLAYER):
-		spawn_cat({
-			'str': PlayerStats.get_stats_modifier(PlayerStats.STATS_STRENGTH),
+		scene.player_battler = spawn_cat({
 			'pow': PlayerStats.get_stats_modifier(PlayerStats.STATS_POWER),
 			'agi': PlayerStats.get_stats_modifier(PlayerStats.STATS_AGILITY)
 		});
@@ -75,8 +74,13 @@ func spawn_cat(stats: Dictionary) -> Node2D:
 	# set battler stats
 	instance.team = team;
 	instance.range_bonus = abs(spawn_position.x);
-	if (stats.has('str')):
+	
+	if (team == Team.PLAYER):
+		instance.health = PlayerStats.get_max_health();
+		instance.cur_health = max(PlayerStats.health, 0.1);
+	elif (stats.has('str')):
 		instance.health = max(instance.health * float(stats['str']), 0.1);
+	
 	if (stats.has('pow')):
 		instance.damage = max(instance.damage * float(stats['pow']), 0.0);
 		instance.attack_speed = clamp(instance.attack_speed - (float(stats['pow']) * 0.1), 0.1, 5.0);

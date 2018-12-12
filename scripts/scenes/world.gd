@@ -1,8 +1,7 @@
 extends Node
 
 # refs
-onready var hud = $ui_layer/ui/hud;
-onready var interface = $ui_layer/ui/interface;
+onready var interface = $ui_layer/interface;
 onready var world = $world;
 
 # res

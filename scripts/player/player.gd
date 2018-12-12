@@ -31,6 +31,11 @@ func _ready() -> void:
 		# set default blend time
 		anims.playback_default_blend_time = 0.1;
 
+func _process(delta: float) -> void:
+	# regenerate health
+	if (PlayerStats.health < PlayerStats.get_max_health()):
+		PlayerStats.health = clamp(PlayerStats.health + 1.0 * delta, 0.0, PlayerStats.get_max_health());
+
 func _unhandled_input(event: InputEvent) -> void:
 	if (OS.has_touchscreen_ui_hint()):
 		if (event is InputEventScreenTouch && event.pressed):

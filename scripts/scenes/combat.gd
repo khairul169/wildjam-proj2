@@ -15,6 +15,7 @@ signal scene_ready();
 signal battler_died(who);
 
 # vars
+var player_battler;
 var enemies = [];
 var combat_running = false;
 var world_state;
@@ -89,6 +90,10 @@ func end_combat(win: bool) -> void:
 	
 	# give player exp point
 	PlayerStats.add_experience(100 * PlayerStats.get_experience_modifier());
+	
+	# set player health
+	if (player_battler):
+		PlayerStats.health = player_battler.cur_health;
 	
 	if (world_state.size() > 2 && world_state[2].size() > 0):
 		# set win state
