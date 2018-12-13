@@ -73,6 +73,7 @@ mouse_filter = 2
 [node name="bg" type="TextureRect" parent="level_name"]
 margin_right = 320.0
 margin_bottom = 80.0
+mouse_filter = 2
 texture = ExtResource( 4 )
 
 [node name="name" type="Label" parent="level_name"]

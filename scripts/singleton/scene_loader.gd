@@ -51,7 +51,7 @@ func switch_scene(scene_id: int, data = null) -> void:
 		get_tree().change_scene_to(scenes[scene_id]);
 	
 	current_scene = scene_id;
-	OS.delay_msec(1000);
+	OS.delay_msec(500);
 	ui_node.hide();
 
 func goto_world_level(state = null) -> void:

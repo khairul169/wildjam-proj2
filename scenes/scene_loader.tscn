@@ -8,7 +8,6 @@
 [sub_resource type="DynamicFont" id=1]
 
 size = 32
-use_filter = true
 font_data = ExtResource( 4 )
 
 [node name="scene_loader" type="CanvasLayer"]
@@ -23,7 +22,7 @@ __meta__ = {
 }
 
 [node name="bg" type="TextureRect" parent="ui"]
-modulate = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
+modulate = Color( 0.129412, 0.129412, 0.129412, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 2 )
