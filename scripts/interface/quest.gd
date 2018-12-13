@@ -25,7 +25,12 @@ func _ready():
 	if (scene):
 		scene.connect("quest_updated", self, "quest_updated");
 	
+	# exit btn
 	$btn_exit.connect("pressed", self, "hide");
+	
+	# chapter btn
+	$chapters/chapter_list/chap1.connect("pressed", self, "select_chapter", [0]);
+	$chapters/chapter_list/chap2.connect("pressed", self, "select_chapter", [1]);
 
 func display_quests(list: Array) -> void:
 	for i in node_quest.get_children():
@@ -51,28 +56,9 @@ func display_quests(list: Array) -> void:
 			instance.get_node("bg_lock").hide();
 			instance.connect("pressed", self, "_quest_item_pressed", [i]);
 
-func quest_updated(list: Dictionary) -> void:
-	quest_list = [];
-	
-	if (list.has(scene.QUEST_MAIN)):
-		var chapter = 0;
-		if (chapter < 0 || chapter >= list[scene.QUEST_MAIN].size()):
-			return;
-		
-		if (typeof(list[scene.QUEST_MAIN][chapter]) != TYPE_ARRAY):
-			return;
-		
-		for id in range(0, list[scene.QUEST_MAIN][chapter].size()):
-			var quest = list[scene.QUEST_MAIN][chapter][id];
-			quest_list.append({
-				'title': quest.title,
-				'caption': quest.caption,
-				'lock': quest.lock,
-				'data': [scene.QUEST_MAIN, id, chapter]
-			});
-	
-	# update quest
-	display_quests(quest_list);
+func quest_updated() -> void:
+	# update quest list
+	select_chapter(0);
 
 func _quest_item_pressed(id) -> void:
 	if (!scene || id < 0 || id >= quest_list.size()):
@@ -90,3 +76,29 @@ func _quest_item_pressed(id) -> void:
 			scene.start_quest(data[0], data[1], data[2]);
 		else:
 			scene.start_quest(data[0], data[1]);
+
+func select_chapter(chapter: int) -> void:
+	if (!scene || !scene.has_method('get_quest_list')):
+		return;
+	
+	var list = scene.get_quest_list();
+	quest_list = [];
+	
+	if (list.has(scene.QUEST_MAIN)):
+		if (chapter < 0 || chapter >= list[scene.QUEST_MAIN].size()):
+			return;
+		
+		if (typeof(list[scene.QUEST_MAIN][chapter]) != TYPE_ARRAY):
+			return;
+		
+		for id in range(0, list[scene.QUEST_MAIN][chapter].size()):
+			var quest = list[scene.QUEST_MAIN][chapter][id];
+			quest_list.append({
+				'title': quest.title,
+				'caption': quest.caption,
+				'lock': quest.lock,
+				'data': [scene.QUEST_MAIN, id, chapter]
+			});
+	
+	# update quest
+	display_quests(quest_list);

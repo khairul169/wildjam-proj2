@@ -13,6 +13,10 @@ func setup_quest(world: Node):
 	world.register_quest(world.QUEST_MAIN, "Ketiga", main_quest(1, 3), 400);
 	world.register_quest(world.QUEST_MAIN, "Keempat", main_quest(1, 4), 500);
 	world.register_quest(world.QUEST_MAIN, "Kelima", main_quest(1, 5), 800);
+	
+	# Chapter 2
+	world.register_quest(world.QUEST_MAIN, "Part 2: Pertama", main_quest(1, 1), 1000, true);
+	world.register_quest(world.QUEST_MAIN, "Part 2: Kedua", main_quest(1, 2), 1200);
 
 func main_quest(chapter: int, id: int) -> String:
 	return mainquest_dir + str(chapter, '_', id);

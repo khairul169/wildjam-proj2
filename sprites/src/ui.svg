@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="ui.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="-30.67208"
+     inkscape:cy="1075.5594"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:snap-nodes="false" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g4608"
+       inkscape:export-filename="D:\Projects\GodotProjects\wildjam-proj2\sprites\ui\window_frame.png"
+       inkscape:export-xdpi="192"
+       inkscape:export-ydpi="192">
+      <rect
+         y="9.3303814"
+         x="10.491622"
+         height="67.733337"
+         width="67.73333"
+         id="rect4482"
+         style="opacity:1;fill:#b67a3b;fill-opacity:1;stroke:none;stroke-width:0.10000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+      <rect
+         style="opacity:1;fill:#e1b774;fill-opacity:1;stroke:none;stroke-width:0.10000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         id="rect4484"
+         width="67.077667"
+         height="67.077675"
+         x="10.819455"
+         y="9.6582146" />
+      <g
+         id="g4580">
+        <rect
+           style="opacity:1;fill:#b67a3b;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+           id="rect4486"
+           width="63.001808"
+           height="63.001816"
+           x="12.857386"
+           y="11.696145" />
+        <path
+           style="opacity:1;fill:#dca85a;fill-opacity:1;stroke:none;stroke-width:0.37795278;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+           d="M 48.595703 44.205078 L 48.595703 282.32227 L 49.605469 282.32227 L 49.605469 45.216797 L 286.71094 45.216797 L 286.71094 44.205078 L 48.595703 44.205078 z "
+           id="rect4488"
+           transform="scale(0.26458333)" />
+      </g>
+      <g
+         id="g4576">
+        <g
+           id="g4524">
+          <path
+             inkscape:connector-curvature="0"
+             id="path4498"
+             d="m 15.189918,9.5721611 0.386665,1.0545399 0.527268,-1.1248426 z"
+             style="fill:#c69953;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+          <path
+             style="fill:#c69953;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="M 30.178119,9.5730532 29.732736,10.787734 29.125397,9.4920743 Z"
+             id="path4500"
+             inkscape:connector-curvature="0" />
+          <path
+             inkscape:connector-curvature="0"
+             id="path4502"
+             d="m 61.791348,9.5721793 0.472869,1.6167347 0.644818,-1.7245171 z"
+             style="fill:#c69953;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        </g>
+        <g
+           id="g4519">
+          <path
+             style="fill:#c69953;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m 78.036331,20.344182 -0.90803,0.332945 0.968565,0.454013 z"
+             id="path4504"
+             inkscape:connector-curvature="0" />
+          <path
+             inkscape:connector-curvature="0"
+             id="path4506"
+             d="m 77.994048,31.771627 -1.542273,0.265663 1.645091,0.362266 z"
+             style="fill:#c69953;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+          <path
+             style="fill:#c69953;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m 78.032155,44.622817 -0.970671,0.265663 1.035382,0.362266 z"
+             id="path4508"
+             inkscape:connector-curvature="0" />
+          <path
+             inkscape:connector-curvature="0"
+             id="path4510"
+             d="m 78.044683,58.921737 -0.782747,0.21423 0.83493,0.29213 z"
+             style="fill:#c69953;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+          <path
+             style="fill:#c69953;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m 78.032155,69.144796 -0.970671,0.265663 1.035382,0.362266 z"
+             id="path4512"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g4532"
+           transform="rotate(-180,43.656061,43.139714)">
+          <path
+             style="fill:#c69953;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m 15.189918,9.5721611 0.386665,1.0545399 0.527268,-1.1248426 z"
+             id="path4526"
+             inkscape:connector-curvature="0" />
+          <path
+             inkscape:connector-curvature="0"
+             id="path4528"
+             d="M 30.178119,9.5730532 29.732736,10.787734 29.125397,9.4920743 Z"
+             style="fill:#c69953;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+          <path
+             style="fill:#c69953;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m 61.791348,9.5721793 0.472869,1.6167347 0.644818,-1.7245171 z"
+             id="path4530"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g4544"
+           transform="rotate(-180,44.366768,43.317966)">
+          <path
+             inkscape:connector-curvature="0"
+             id="path4534"
+             d="m 78.036331,20.344182 -0.90803,0.332945 0.968565,0.454013 z"
+             style="fill:#c69953;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+          <path
+             style="fill:#c69953;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m 77.994048,31.771627 -1.542273,0.265663 1.645091,0.362266 z"
+             id="path4536"
+             inkscape:connector-curvature="0" />
+          <path
+             inkscape:connector-curvature="0"
+             id="path4538"
+             d="m 78.032155,44.622817 -0.970671,0.265663 1.035382,0.362266 z"
+             style="fill:#c69953;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+          <path
+             style="fill:#c69953;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m 78.044683,58.921737 -0.782747,0.21423 0.83493,0.29213 z"
+             id="path4540"
+             inkscape:connector-curvature="0" />
+          <path
+             inkscape:connector-curvature="0"
+             id="path4542"
+             d="m 78.032155,69.144796 -0.970671,0.265663 1.035382,0.362266 z"
+             style="fill:#c69953;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="g4648"
+       inkscape:export-filename="D:\Projects\GodotProjects\wildjam-proj2\sprites\ui\quest_list.png"
+       inkscape:export-xdpi="192"
+       inkscape:export-ydpi="192">
+      <path
+         id="rect4610"
+         transform="scale(0.26458333)"
+         d="M 76.427734 104.66211 L 76.427734 116.40039 L 81.027344 118.00977 L 76.427734 119.26758 L 76.427734 144.66211 L 103.74219 144.66211 L 105.44336 139.79688 L 106.77734 144.66211 L 174.1543 144.66211 L 175.93359 141.56445 L 177.32227 144.66211 L 236.42773 144.66211 L 236.42773 134.22656 L 231.61914 132.91016 L 236.42773 131.22656 L 236.42773 104.66211 L 230.29883 104.66211 L 226.28906 107.5 L 225.29688 104.66211 L 76.427734 104.66211 z "
+         style="opacity:1;fill:#fdeecd;fill-opacity:1;stroke:none;stroke-width:11.33858299;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.20000005;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+      <path
+         id="path4643"
+         transform="scale(0.26458333)"
+         d="M 76.427734 104.66211 L 76.427734 116.40039 L 77.585938 116.80469 L 77.585938 105.91992 L 224.30078 105.91992 L 225.27734 108.58008 L 229.22852 105.91992 L 235.26953 105.91992 L 235.26953 130.8125 L 230.53125 132.39062 L 232.00586 132.77539 L 236.42773 131.22656 L 236.42773 104.66211 L 230.29883 104.66211 L 226.28906 107.5 L 225.29688 104.66211 L 76.427734 104.66211 z M 80.9375 118.03516 L 76.427734 119.26758 L 76.427734 144.66211 L 103.74219 144.66211 L 104.18164 143.4043 L 77.585938 143.4043 L 77.585938 119.60742 L 82.119141 118.42773 L 80.9375 118.03516 z M 235.26953 133.91016 L 235.26953 143.4043 L 177.01953 143.4043 L 175.65039 140.5 L 173.89844 143.4043 L 107.49609 143.4043 L 106.18164 138.84375 L 105.60938 140.40039 L 106.77734 144.66211 L 174.1543 144.66211 L 175.93359 141.56445 L 177.32227 144.66211 L 236.42773 144.66211 L 236.42773 134.22656 L 235.26953 133.91016 z "
+         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:11.33858299;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.20000005;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+    </g>
+    <g
+       id="g4677"
+       inkscape:export-filename="D:\Projects\GodotProjects\wildjam-proj2\sprites\ui\quest_list_d.png"
+       inkscape:export-xdpi="192"
+       inkscape:export-ydpi="192">
+      <g
+         transform="translate(0,13.985119)"
+         id="g4654"
+         inkscape:export-filename="D:\Projects\GodotProjects\wildjam-proj2\sprites\ui\quest_list_d.png"
+         inkscape:export-xdpi="192"
+         inkscape:export-ydpi="192">
+        <path
+           inkscape:connector-curvature="0"
+           id="path4650"
+           transform="scale(0.26458333)"
+           d="m 76.427734,104.66211 v 11.73828 l 4.59961,1.60938 -4.59961,1.25781 v 25.39453 h 27.314456 l 1.70117,-4.86523 1.33398,4.86523 h 67.37696 l 1.77929,-3.09766 1.38868,3.09766 h 59.10546 v -10.43555 l -4.80859,-1.3164 4.80859,-1.6836 v -26.56445 h -6.1289 l -4.00977,2.83789 -0.99218,-2.83789 z"
+           style="opacity:1;fill:#e3c088;fill-opacity:1;stroke:none;stroke-width:11.33858299;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.20000005;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+      </g>
+      <g
+         style="fill:#ffffff;fill-opacity:1;stroke-width:1.40842783"
+         transform="matrix(0.71001148,0,0,0.71001148,16.866405,14.322474)"
+         id="g4670">
+        <rect
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:4.22528362;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.20000005;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+           id="rect4656"
+           width="3.9188902"
+           height="2.8702469"
+           x="53.921898"
+           y="45.636284"
+           ry="0.62374824"
+           rx="0.56493115" />
+        <path
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:4.22528362;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.20000005;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+           d="m 54.959953,43.755984 c -0.320644,0 -0.578776,0.263478 -0.578776,0.590664 v 1.81901 c 0,0.327184 0.258132,0.590661 0.578776,0.590661 h 1.84278 c 0.320641,0 0.578776,-0.263477 0.578776,-0.590661 v -1.81901 c 0,-0.327186 -0.258135,-0.590664 -0.578776,-0.590664 z m 0.28267,0.520089 h 1.254186 c 0.177009,0 0.31936,0.142163 0.31936,0.318844 v 1.352666 c 0,0.176679 -0.142351,0.31936 -0.31936,0.31936 h -1.254186 c -0.177009,0 -0.319879,-0.142681 -0.319879,-0.31936 v -1.352666 c 0,-0.176681 0.14287,-0.318844 0.319879,-0.318844 z"
+           id="rect4662"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ssssssssssssssssss" />
+      </g>
+    </g>
+  </g>
+</svg>

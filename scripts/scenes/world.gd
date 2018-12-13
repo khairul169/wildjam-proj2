@@ -1,7 +1,7 @@
 extends Node
 
 # signals
-signal quest_updated(list);
+signal quest_updated();
 
 # refs
 onready var interface = $ui_layer/interface;
@@ -203,8 +203,11 @@ func register_quest(type: int, caption: String = "", level: String = "", clear_e
 			'clear_exp': clear_exp
 		});
 
+func get_quest_list() -> Dictionary:
+	return quest_list;
+
 func update_quest() -> void:
-	emit_signal("quest_updated", quest_list);
+	emit_signal("quest_updated");
 
 func start_quest(type, id, chapter = null) -> void:
 	if (!quest_list.has(type)):
