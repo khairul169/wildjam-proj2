@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 	
 	# experience
 	var exp_bar = hud.get_node("character_info/experience/bar");
-	exp_bar.rect_size.x = (exp_bar.get_parent().rect_size.x - 2.0) * clamp(float(PlayerStats.experience) / PlayerStats.get_level_expcap(), 0.0, 1.0);
+	exp_bar.rect_size.x = (exp_bar.get_parent().rect_size.x - 2.0) * clamp(float(PlayerStats.experience) / PlayerStats.get_experience_cap(), 0.0, 1.0);
 
 func show_level_name(name) -> void:
 	if (!name || typeof(name) != TYPE_STRING || name.length() <= 0):

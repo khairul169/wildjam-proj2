@@ -88,7 +88,7 @@ func end_combat(win: bool) -> void:
 		return;
 	
 	# give player exp point
-	PlayerStats.add_experience(60.0 * enemy_count * enemy_level);
+	PlayerStats.combat_finished(enemy_count, enemy_level);
 	
 	# set player health
 	if (player_battler):

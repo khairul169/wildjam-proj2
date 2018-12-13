@@ -6,6 +6,7 @@ const MAX_LEVEL = 100;
 const SAVEGAME_PATH = "user://save_game.dat";
 const SAVEGAME_ENCRYPTED = false;
 const SAVEGAME_KEY = "kkj8912kkl321";
+const EXPERIENCE_DATA = preload("res://scripts/player/experience_data.gd");
 
 # stats type
 enum {
@@ -23,11 +24,15 @@ var stats_point: int;
 var stats = {};
 var quest_unlocked = {};
 var savegame_loaded = false;
+var exp_data: EXPERIENCE_DATA;
 
 # signals
 signal exp_updated();
 
 func _ready():
+	# initialize experience data
+	exp_data = EXPERIENCE_DATA.new();
+	
 	reset_data();
 
 func _exit_tree() -> void:
@@ -149,8 +154,8 @@ func get_stats_modifier(type: int) -> float:
 func get_experience_modifier() -> float:
 	return 1.0 + (float(level) / float(MAX_LEVEL) * float(MAX_LEVEL/2.0));
 
-func get_level_expcap() -> int:
-	return 200 * (level * level);
+func get_experience_cap() -> int:
+	return exp_data.get_experience_cap(level);
 
 func get_max_health() -> float:
 	return 100.0 * get_stats_modifier(STATS_STRENGTH);
@@ -162,7 +167,7 @@ func add_experience(points: int) -> void:
 	# add experience
 	experience = experience + points;
 	
-	var exp_cap = get_level_expcap();
+	var exp_cap = get_experience_cap();
 	if (experience >= exp_cap):
 		# level up
 		level = int(min(level + 1, MAX_LEVEL));
@@ -170,6 +175,11 @@ func add_experience(points: int) -> void:
 		stats_point += 2;
 	
 	emit_signal("exp_updated");
+
+func combat_finished(enemy_count: int, enemy_level: int) -> void:
+	var exp_gain = exp_data.calculate_exp_combat(enemy_count, enemy_level);
+	if (exp_gain > 0):
+		add_experience(exp_gain);
 
 func is_quest_cleared(type, id, chapter = null) -> bool:
 	# variable is not valid
