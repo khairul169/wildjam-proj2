@@ -172,6 +172,17 @@ func register_quest(type: int, caption: String = "", level: String = "", clear_e
 		if (chapter <= 0 && quest_id <= 0):
 			locked = false;
 		
+		if (quest_id <= 0):
+			if (chapter <= 0):
+				# first quest always unlocked
+				locked = false;
+			else:
+				# check previous chapter
+				locked = !PlayerStats.is_quest_cleared(QUEST_MAIN, quest_list[type][chapter-1].size()-1, chapter-1);
+		else:
+			# check previous quest
+			locked = !PlayerStats.is_quest_cleared(QUEST_MAIN, quest_id - 1, chapter);
+		
 		quest_list[type][chapter].append({
 			'title': str('Chapter ', chapter + 1, '-', quest_id + 1),
 			'caption': caption,
@@ -182,12 +193,13 @@ func register_quest(type: int, caption: String = "", level: String = "", clear_e
 	
 	if (type == QUEST_SIDE):
 		var quest_id = quest_list[type].size() - 1;
+		var locked = PlayerStats.is_quest_cleared(QUEST_SIDE, quest_id);
 		
 		quest_list[type].append({
 			'title': str('Quest #', quest_id + 1),
 			'caption': caption,
 			'level': level_scene,
-			'lock': true,
+			'lock': locked,
 			'clear_exp': clear_exp
 		});
 
@@ -249,6 +261,9 @@ func quest_clear(quest: Dictionary) -> void:
 		var quest_data = quest_list[QUEST_MAIN][quest.chapter][quest.id];
 		if (quest_data.has('clear_exp')):
 			clear_exp = quest_data.clear_exp;
+	
+	# set quest clear
+	PlayerStats.set_quest_clear(quest.type, quest.id, quest.chapter);
 	
 	# give player exp
 	PlayerStats.add_experience(clear_exp);

@@ -4,6 +4,7 @@ extends Node
 const STATS_MAXPOINT = 30;
 const MAX_LEVEL = 100;
 const SAVEGAME_PATH = "user://save_game.dat";
+const SAVEGAME_ENCRYPTED = false;
 const SAVEGAME_KEY = "kkj8912kkl321";
 
 # stats type
@@ -20,6 +21,7 @@ var level: int;
 var experience: int;
 var stats_point: int;
 var stats = {};
+var quest_unlocked = {};
 var savegame_loaded = false;
 
 # signals
@@ -56,11 +58,20 @@ func save_game() -> void:
 		'pow': stats[STATS_POWER],
 		'agi': stats[STATS_AGILITY]
 	};
+	save_data['quest'] = quest_unlocked;
+	
 	var encoded = to_json(save_data);
 	var f = File.new();
-	if (f.open_encrypted_with_pass(SAVEGAME_PATH, File.WRITE, SAVEGAME_KEY) != OK):
+	var err = -1;
+	if (SAVEGAME_ENCRYPTED):
+		err = f.open_encrypted_with_pass(SAVEGAME_PATH, File.WRITE, SAVEGAME_KEY);
+	else:
+		err = f.open(SAVEGAME_PATH, File.WRITE);
+	
+	if (err != OK):
 		print("cannot save game!");
 		return;
+	
 	f.store_string(encoded);
 	f.close();
 	savegame_loaded = true;
@@ -73,9 +84,16 @@ func load_game() -> void:
 	var f = File.new();
 	if (!f.file_exists(SAVEGAME_PATH)):
 		return;
-	if (f.open_encrypted_with_pass(SAVEGAME_PATH, File.READ, SAVEGAME_KEY) != OK):
+	var err = -1;
+	if (SAVEGAME_ENCRYPTED):
+		err = f.open_encrypted_with_pass(SAVEGAME_PATH, File.READ, SAVEGAME_KEY);
+	else:
+		err = f.open(SAVEGAME_PATH, File.READ);
+	
+	if (err != OK):
 		print("cannot load game!");
 		return;
+	
 	var content = f.get_as_text();
 	f.close();
 	
@@ -110,6 +128,9 @@ func load_game() -> void:
 			stats[STATS_POWER] = int(stats_data['pow']);
 		if (stats_data.has('agi')):
 			stats[STATS_AGILITY] = int(stats_data['agi']);
+	
+	if (data.has('quest')):
+		quest_unlocked = data['quest'];
 
 func get_stats_modifier(type: int) -> float:
 	if (!stats.has(type)):
@@ -138,8 +159,6 @@ func add_experience(points: int) -> void:
 	if (level >= MAX_LEVEL || points <= 0):
 		return;
 	
-	print(" exp ", points);
-	
 	# add experience
 	experience = experience + points;
 	
@@ -151,3 +170,60 @@ func add_experience(points: int) -> void:
 		stats_point += 2;
 	
 	emit_signal("exp_updated");
+
+func is_quest_cleared(type, id, chapter = null) -> bool:
+	# variable is not valid
+	if (!quest_unlocked || typeof(quest_unlocked) != TYPE_DICTIONARY):
+		quest_unlocked = {};
+	
+	# convert type
+	type = str('quest', type);
+	id = str('i', id);
+	
+	if (typeof(chapter) == TYPE_INT):
+		chapter = str('chapter', chapter);
+	
+	# check for quest type
+	if (!quest_unlocked.has(type)):
+		return false;
+	
+	if (chapter != null && quest_unlocked[type].has(chapter)):
+		var quest_chapter = quest_unlocked[type][chapter];
+		if (quest_chapter.has(id)):
+			return true;
+	else:
+		if (quest_unlocked[type].has(id)):
+			return true;
+	return false;
+
+func set_quest_clear(type, id, chapter = null) -> bool:
+	if (is_quest_cleared(type, id, chapter)):
+		return false;
+	
+	# convert type
+	type = str('quest', type);
+	id = str('i', id);
+	
+	if (typeof(chapter) == TYPE_INT):
+		chapter = str('chapter', chapter);
+		
+		# new quest type
+		if (!quest_unlocked.has(type)):
+			quest_unlocked[type] = {};
+		
+		# create new chapter
+		if (!quest_unlocked[type].has(chapter)):
+			quest_unlocked[type][chapter] = [];
+		
+		# add to unlocked list
+		quest_unlocked[type][chapter].append(id);
+	else:
+		# new quest type
+		if (!quest_unlocked.has(type)):
+			quest_unlocked[type] = [];
+		
+		# add to unlocked list
+		quest_unlocked[type].append(id);
+	
+	save_game();
+	return true;
