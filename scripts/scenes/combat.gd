@@ -3,12 +3,21 @@ extends Node
 # consts
 const BATTLER_GROUP = 'cats';
 
+# refs
+onready var battle_condition = $ui_layer/interface/battle_condition;
+
 # enums
 enum Team {
 	NONE = 0,
 	PLAYER,
 	ENEMY
-}
+};
+
+enum {
+	RESULT_NONE = 0,
+	RESULT_LOSE,
+	RESULT_WIN
+};
 
 # signals
 signal scene_ready();
@@ -17,15 +26,13 @@ signal battler_died(who);
 # vars
 var player_battler;
 var enemies = [];
-var combat_running = false;
 var world_state;
 var enemy_count = 0;
 var enemy_level = 1;
+var battle_result = RESULT_NONE;
+var next_think = 0.0;
 
 func _ready() -> void:
-	# set combat as running
-	combat_running = true;
-	
 	# load enemy
 	var shared_data = SceneLoader.get_shared_data();
 	if (shared_data && typeof(shared_data) == TYPE_DICTIONARY):
@@ -50,8 +57,17 @@ func _ready() -> void:
 	connect("battler_died", self, "_battler_died");
 	emit_signal("scene_ready");
 
+func _process(delta: float) -> void:
+	if (battle_result && next_think > 0.0):
+		next_think -= delta;
+		
+		# get back to world
+		if (next_think <= 0.0):
+			back_to_world();
+			set_process(false);
+
 func _battler_died(who) -> void:
-	if (!combat_running):
+	if (battle_result):
 		return;
 	
 	# check for team alive member
@@ -84,11 +100,19 @@ func get_enemies() -> Array:
 	return enemies;
 
 func end_combat(win: bool) -> void:
-	if (!combat_running || !world_state):
+	if (battle_result || !world_state):
 		return;
 	
 	# give player exp point
-	PlayerStats.combat_finished(enemy_count, enemy_level);
+	PlayerStats.combat_finished(win, enemy_count, enemy_level);
+	
+	# set result
+	if (win):
+		battle_result = RESULT_WIN;
+		battle_condition.show_hud(battle_condition.BATTLE_CLEAR);
+	else:
+		battle_result = RESULT_LOSE;
+		battle_condition.show_hud(battle_condition.BATTLE_FAILED);
 	
 	# set player health
 	if (player_battler):
@@ -99,5 +123,15 @@ func end_combat(win: bool) -> void:
 		var enemy_id = world_state.enemy.size()-1;
 		world_state.enemy[enemy_id][1] = win;
 	
+	# set delay to go back to the world
+	next_think = 4.0;
+
+func back_to_world() -> void:
+	if (!battle_result):
+		return;
+	
 	# go back to world
-	SceneLoader.goto_world_level(world_state);
+	if (battle_result == RESULT_WIN):
+		SceneLoader.goto_world_level(world_state);
+	else:
+		SceneLoader.goto_world_level();

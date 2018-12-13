@@ -27,6 +27,7 @@ var enemies_state = [];
 var quest_list = {};
 var current_quest;
 var next_check = 0.0;
+var checked = false;
 
 func _ready() -> void:
 	var spawn_pos = Vector2.ZERO;
@@ -89,15 +90,20 @@ func _ready() -> void:
 			if (died):
 				node.queue_free();
 	
-	# check for alive enemy
-	next_check = 2.0;
+	# check for quest condition
+	next_check = 0.5;
 
 func _process(delta: float) -> void:
-	if (next_check > 0.0):
+	if (next_check > 0.0 && current_quest):
 		next_check -= delta;
 		
 		if (next_check <= 0.0):
-			check_enemy();
+			if (!checked):
+				# check for alive enemy
+				check_enemy();
+			else:
+				# go to base camp
+				SceneLoader.goto_world_level();
 
 func spawn_player(pos: Vector2 = Vector2.ZERO) -> Node2D:
 	# instance player
@@ -246,7 +252,9 @@ func check_enemy() -> void:
 	
 	if (enemies.size() <= 0):
 		quest_clear(current_quest);
-		SceneLoader.goto_world_level();
+		checked = true;
+		next_check = 4.0;
+		interface.battle_condition.show_hud(interface.battle_condition.QUEST_CLEAR);
 
 func quest_clear(quest: Dictionary) -> void:
 	if (!quest.has('type') || !quest.has('id')):

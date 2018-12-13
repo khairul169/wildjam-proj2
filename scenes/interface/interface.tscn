@@ -1,14 +1,15 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/interface/interface.gd" type="Script" id=1]
 [ext_resource path="res://scenes/interface/hud.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/interface/quest.tscn" type="PackedScene" id=3]
-[ext_resource path="res://fonts/PetitaMedium.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://sprites/ui/quest_list.png" type="Texture" id=4]
+[ext_resource path="res://fonts/PetitaMedium.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 
-size = 32
-font_data = ExtResource( 4 )
+size = 28
+font_data = ExtResource( 5 )
 
 [sub_resource type="Animation" id=2]
 
@@ -61,25 +62,26 @@ __meta__ = {
 [node name="quest" parent="panel" instance=ExtResource( 3 )]
 
 [node name="level_name" type="Control" parent="."]
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_top = -180.0
-margin_bottom = -110.0
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = -230.0
+margin_right = 350.0
+margin_bottom = -150.0
 mouse_filter = 2
 
-[node name="bg" type="ColorRect" parent="level_name"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_filter = 2
-color = Color( 0, 0, 0, 0.505882 )
+[node name="bg" type="TextureRect" parent="level_name"]
+margin_right = 320.0
+margin_bottom = 80.0
+texture = ExtResource( 4 )
 
 [node name="name" type="Label" parent="level_name"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 30.0
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.403922, 0.278431, 0.133333, 1 )
 text = "Level Name"
-align = 1
 valign = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="level_name"]

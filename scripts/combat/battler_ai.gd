@@ -3,6 +3,7 @@ extends Node2D
 # refs
 onready var scene = get_node("/root/scene");
 onready var body = $body;
+onready var base_animplayer = $AnimationPlayer;
 onready var anims: AnimationPlayer = $body.find_node("AnimationPlayer");
 
 # res
@@ -145,6 +146,8 @@ func give_damage(attacker: Node2D, dmg: float) -> void:
 	
 	cur_health = max(cur_health - dmg, 0.0);
 	update_ui();
+	
+	base_animplayer.play("damaged");
 	
 	if (cur_health <= 0.0):
 		set_animation('dying', true);

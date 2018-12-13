@@ -176,8 +176,13 @@ func add_experience(points: int) -> void:
 	
 	emit_signal("exp_updated");
 
-func combat_finished(enemy_count: int, enemy_level: int) -> void:
+func combat_finished(win: bool, enemy_count: int, enemy_level: int) -> void:
 	var exp_gain = exp_data.calculate_exp_combat(enemy_count, enemy_level);
+	
+	# reduce exp if lose
+	if (!win):
+		exp_gain *= 0.2;
+	
 	if (exp_gain > 0):
 		add_experience(exp_gain);
 
