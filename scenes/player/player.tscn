@@ -17,8 +17,12 @@ shape = SubResource( 1 )
 [node name="body" type="Node2D" parent="."]
 
 [node name="character" parent="body" instance=ExtResource( 2 )]
+editor/display_folded = true
 position = Vector2( 8.086, -30 )
 scale = Vector2( 0.15, 0.15 )
+
+[node name="gun" parent="body/character/sprite/hand_r/attachment" index="0"]
+visible = false
 
 [node name="camera" type="Camera2D" parent="."]
 current = true
@@ -33,3 +37,5 @@ drag_margin_v_enabled = false
 smoothing_enabled = true
 smoothing_speed = 4.0
 
+
+[editable path="body/character"]

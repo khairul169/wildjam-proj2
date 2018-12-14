@@ -10,7 +10,7 @@ onready var anims: AnimationPlayer = $body.find_node("AnimationPlayer");
 onready var scene_healthbar = load("res://scenes/combat/battler_healthbar.tscn");
 
 # stats
-var speed = 100.0;
+var speed = 150.0;
 var health = 100.0;
 var damage = 10.0;
 var attack_speed = 1.0;
