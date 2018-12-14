@@ -2,8 +2,9 @@
 
 [ext_resource path="res://scripts/interface/menu.gd" type="Script" id=1]
 [ext_resource path="res://sprites/ui/window_frame.png" type="Texture" id=2]
-[ext_resource path="res://characters/cat/character.tscn" type="PackedScene" id=3]
+[ext_resource path="res://characters/cat/default.tscn" type="PackedScene" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
+
 
 [node name="menu" type="Control"]
 pause_mode = 2

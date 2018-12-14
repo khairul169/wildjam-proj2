@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/head.png-65f71d3396d85697daff4318bb0fc8a1.stex"
+path="res://.import/head.png-2f7c0ba9a181228f00fdb1fc80d5c17c.stex"
 
 [deps]
 
-source_file="res://characters/cat/sprites/head.png"
-dest_files=[ "res://.import/head.png-65f71d3396d85697daff4318bb0fc8a1.stex" ]
+source_file="res://characters/cat/skins/grey/head.png"
+dest_files=[ "res://.import/head.png-2f7c0ba9a181228f00fdb1fc80d5c17c.stex" ]
 
 [params]
 

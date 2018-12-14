@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/combat/base_cat.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/combat/enemy_ai.gd" type="Script" id=2]
+[ext_resource path="res://characters/cat/grey.tscn" type="PackedScene" id=3]
 
 [node name="enemy_cat" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -13,4 +14,6 @@ _attack_speed = 1.1
 _atkspd_incremental = 0.02
 _attack_range = 700.0
 _evasion = 0.1
+
+[node name="character" parent="body/base" index="0" instance=ExtResource( 3 )]
 

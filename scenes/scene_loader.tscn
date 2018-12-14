@@ -2,8 +2,9 @@
 
 [ext_resource path="res://scripts/singleton/scene_loader.gd" type="Script" id=1]
 [ext_resource path="res://sprites/white.png" type="Texture" id=2]
-[ext_resource path="res://characters/cat/character.tscn" type="PackedScene" id=3]
+[ext_resource path="res://characters/cat/default.tscn" type="PackedScene" id=3]
 [ext_resource path="res://fonts/PetitaMedium.ttf" type="DynamicFontData" id=4]
+
 
 [sub_resource type="DynamicFont" id=1]
 

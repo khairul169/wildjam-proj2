@@ -6,7 +6,7 @@
 [ext_resource path="res://sprites/level/combat/cloud.png" type="Texture" id=4]
 [ext_resource path="res://sprites/level/combat/cloud2.png" type="Texture" id=5]
 [ext_resource path="res://fonts/PetitaMedium.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://characters/cat/character.tscn" type="PackedScene" id=7]
+[ext_resource path="res://characters/cat/grey.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 
