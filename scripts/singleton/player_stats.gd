@@ -1,18 +1,21 @@
 extends Node
 
 # consts
-const STATS_MAXPOINT = 30;
 const MAX_LEVEL = 100;
+const MAX_STATS_POINT = 10;
+
 const SAVEGAME_PATH = "user://save_game.dat";
 const SAVEGAME_ENCRYPTED = false;
 const SAVEGAME_KEY = "kkj8912kkl321";
+
 const EXPERIENCE_DATA = preload("res://scripts/player/experience_data.gd");
 
 # stats type
 enum {
 	STATS_STRENGTH = 0,
 	STATS_POWER,
-	STATS_AGILITY
+	STATS_AGILITY,
+	STATS_INTELLIGENCE
 };
 
 # player data
@@ -28,6 +31,7 @@ var exp_data: EXPERIENCE_DATA;
 
 # signals
 signal exp_updated();
+signal stats_updated();
 
 func _ready():
 	# initialize experience data
@@ -36,8 +40,9 @@ func _ready():
 	reset_data();
 
 func _exit_tree() -> void:
-	if (savegame_loaded):
-		save_game();
+	pass
+	#if (savegame_loaded):
+	#	save_game();
 
 func reset_data() -> void:
 	player_name = 'Khai';
@@ -48,6 +53,8 @@ func reset_data() -> void:
 	stats[STATS_STRENGTH] = 0;
 	stats[STATS_POWER] = 0;
 	stats[STATS_AGILITY] = 0;
+	stats[STATS_INTELLIGENCE] = 0;
+	quest_unlocked = {};
 
 func save_game() -> void:
 	var save_data = {};
@@ -61,7 +68,8 @@ func save_game() -> void:
 	save_data['stats'] = {
 		'str': stats[STATS_STRENGTH],
 		'pow': stats[STATS_POWER],
-		'agi': stats[STATS_AGILITY]
+		'agi': stats[STATS_AGILITY],
+		'int': stats[STATS_INTELLIGENCE]
 	};
 	save_data['quest'] = quest_unlocked;
 	
@@ -133,6 +141,8 @@ func load_game() -> void:
 			stats[STATS_POWER] = int(stats_data['pow']);
 		if (stats_data.has('agi')):
 			stats[STATS_AGILITY] = int(stats_data['agi']);
+		if (stats_data.has('int')):
+			stats[STATS_INTELLIGENCE] = int(stats_data['int']);
 	
 	if (data.has('quest')):
 		quest_unlocked = data['quest'];
@@ -144,11 +154,11 @@ func get_stats_modifier(type: int) -> float:
 	var mod = 0.0;
 	match (type):
 		STATS_STRENGTH:
-			mod = 1.0 + (float(stats[type]) / STATS_MAXPOINT * 9.0); 
+			mod = 1.0 + (float(stats[type]) / MAX_STATS_POINT * 1.0); 
 		STATS_POWER:
-			mod = 1.0 + (float(stats[type]) / STATS_MAXPOINT * 7.0); 
+			mod = 1.0 + (float(stats[type]) / MAX_STATS_POINT * 0.5); 
 		STATS_AGILITY:
-			mod = 1.0 + (float(stats[type]) / STATS_MAXPOINT * 4.0); 
+			mod = 1.0 + (float(stats[type]) / MAX_STATS_POINT * 1.0); 
 	return mod;
 
 func get_experience_modifier() -> float:
@@ -158,7 +168,10 @@ func get_experience_cap() -> int:
 	return exp_data.get_experience_cap(level);
 
 func get_max_health() -> float:
-	return 100.0 * get_stats_modifier(STATS_STRENGTH);
+	var base_health = 100.0;
+	if (stats.has(STATS_STRENGTH)):
+		base_health = base_health + (stats[STATS_STRENGTH] * 40.0);
+	return base_health;
 
 func add_experience(points: int) -> void:
 	if (level >= MAX_LEVEL || points <= 0):
@@ -172,7 +185,7 @@ func add_experience(points: int) -> void:
 		# level up
 		level = int(min(level + 1, MAX_LEVEL));
 		experience = int(experience - exp_cap);
-		stats_point += 2;
+		stats_point += 1;
 	
 	emit_signal("exp_updated");
 
@@ -242,3 +255,44 @@ func set_quest_clear(type, id, chapter = null) -> bool:
 	
 	save_game();
 	return true;
+
+func get_player_stats() -> Array:
+	var st = [];
+	st.append({
+		'id': STATS_STRENGTH,
+		'title': 'Strength',
+		'point': int(clamp(stats[STATS_STRENGTH], 0, MAX_STATS_POINT))
+	});
+	st.append({
+		'id': STATS_POWER,
+		'title': 'Power',
+		'point': int(clamp(stats[STATS_POWER], 0, MAX_STATS_POINT))
+	});
+	st.append({
+		'id': STATS_AGILITY,
+		'title': 'Agility',
+		'point': int(clamp(stats[STATS_AGILITY], 0, MAX_STATS_POINT))
+	});
+	st.append({
+		'id': STATS_INTELLIGENCE,
+		'title': 'Intelligence',
+		'point': int(clamp(stats[STATS_INTELLIGENCE], 0, MAX_STATS_POINT))
+	});
+	return st;
+
+func allocate_stats_point(cat: int) -> void:
+	if (stats_point <= 0 || !stats.has(cat)):
+		return;
+	
+	if (stats[cat] >= MAX_STATS_POINT):
+		return;
+	
+	# add point
+	stats[cat] = int(clamp(stats[cat] + 1, 0, MAX_STATS_POINT));
+	stats_point = int(max(stats_point - 1, 0));
+	
+	# restore health
+	if (cat == STATS_STRENGTH):
+		health = get_max_health();
+	
+	emit_signal("stats_updated");

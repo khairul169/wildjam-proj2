@@ -8,6 +8,7 @@ enum {
 };
 
 var scenes = {
+	SCENE_MAINMENU: "res://scenes/main_menu.tscn",
 	SCENE_WORLD: "res://scenes/world.tscn",
 	SCENE_COMBAT: "res://scenes/combat.tscn"
 };

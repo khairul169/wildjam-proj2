@@ -49,9 +49,7 @@ func _ready() -> void:
 	# add enemies
 	for i in range(enemy_count):
 		enemies.append({
-			'str': 1.0 + (enemy_level / 100.0 * 10.0),
-			'pow': 1.0 + (enemy_level / 100.0 * 8.0),
-			'agi': 1.0 + (enemy_level / 100.0 * 4.0)
+			'level': enemy_level
 		});
 	
 	connect("battler_died", self, "_battler_died");

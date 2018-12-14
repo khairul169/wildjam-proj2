@@ -10,12 +10,12 @@ onready var anims: AnimationPlayer = $body.find_node("AnimationPlayer");
 onready var scene_healthbar = load("res://scenes/combat/battler_healthbar.tscn");
 
 # stats
-export var speed = 100.0;
-export var health = 100.0;
-export var damage = 10.0;
-export var attack_speed = 1.0;
-export var attack_range = 800.0;
-export var evasion = 0.2;
+var speed = 100.0;
+var health = 100.0;
+var damage = 10.0;
+var attack_speed = 1.0;
+var attack_range = 800.0;
+var evasion = 0.2;
 
 # vars
 var move_dir = Vector2.ZERO;

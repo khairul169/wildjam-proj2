@@ -78,14 +78,18 @@ func spawn_cat(stats: Dictionary) -> Node2D:
 	if (team == Team.PLAYER):
 		instance.health = PlayerStats.get_max_health();
 		instance.cur_health = max(PlayerStats.health, 0.1);
-	elif (stats.has('str')):
-		instance.health = max(instance.health * float(stats['str']), 0.1);
+		
+		# power
+		if (stats.has('pow')):
+			instance.damage = max(instance.damage * float(stats['pow']), 0.0);
+			instance.attack_speed = clamp(instance.attack_speed - (float(stats['pow']) * 0.05), 0.1, 2.0);
+		
+		# agility
+		if (stats.has('agi')):
+			instance.evasion = clamp(instance.evasion * float(stats['agi']), 0.0, 0.9);
 	
-	if (stats.has('pow')):
-		instance.damage = max(instance.damage * float(stats['pow']), 0.0);
-		instance.attack_speed = clamp(instance.attack_speed - (float(stats['pow']) * 0.1), 0.1, 5.0);
-	if (stats.has('agi')):
-		instance.evasion = clamp(instance.evasion * float(stats['agi']), 0.0, 0.9);
+	if (team == Team.ENEMY && instance.has_method('set_level') && stats.has('level')):
+		instance.set_level(stats.level);
 	
 	# set camera follow
 	if (set_cam && camera):

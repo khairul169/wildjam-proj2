@@ -153,11 +153,13 @@ func execute_action(action_type, object) -> void:
 		
 		ACTION_AREA.ActionType.SHOP:
 			print("SHOP");
+		
 		ACTION_AREA.ActionType.STATS:
-			print("STATS");
+			scene.interface.stats_panel.show();
+		
 		ACTION_AREA.ActionType.SKILLS:
 			print("SKILLS");
 		
 		ACTION_AREA.ActionType.QUEST:
-			if (scene.interface && scene.interface.quest_panel):
-				scene.interface.quest_panel.show();
+			if (scene.interface):
+				scene.interface.show_panel(scene.interface.PANEL_QUEST);

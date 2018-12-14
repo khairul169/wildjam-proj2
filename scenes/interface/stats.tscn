@@ -1,0 +1,136 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scripts/interface/stats.gd" type="Script" id=1]
+[ext_resource path="res://sprites/ui/window_frame.png" type="Texture" id=2]
+[ext_resource path="res://fonts/PetitaMedium.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://sprites/ui/quest_list.png" type="Texture" id=4]
+[ext_resource path="res://sprites/white.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 24
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+
+size = 20
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
+
+[node name="stats" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -275.0
+margin_right = 200.0
+margin_bottom = 275.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bg" type="NinePatchRect" parent="."]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+patch_margin_left = 64
+patch_margin_top = 64
+patch_margin_right = 64
+patch_margin_bottom = 64
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="title" type="Label" parent="."]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 380.0
+margin_bottom = 95.0
+custom_fonts/font = SubResource( 1 )
+text = "STATS"
+align = 1
+valign = 1
+
+[node name="btn_exit" type="Button" parent="."]
+margin_left = 320.0
+margin_top = 40.0
+margin_right = 360.0
+margin_bottom = 80.0
+text = "X"
+
+[node name="sp" type="Label" parent="."]
+margin_left = 40.0
+margin_top = 95.0
+margin_right = 360.0
+margin_bottom = 123.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Points Available: 0"
+
+[node name="list" type="VBoxContainer" parent="."]
+margin_left = 40.0
+margin_top = 143.0
+margin_right = 360.0
+margin_bottom = 508.0
+custom_constants/separation = 15
+
+[node name="item" type="Button" parent="list"]
+margin_right = 320.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 320, 80 )
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="bg" type="TextureRect" parent="list/item"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="title" type="Label" parent="list/item"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 300.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.403922, 0.278431, 0.133333, 1 )
+text = "Stats Name"
+valign = 2
+
+[node name="sp" type="Label" parent="list/item"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 300.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.403922, 0.278431, 0.133333, 1 )
+text = "0/10"
+align = 2
+valign = 2
+
+[node name="progress" type="TextureRect" parent="list/item"]
+self_modulate = Color( 1, 1, 1, 0.309804 )
+margin_left = 20.0
+margin_top = 56.0
+margin_right = 300.0
+margin_bottom = 64.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="bar" type="TextureRect" parent="list/item/progress"]
+modulate = Color( 0.392157, 0.458824, 1, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -80.0
+texture = ExtResource( 5 )
+expand = true
+

@@ -254,7 +254,6 @@ position = Vector2( 1180, 690 )
 
 [node name="npc_enemycat" parent="ysort" instance=ExtResource( 7 )]
 position = Vector2( 246.95, 280 )
-enemy_count = 3
 
 [node name="npc_enemycat2" parent="ysort" instance=ExtResource( 7 )]
 position = Vector2( 790, 200 )
@@ -263,5 +262,5 @@ enemy_level = 3
 [node name="npc_enemycat3" parent="ysort" instance=ExtResource( 7 )]
 position = Vector2( 1600, 480 )
 enemy_level = 2
-enemy_count = 3
+enemy_count = 2
 

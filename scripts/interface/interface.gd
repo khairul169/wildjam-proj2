@@ -2,14 +2,53 @@ extends Control
 
 # refs
 onready var character_info = $hud/character_info;
-onready var quest_panel = $panel/quest;
+onready var panel_menu = $panel/menu;
+onready var panel_quest = $panel/quest;
+onready var panel_stats = $panel/stats;
 onready var lvl_name = $level_name;
 onready var battle_condition = $hud/battle_condition;
 
+# panels
+enum {
+	PANEL_MENU = 0,
+	PANEL_QUEST,
+	PANEL_STATS
+};
+
 func _ready():
 	# hide all panel
-	quest_panel.hide();
+	show_panel(-1);
 	lvl_name.hide();
+
+func _input(event: InputEvent) -> void:
+	if (event is InputEventKey && event.pressed):
+		if (event.scancode == KEY_ESCAPE):
+			if (panel_menu.visible):
+				show_panel(-1);
+			else:
+				show_panel(PANEL_MENU);
+		
+		if (event.scancode == KEY_TAB):
+			if (panel_stats.visible):
+				show_panel(-1);
+			else:
+				show_panel(PANEL_STATS);
+
+func show_panel(panel: int) -> void:
+	if (panel == PANEL_MENU):
+		panel_menu.show();
+	else:
+		panel_menu.hide();
+	
+	if (panel == PANEL_QUEST):
+		panel_quest.show();
+	else:
+		panel_quest.hide();
+	
+	if (panel == PANEL_STATS):
+		panel_stats.show();
+	else:
+		panel_stats.hide();
 
 func _process(delta: float) -> void:
 	# player name

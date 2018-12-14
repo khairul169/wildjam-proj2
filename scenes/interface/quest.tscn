@@ -25,10 +25,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -190.0
-margin_top = -275.0
-margin_right = 190.0
-margin_bottom = 275.0
+margin_left = -210.0
+margin_top = -292.5
+margin_right = 210.0
+margin_bottom = 292.5
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
@@ -37,44 +37,38 @@ __meta__ = {
 [node name="bg" type="NinePatchRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -20.0
-margin_top = -15.0
-margin_right = 20.0
-margin_bottom = 15.0
 texture = ExtResource( 2 )
 patch_margin_left = 64
 patch_margin_top = 64
 patch_margin_right = 64
 patch_margin_bottom = 64
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="title" type="Label" parent="."]
-margin_right = 380.0
-margin_bottom = 75.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 400.0
+margin_bottom = 95.0
 custom_fonts/font = SubResource( 1 )
 text = "QUEST"
 align = 1
 valign = 1
 
-[node name="btn_main" type="Button" parent="."]
-margin_left = 20.0
-margin_top = 485.0
-margin_right = 180.0
-margin_bottom = 525.0
-text = "MAIN"
-
-[node name="btn_side" type="Button" parent="."]
-margin_left = 200.0
-margin_top = 485.0
-margin_right = 360.0
-margin_bottom = 525.0
-disabled = true
-text = "SIDE"
+[node name="btn_exit" type="Button" parent="."]
+margin_left = 340.0
+margin_top = 40.0
+margin_right = 380.0
+margin_bottom = 80.0
+text = "X"
 
 [node name="container" type="ScrollContainer" parent="."]
-margin_left = 20.0
-margin_top = 75.0
-margin_right = 360.0
-margin_bottom = 405.0
+editor/display_folded = true
+margin_left = 40.0
+margin_top = 95.0
+margin_right = 380.0
+margin_bottom = 425.0
 scroll_horizontal_enabled = false
 
 [node name="quest_list" type="VBoxContainer" parent="container"]
@@ -119,18 +113,27 @@ custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.403922, 0.278431, 0.133333, 1 )
 text = "Quest Caption"
 
-[node name="btn_exit" type="Button" parent="."]
-margin_left = 320.0
-margin_top = 20.0
-margin_right = 360.0
-margin_bottom = 60.0
-text = "X"
+[node name="btn_main" type="Button" parent="."]
+margin_left = 40.0
+margin_top = 505.0
+margin_right = 200.0
+margin_bottom = 545.0
+text = "MAIN"
+
+[node name="btn_side" type="Button" parent="."]
+margin_left = 220.0
+margin_top = 505.0
+margin_right = 380.0
+margin_bottom = 545.0
+disabled = true
+text = "SIDE"
 
 [node name="chapters" type="Control" parent="."]
-margin_left = 20.0
-margin_top = 423.0
-margin_right = 360.0
-margin_bottom = 463.0
+editor/display_folded = true
+margin_left = 40.0
+margin_top = 443.0
+margin_right = 380.0
+margin_bottom = 483.0
 
 [node name="chapter_list" type="HBoxContainer" parent="chapters"]
 margin_right = 340.0

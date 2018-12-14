@@ -9,10 +9,10 @@ func setup_quest(world: Node):
 	
 	# Chapter 1
 	world.register_quest(world.QUEST_MAIN, "Pertama", main_quest(1, 1), 200);
-	world.register_quest(world.QUEST_MAIN, "Kedua", main_quest(1, 2), 300);
-	world.register_quest(world.QUEST_MAIN, "Ketiga", main_quest(1, 3), 400);
-	world.register_quest(world.QUEST_MAIN, "Keempat", main_quest(1, 4), 500);
-	world.register_quest(world.QUEST_MAIN, "Kelima", main_quest(1, 5), 800);
+	world.register_quest(world.QUEST_MAIN, "Kedua", main_quest(1, 2), 200);
+	world.register_quest(world.QUEST_MAIN, "Ketiga", main_quest(1, 3), 300);
+	world.register_quest(world.QUEST_MAIN, "Keempat", main_quest(1, 4), 400);
+	world.register_quest(world.QUEST_MAIN, "Kelima", main_quest(1, 5), 500);
 	
 	# Chapter 2
 	world.register_quest(world.QUEST_MAIN, "Part 2: Pertama", main_quest(1, 1), 1000, true);
