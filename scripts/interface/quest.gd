@@ -20,8 +20,7 @@ func _ready():
 	container.rect_size.y = CONTAINER_H_MAIN;
 	
 	# set quest item as placeholder node
-	if (scene_questitem):
-		scene_questitem.get_parent().remove_child(scene_questitem);
+	scene_questitem.get_parent().remove_child(scene_questitem);
 	
 	if (scene):
 		scene.connect("quest_updated", self, "quest_updated");

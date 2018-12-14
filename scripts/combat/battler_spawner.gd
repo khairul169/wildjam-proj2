@@ -1,5 +1,8 @@
 extends Node2D
 
+# signals
+signal spawned(object);
+
 # enums
 enum Team {
 	NONE = 0,
@@ -41,7 +44,7 @@ func _ready() -> void:
 func scene_ready() -> void:
 	# spawn cats
 	if (team == Team.PLAYER):
-		scene.player_battler = spawn_cat({
+		spawn_cat({
 			'pow': PlayerStats.get_stats_modifier(PlayerStats.STATS_POWER),
 			'agi': PlayerStats.get_stats_modifier(PlayerStats.STATS_AGILITY)
 		});
@@ -100,4 +103,7 @@ func spawn_cat(stats: Dictionary) -> Node2D:
 	
 	# add to world
 	add_child(instance);
+	
+	# spawn signal
+	emit_signal("spawned", instance);
 	return instance;

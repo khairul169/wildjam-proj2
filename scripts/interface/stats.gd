@@ -9,8 +9,7 @@ onready var stats_item = $list/item;
 
 func _ready():
 	# set skill item as placeholder node
-	if (stats_item):
-		stats_item.get_parent().remove_child(stats_item);
+	stats_item.get_parent().remove_child(stats_item);
 	
 	# signals
 	PlayerStats.connect("stats_updated", self, "update_interface");

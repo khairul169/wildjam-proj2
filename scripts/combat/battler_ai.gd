@@ -1,5 +1,12 @@
 extends Node2D
 
+# consts
+enum {
+	EFFECT_DAMAGE = 0,
+	EFFECT_SHIELD,
+	EFFECT_HEAL
+};
+
 # refs
 onready var scene = get_node("/root/scene");
 onready var body = $body;
@@ -25,6 +32,7 @@ var team = 0;
 var range_bonus = 0.0;
 var cur_health = 0.0;
 var health_bar: Control;
+var effects = [];
 
 func _ready() -> void:
 	if (!scene):
@@ -50,6 +58,12 @@ func _process(delta: float) -> void:
 		next_think = 0.1;
 		# do process
 		cat_think();
+	
+	for i in effects:
+		if (i.size() > 1 && i[1] > 0.0):
+			i[1] -= delta;
+		else:
+			effects.erase(i);
 	
 	# move the cat
 	if (move_dir.length() > 0.1 && is_alive()):
@@ -134,6 +148,12 @@ func attack_enemy(enemy: Node2D) -> void:
 	
 	if (enemy.has_method('give_damage')):
 		var dmg = damage + (randf() * 2.0);
+		
+		for i in effects:
+			# damage buff
+			if (i[0] == EFFECT_DAMAGE):
+				dmg = dmg * i[2];
+		
 		enemy.give_damage(self, dmg);
 
 func give_damage(attacker: Node2D, dmg: float) -> void:
@@ -169,3 +189,15 @@ func update_ui() -> void:
 		else:
 			health_bar.visible = true;
 			health_bar.get_node("bar").rect_size.x = health_bar.rect_size.x * clamp(cur_health / health, 0.0, 1.0);
+
+func give_effect(effect: int, time = 0.0, args = null):
+	if (effect < 0):
+		return;
+	
+	if (effect == EFFECT_HEAL && typeof(args) == TYPE_REAL):
+		cur_health = clamp(cur_health + args, 0.0, health);
+		update_ui();
+		return;
+	
+	# add buff
+	effects.append([effect, time, args]);

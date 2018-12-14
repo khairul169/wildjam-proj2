@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/scenes/combat.gd" type="Script" id=1]
 [ext_resource path="res://scenes/interface/battle_condition.tscn" type="PackedScene" id=2]
-[ext_resource path="res://levels/combat_level.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scripts/combat/battler_spawner.gd" type="Script" id=4]
+[ext_resource path="res://scenes/interface/combat_skills.tscn" type="PackedScene" id=3]
+[ext_resource path="res://levels/combat_level.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/combat/battler_spawner.gd" type="Script" id=5]
 
 [node name="scene" type="Node"]
 script = ExtResource( 1 )
@@ -20,13 +21,15 @@ __meta__ = {
 
 [node name="battle_condition" parent="ui_layer/interface" instance=ExtResource( 2 )]
 
+[node name="skills" parent="ui_layer/interface" instance=ExtResource( 3 )]
+
 [node name="world" type="Node2D" parent="."]
 
-[node name="level" parent="world" instance=ExtResource( 3 )]
+[node name="level" parent="world" instance=ExtResource( 4 )]
 
 [node name="player" type="YSort" parent="world"]
 position = Vector2( 243, 540.9 )
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 team = 1
 camera = NodePath("camera")
 spawn_position = NodePath("spawn_pos")
@@ -66,7 +69,7 @@ position = Vector2( -146.927, 0.299614 )
 
 [node name="enemy" type="YSort" parent="world"]
 position = Vector2( 2000, 540 )
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 team = 2
 spawn_position = NodePath("spawn_pos")
 

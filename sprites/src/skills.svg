@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="skills.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="256.0652"
+     inkscape:cy="904.57903"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:snap-nodes="false" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g4543"
+       inkscape:export-filename="D:\Projects\GodotProjects\wildjam-proj2\sprites\ui\skills\heal.png"
+       inkscape:export-xdpi="158"
+       inkscape:export-ydpi="158">
+      <rect
+         y="7.6215887"
+         x="7.8844514"
+         height="41.201771"
+         width="41.201767"
+         id="rect4485"
+         style="opacity:1;fill:#000000;fill-opacity:0.44751383;stroke:none;stroke-width:0.09999999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         rx="5"
+         ry="5" />
+      <g
+         style="stroke-width:0.59479368"
+         transform="matrix(1.6812552,0,0,1.6812552,4.3056214,2.4639884)"
+         id="g4507">
+        <rect
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.05947938;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+           id="rect4487"
+           width="2.6726952"
+           height="12.695302"
+           x="10.891233"
+           y="9.217536" />
+        <rect
+           y="-18.575232"
+           x="14.22884"
+           height="12.695302"
+           width="2.6726952"
+           id="rect4503"
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.05947938;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+           transform="rotate(90)" />
+      </g>
+      <g
+         id="g4513"
+         transform="matrix(0.73503119,0,0,0.73503119,29.416446,8.8893921)"
+         style="stroke-width:1.36048651">
+        <rect
+           y="9.217536"
+           x="10.891233"
+           height="12.695302"
+           width="2.6726952"
+           id="rect4509"
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.13604867;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+        <rect
+           transform="rotate(90)"
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.13604867;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+           id="rect4511"
+           width="2.6726952"
+           height="12.695302"
+           x="14.22884"
+           y="-18.575232" />
+      </g>
+    </g>
+    <g
+       id="g4592"
+       inkscape:export-filename="D:\Projects\GodotProjects\wildjam-proj2\sprites\ui\skills\dmg_up.png"
+       inkscape:export-xdpi="158"
+       inkscape:export-ydpi="158">
+      <rect
+         style="opacity:1;fill:#000000;fill-opacity:0.44751383;stroke:none;stroke-width:0.09999999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         id="rect4505"
+         width="41.201767"
+         height="41.201771"
+         x="56.136097"
+         y="7.6215887"
+         rx="5"
+         ry="5" />
+      <g
+         style="stroke-width:0.79381436"
+         transform="matrix(0.88239759,-0.89906625,0.89906625,0.88239759,-11.966686,67.505431)"
+         id="g4552">
+        <rect
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.07938144;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+           id="rect4545"
+           width="18.174328"
+           height="5.746295"
+           x="62.2738"
+           y="28.861847" />
+        <path
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.07938144;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+           d="m 79.111774,29.596838 3.741774,0.534539 v 3.207234 l -3.741774,0.534539 z"
+           id="rect4547"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ccccc" />
+      </g>
+      <g
+         id="g4574"
+         transform="matrix(0.76454983,0,0,1.0209147,17.708713,2.7493609)"
+         style="stroke-width:1.13188505">
+        <path
+           sodipodi:nodetypes="cccccc"
+           inkscape:connector-curvature="0"
+           id="rect4570"
+           d="m 68.487816,14.897014 h 2.53906 l 0.597822,11.024868 -1.867352,-1.006985 -1.867352,1.006985 z"
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.11318851;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+        <path
+           sodipodi:nodetypes="ccccc"
+           inkscape:connector-curvature="0"
+           id="path4572"
+           transform="scale(0.26458333)"
+           d="m 263.78711,45.181641 -15.01563,24.759765 15.01563,-4.0625 15.01562,4.0625 z"
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.42779911;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+      </g>
+    </g>
+  </g>
+</svg>

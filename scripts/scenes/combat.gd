@@ -2,6 +2,7 @@ extends Node
 
 # consts
 const BATTLER_GROUP = 'cats';
+const BATTLER_AI = preload("res://scripts/combat/battler_ai.gd");
 
 # refs
 onready var battle_condition = $ui_layer/interface/battle_condition;
@@ -14,6 +15,14 @@ enum Team {
 };
 
 enum {
+	SKILL_UNKNOWN = 0
+	
+	SKILL_DAMAGE,
+	SKILL_SHIELD,
+	SKILL_HEAL
+};
+
+enum {
 	RESULT_NONE = 0,
 	RESULT_LOSE,
 	RESULT_WIN
@@ -21,10 +30,11 @@ enum {
 
 # signals
 signal scene_ready();
-signal battler_died(who);
+signal battler_died(object);
 
 # vars
-var player_battler;
+var player_instance;
+var player_skills;
 var enemies = [];
 var world_state;
 var enemy_count = 0;
@@ -52,7 +62,10 @@ func _ready() -> void:
 			'level': enemy_level
 		});
 	
+	# signals
 	connect("battler_died", self, "_battler_died");
+	$world/player.connect("spawned", self, "_player_spawned");
+	
 	emit_signal("scene_ready");
 
 func _process(delta: float) -> void:
@@ -64,7 +77,56 @@ func _process(delta: float) -> void:
 			back_to_world();
 			set_process(false);
 
-func _battler_died(who) -> void:
+func _player_spawned(object) -> void:
+	if (player_instance || !object || object.team != Team.PLAYER):
+		return;
+	
+	# set player instance
+	player_instance = object;
+	
+	# update player skills
+	player_skills = [];
+	player_skills.append({
+		'type': SKILL_DAMAGE,
+		'cd': 6.0,
+		'initial_cd': 2.0,
+		'icon': load("res://sprites/ui/skills/dmg_up.png"),
+		'dmg': 1.1,
+		'time': 3.0,
+		'desc': "Increase damage by 10% for 3 sec"
+	});
+	player_skills.append({
+		'type': SKILL_HEAL,
+		'cd': 5.0,
+		'initial_cd': 3.0,
+		'icon': load("res://sprites/ui/skills/heal.png"),
+		'amount': 20.0,
+		'desc': "Heal for 20 health points"
+	});
+	
+	# update interface
+	$ui_layer/interface/skills.set_skills(player_skills);
+	$ui_layer/interface/skills.connect("skill_activated", self, "_skill_activated");
+
+func _skill_activated(id) -> void:
+	if (battle_result || !player_instance || id < 0 || id >= player_skills.size()):
+		return;
+	
+	if (!player_instance.has_method('give_effect')):
+		return;
+	
+	# skill activated
+	var skill = player_skills[id];
+	
+	# damage multiplier
+	if (skill.type == SKILL_DAMAGE):
+		player_instance.give_effect(BATTLER_AI.EFFECT_DAMAGE, skill.time, skill.dmg);
+	
+	# heal player
+	if (skill.type == SKILL_HEAL):
+		player_instance.give_effect(BATTLER_AI.EFFECT_HEAL, 0.0, skill.amount);
+
+func _battler_died(object) -> void:
 	if (battle_result):
 		return;
 	
@@ -113,8 +175,8 @@ func end_combat(win: bool) -> void:
 		battle_condition.show_hud(battle_condition.BATTLE_FAILED);
 	
 	# set player health
-	if (player_battler):
-		PlayerStats.health = player_battler.cur_health;
+	if (player_instance):
+		PlayerStats.health = player_instance.cur_health;
 	
 	if (world_state.has('enemy') && world_state.enemy.size() > 0):
 		# set win state

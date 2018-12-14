@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/interface/combat_skills.gd" type="Script" id=1]
+[ext_resource path="res://fonts/PetitaMedium.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 20
+font_data = ExtResource( 2 )
+
+[node name="skills" type="Control"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -120.0
+margin_bottom = -30.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="container" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 30
+alignment = 1
+
+[node name="skill" type="Button" parent="container"]
+margin_left = 595.0
+margin_right = 685.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 90, 90 )
+flat = true
+
+[node name="icon" type="TextureRect" parent="container/skill"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+expand = true
+
+[node name="cd" type="Label" parent="container/skill"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -11.5
+margin_bottom = 11.5
+custom_fonts/font = SubResource( 1 )
+text = "1"
+align = 1
+valign = 1
+
+[node name="key" type="Label" parent="container/skill"]
+margin_left = 7.0
+margin_top = 60.0
+margin_right = 47.0
+margin_bottom = 83.0
+custom_fonts/font = SubResource( 1 )
+text = "Q"
+valign = 2
+
