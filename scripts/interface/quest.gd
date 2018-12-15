@@ -30,7 +30,7 @@ func _ready():
 	
 	# chapter btn
 	$chapters/chapter_list/chap1.connect("pressed", self, "select_chapter", [0]);
-	$chapters/chapter_list/chap2.connect("pressed", self, "select_chapter", [1]);
+	#$chapters/chapter_list/chap2.connect("pressed", self, "select_chapter", [1]);
 
 func display_quests(list: Array) -> void:
 	for i in node_quest.get_children():

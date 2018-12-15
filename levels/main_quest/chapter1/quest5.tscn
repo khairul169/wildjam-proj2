@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/props/level.gd" type="Script" id=1]
 [ext_resource path="res://sprites/level/winter/snow_tile.png" type="Texture" id=2]
 [ext_resource path="res://sprites/level/props/stones01.png" type="Texture" id=3]
-[ext_resource path="res://scenes/npc/enemy_cat.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/props/tree.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/props/rock.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/props/bush.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/npc/enemy_cat.tscn" type="PackedScene" id=7]
 
 [node name="level" type="Node2D"]
 script = ExtResource( 1 )
@@ -17,7 +20,7 @@ _ysort = NodePath("ysort")
 texture = ExtResource( 2 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 0, 0, 2000, 1600 )
+region_rect = Rect2( 0, 0, 4096, 4096 )
 
 [node name="props" type="Node2D" parent="."]
 editor/display_folded = true
@@ -26,78 +29,577 @@ editor/display_folded = true
 position = Vector2( 230, 260 )
 texture = ExtResource( 3 )
 
+[node name="stones18" type="Sprite" parent="props"]
+position = Vector2( 2213, 249 )
+texture = ExtResource( 3 )
+
+[node name="stones39" type="Sprite" parent="props"]
+position = Vector2( 2233, 2059 )
+texture = ExtResource( 3 )
+
+[node name="stones54" type="Sprite" parent="props"]
+position = Vector2( 553, 2079 )
+texture = ExtResource( 3 )
+
 [node name="stones02" type="Sprite" parent="props"]
 position = Vector2( 700, 760 )
+texture = ExtResource( 3 )
+
+[node name="stones23" type="Sprite" parent="props"]
+position = Vector2( 2683, 749 )
+texture = ExtResource( 3 )
+
+[node name="stones37" type="Sprite" parent="props"]
+position = Vector2( 2703, 2559 )
+texture = ExtResource( 3 )
+
+[node name="stones58" type="Sprite" parent="props"]
+position = Vector2( 1023, 2579 )
 texture = ExtResource( 3 )
 
 [node name="stones04" type="Sprite" parent="props"]
 position = Vector2( 300, 650 )
 texture = ExtResource( 3 )
 
+[node name="stones20" type="Sprite" parent="props"]
+position = Vector2( 2283, 639 )
+texture = ExtResource( 3 )
+
+[node name="stones38" type="Sprite" parent="props"]
+position = Vector2( 2303, 2449 )
+texture = ExtResource( 3 )
+
+[node name="stones53" type="Sprite" parent="props"]
+position = Vector2( 623, 2469 )
+texture = ExtResource( 3 )
+
 [node name="stones05" type="Sprite" parent="props"]
 position = Vector2( 710, 140 )
+texture = ExtResource( 3 )
+
+[node name="stones27" type="Sprite" parent="props"]
+position = Vector2( 2693, 129 )
+texture = ExtResource( 3 )
+
+[node name="stones44" type="Sprite" parent="props"]
+position = Vector2( 2713, 1939 )
+texture = ExtResource( 3 )
+
+[node name="stones61" type="Sprite" parent="props"]
+position = Vector2( 1033, 1959 )
 texture = ExtResource( 3 )
 
 [node name="stones06" type="Sprite" parent="props"]
 position = Vector2( 1260, 780 )
 texture = ExtResource( 3 )
 
+[node name="stones24" type="Sprite" parent="props"]
+position = Vector2( 3243, 769 )
+texture = ExtResource( 3 )
+
+[node name="stones36" type="Sprite" parent="props"]
+position = Vector2( 3263, 2579 )
+texture = ExtResource( 3 )
+
+[node name="stones56" type="Sprite" parent="props"]
+position = Vector2( 1583, 2599 )
+texture = ExtResource( 3 )
+
 [node name="stones07" type="Sprite" parent="props"]
 position = Vector2( 1000, 1050 )
+texture = ExtResource( 3 )
+
+[node name="stones19" type="Sprite" parent="props"]
+position = Vector2( 2983, 1039 )
+texture = ExtResource( 3 )
+
+[node name="stones35" type="Sprite" parent="props"]
+position = Vector2( 3003, 2849 )
+texture = ExtResource( 3 )
+
+[node name="stones55" type="Sprite" parent="props"]
+position = Vector2( 1323, 2869 )
 texture = ExtResource( 3 )
 
 [node name="stones08" type="Sprite" parent="props"]
 position = Vector2( 420, 1070 )
 texture = ExtResource( 3 )
 
+[node name="stones25" type="Sprite" parent="props"]
+position = Vector2( 2403, 1059 )
+texture = ExtResource( 3 )
+
+[node name="stones47" type="Sprite" parent="props"]
+position = Vector2( 2423, 2869 )
+texture = ExtResource( 3 )
+
+[node name="stones65" type="Sprite" parent="props"]
+position = Vector2( 743, 2889 )
+texture = ExtResource( 3 )
+
 [node name="stones09" type="Sprite" parent="props"]
 position = Vector2( 170, 910 )
+texture = ExtResource( 3 )
+
+[node name="stones28" type="Sprite" parent="props"]
+position = Vector2( 2153, 899 )
+texture = ExtResource( 3 )
+
+[node name="stones46" type="Sprite" parent="props"]
+position = Vector2( 2173, 2709 )
+texture = ExtResource( 3 )
+
+[node name="stones63" type="Sprite" parent="props"]
+position = Vector2( 493, 2729 )
 texture = ExtResource( 3 )
 
 [node name="stones10" type="Sprite" parent="props"]
 position = Vector2( 1510, 1020 )
 texture = ExtResource( 3 )
 
+[node name="stones21" type="Sprite" parent="props"]
+position = Vector2( 3493, 1009 )
+texture = ExtResource( 3 )
+
+[node name="stones40" type="Sprite" parent="props"]
+position = Vector2( 3513, 2819 )
+texture = ExtResource( 3 )
+
+[node name="stones57" type="Sprite" parent="props"]
+position = Vector2( 1833, 2839 )
+texture = ExtResource( 3 )
+
 [node name="stones12" type="Sprite" parent="props"]
 position = Vector2( 1700, 1390 )
+texture = ExtResource( 3 )
+
+[node name="stones26" type="Sprite" parent="props"]
+position = Vector2( 3683, 1379 )
+texture = ExtResource( 3 )
+
+[node name="stones43" type="Sprite" parent="props"]
+position = Vector2( 3703, 3189 )
+texture = ExtResource( 3 )
+
+[node name="stones69" type="Sprite" parent="props"]
+position = Vector2( 3583, 3679 )
+texture = ExtResource( 3 )
+
+[node name="stones52" type="Sprite" parent="props"]
+position = Vector2( 2023, 3209 )
+texture = ExtResource( 3 )
+
+[node name="stones74" type="Sprite" parent="props"]
+position = Vector2( 1903, 3699 )
 texture = ExtResource( 3 )
 
 [node name="stones13" type="Sprite" parent="props"]
 position = Vector2( 1130, 1400 )
 texture = ExtResource( 3 )
 
+[node name="stones29" type="Sprite" parent="props"]
+position = Vector2( 3113, 1389 )
+texture = ExtResource( 3 )
+
+[node name="stones48" type="Sprite" parent="props"]
+position = Vector2( 3133, 3199 )
+texture = ExtResource( 3 )
+
+[node name="stones76" type="Sprite" parent="props"]
+position = Vector2( 3013, 3689 )
+texture = ExtResource( 3 )
+
+[node name="stones68" type="Sprite" parent="props"]
+position = Vector2( 1453, 3219 )
+texture = ExtResource( 3 )
+
+[node name="stones71" type="Sprite" parent="props"]
+position = Vector2( 1333, 3709 )
+texture = ExtResource( 3 )
+
 [node name="stones14" type="Sprite" parent="props"]
 position = Vector2( 240, 1410 )
+texture = ExtResource( 3 )
+
+[node name="stones30" type="Sprite" parent="props"]
+position = Vector2( 2223, 1399 )
+texture = ExtResource( 3 )
+
+[node name="stones45" type="Sprite" parent="props"]
+position = Vector2( 2243, 3209 )
+texture = ExtResource( 3 )
+
+[node name="stones75" type="Sprite" parent="props"]
+position = Vector2( 2123, 3699 )
+texture = ExtResource( 3 )
+
+[node name="stones66" type="Sprite" parent="props"]
+position = Vector2( 563, 3229 )
+texture = ExtResource( 3 )
+
+[node name="stones72" type="Sprite" parent="props"]
+position = Vector2( 443, 3719 )
 texture = ExtResource( 3 )
 
 [node name="stones15" type="Sprite" parent="props"]
 position = Vector2( 710, 1350 )
 texture = ExtResource( 3 )
 
+[node name="stones22" type="Sprite" parent="props"]
+position = Vector2( 2693, 1339 )
+texture = ExtResource( 3 )
+
+[node name="stones41" type="Sprite" parent="props"]
+position = Vector2( 2713, 3149 )
+texture = ExtResource( 3 )
+
+[node name="stones70" type="Sprite" parent="props"]
+position = Vector2( 2593, 3639 )
+texture = ExtResource( 3 )
+
+[node name="stones59" type="Sprite" parent="props"]
+position = Vector2( 1033, 3169 )
+texture = ExtResource( 3 )
+
+[node name="stones73" type="Sprite" parent="props"]
+position = Vector2( 913, 3659 )
+texture = ExtResource( 3 )
+
 [node name="stones16" type="Sprite" parent="props"]
 position = Vector2( 1780, 720 )
+texture = ExtResource( 3 )
+
+[node name="stones31" type="Sprite" parent="props"]
+position = Vector2( 3763, 709 )
+texture = ExtResource( 3 )
+
+[node name="stones51" type="Sprite" parent="props"]
+position = Vector2( 3783, 2519 )
+texture = ExtResource( 3 )
+
+[node name="stones67" type="Sprite" parent="props"]
+position = Vector2( 2103, 2539 )
 texture = ExtResource( 3 )
 
 [node name="stones17" type="Sprite" parent="props"]
 position = Vector2( 1710, 350 )
 texture = ExtResource( 3 )
 
+[node name="stones32" type="Sprite" parent="props"]
+position = Vector2( 3693, 339 )
+texture = ExtResource( 3 )
+
+[node name="stones49" type="Sprite" parent="props"]
+position = Vector2( 3713, 2149 )
+texture = ExtResource( 3 )
+
+[node name="stones62" type="Sprite" parent="props"]
+position = Vector2( 2033, 2169 )
+texture = ExtResource( 3 )
+
 [node name="stones11" type="Sprite" parent="props"]
 position = Vector2( 1380, 240 )
+texture = ExtResource( 3 )
+
+[node name="stones33" type="Sprite" parent="props"]
+position = Vector2( 3363, 229 )
+texture = ExtResource( 3 )
+
+[node name="stones50" type="Sprite" parent="props"]
+position = Vector2( 3383, 2039 )
+texture = ExtResource( 3 )
+
+[node name="stones64" type="Sprite" parent="props"]
+position = Vector2( 1703, 2059 )
 texture = ExtResource( 3 )
 
 [node name="stones03" type="Sprite" parent="props"]
 position = Vector2( 1090, 410 )
 texture = ExtResource( 3 )
 
+[node name="stones34" type="Sprite" parent="props"]
+position = Vector2( 3073, 399 )
+texture = ExtResource( 3 )
+
+[node name="stones42" type="Sprite" parent="props"]
+position = Vector2( 3093, 2209 )
+texture = ExtResource( 3 )
+
+[node name="stones60" type="Sprite" parent="props"]
+position = Vector2( 1413, 2229 )
+texture = ExtResource( 3 )
+
 [node name="spawn_pos" type="Position2D" parent="."]
-position = Vector2( 850, 600 )
+position = Vector2( 1360, 3466 )
 
 [node name="limit" type="Position2D" parent="."]
-position = Vector2( 2000, 1600 )
+position = Vector2( 4096, 4096 )
 
 [node name="ysort" type="YSort" parent="."]
 
-[node name="npc_enemycat" parent="ysort" instance=ExtResource( 4 )]
-position = Vector2( 246.95, 280 )
+[node name="props" type="YSort" parent="ysort"]
+editor/display_folded = true
+
+[node name="trees" type="YSort" parent="ysort/props"]
+editor/display_folded = true
+
+[node name="tree" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 2770, 850 )
+
+[node name="tree2" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 2470, 1122 )
+
+[node name="tree3" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 3630, 1002 )
+
+[node name="tree4" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 3480, 1620 )
+
+[node name="tree5" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 1936, 360 )
+
+[node name="tree6" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 940, 1101.06 )
+
+[node name="tree7" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 1070, 426.513 )
+
+[node name="tree8" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 1736, 980 )
+
+[node name="tree9" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 1820, 1420 )
+
+[node name="tree10" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 890, 2390 )
+
+[node name="tree11" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 1140, 1680 )
+
+[node name="tree12" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 453, 1270 )
+
+[node name="tree13" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 380, 390 )
+
+[node name="tree14" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 1580, 2110 )
+
+[node name="tree15" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 2030, 3340 )
+
+[node name="tree16" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 1000, 3160 )
+
+[node name="tree17" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 2650, 2620 )
+
+[node name="tree18" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 3526, 3178 )
+
+[node name="tree19" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 3533.52, 2410 )
+
+[node name="tree20" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 2986.95, 3780 )
+
+[node name="tree21" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 3730, 3880 )
+
+[node name="tree22" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 1880, 3860 )
+
+[node name="tree23" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 720, 3880 )
+
+[node name="tree24" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 333, 3050 )
+
+[node name="tree25" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 470, 1900 )
+
+[node name="tree26" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 3533.52, 240 )
+
+[node name="tree27" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 2660, 1830 )
+
+[node name="tree28" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 2563.52, 2890 )
+
+[node name="tree29" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 2830, 2850 )
+
+[node name="tree30" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 1440, 2310 )
+
+[node name="tree31" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 1170, 2510 )
+
+[node name="tree32" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 1150, 2238 )
+
+[node name="tree33" parent="ysort/props/trees" instance=ExtResource( 4 )]
+position = Vector2( 3870, 2530 )
+
+[node name="rocks" type="YSort" parent="ysort/props"]
+editor/display_folded = true
+
+[node name="rock" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 263, 530 )
+
+[node name="rock2" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 770, 1230 )
+
+[node name="rock3" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 1320, 480 )
+
+[node name="rock4" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 2600, 1280 )
+
+[node name="rock5" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 2970, 820 )
+
+[node name="rock6" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 3460, 1060 )
+
+[node name="rock7" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 3036, 1980 )
+
+[node name="rock8" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 2000, 1650 )
+
+[node name="rock9" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 2090, 1770 )
+
+[node name="rock10" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 1270, 1880 )
+
+[node name="rock11" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 1413, 1200 )
+
+[node name="rock12" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 1570, 350 )
+
+[node name="rock13" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 2280, 280 )
+
+[node name="rock14" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 3036, 289 )
+
+[node name="rock15" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 2380, 2600 )
+
+[node name="rock16" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 1380, 2500 )
+
+[node name="rock17" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 570, 2050 )
+
+[node name="rock18" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 210, 2440 )
+
+[node name="rock19" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 700, 2820 )
+
+[node name="rock20" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 400, 3610.51 )
+
+[node name="rock21" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 1347, 3820 )
+
+[node name="rock22" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 1560, 3630 )
+
+[node name="rock23" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 1690, 3870 )
+
+[node name="rock24" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 3100, 3550 )
+
+[node name="rock25" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 2733.52, 3820 )
+
+[node name="rock26" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 3490, 2910 )
+
+[node name="rock27" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 3816, 3440 )
+
+[node name="rock28" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 3860, 2240 )
+
+[node name="rock29" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 3240, 1630 )
+
+[node name="rock30" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 2610, 3450 )
+
+[node name="rock31" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 1486, 3050 )
+
+[node name="rock32" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 1639.52, 2908.51 )
+
+[node name="rock33" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 1790, 3040 )
+
+[node name="rock34" parent="ysort/props/rocks" instance=ExtResource( 5 )]
+position = Vector2( 2540, 2376.51 )
+
+[node name="bush" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 2880, 1090 )
+
+[node name="bush2" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 3110, 990 )
+
+[node name="bush3" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 3240, 1260 )
+
+[node name="bush4" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 2488, 1630 )
+
+[node name="bush5" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 2860, 2220 )
+
+[node name="bush6" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 3070, 2596.51 )
+
+[node name="bush7" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 3120, 3080 )
+
+[node name="bush8" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 1690, 2240.51 )
+
+[node name="bush9" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 2330, 2360 )
+
+[node name="bush10" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 1730, 2576.51 )
+
+[node name="bush11" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 1050, 2890.51 )
+
+[node name="bush12" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 1259.52, 3476 )
+
+[node name="bush13" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 670, 1500 )
+
+[node name="bush14" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 1420, 1540 )
+
+[node name="bush15" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 2080, 770 )
+
+[node name="bush16" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 3602, 1906 )
+
+[node name="npc_enemycat" parent="ysort" instance=ExtResource( 7 )]
+position = Vector2( 2970, 1150 )
+enemy_level = 12
+
+[node name="npc_enemycat2" parent="ysort" instance=ExtResource( 7 )]
+position = Vector2( 3180, 1210 )
+enemy_level = 8
 
