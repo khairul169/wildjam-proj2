@@ -4455,7 +4455,7 @@ position = Vector2( 270, 1050 )
 texture = ExtResource( 4 )
 
 [node name="camera" type="Camera2D" parent="."]
-position = Vector2( 690, 407 )
+position = Vector2( 721, 509 )
 current = true
 limit_left = 0
 limit_top = 0
@@ -4651,10 +4651,9 @@ anims/shoot-hg = SubResource( 19 )
 
 [node name="bandit1" parent="objects" instance=ExtResource( 12 )]
 editor/display_folded = true
-position = Vector2( 519.28, 340 )
+position = Vector2( 340, -60 )
 scale = Vector2( 0.15, 0.15 )
 script = ExtResource( 11 )
-state = 1
 
 [node name="tail" parent="objects/bandit1/sprite" index="1"]
 position = Vector2( -74.8714, 15.1509 )
@@ -4699,10 +4698,9 @@ anims/shoot-hg = SubResource( 28 )
 
 [node name="bandit2" parent="objects" instance=ExtResource( 12 )]
 editor/display_folded = true
-position = Vector2( 630, 306 )
+position = Vector2( 440, -60 )
 scale = Vector2( 0.15, 0.15 )
 script = ExtResource( 11 )
-state = 1
 
 [node name="sprite" parent="objects/bandit2" index="0"]
 editor/display_folded = true
@@ -4721,8 +4719,8 @@ position = Vector2( 708, 610 )
 texture = ExtResource( 13 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "intro"
-anims/intro = ExtResource( 14 )
+autoplay = "intro_animation"
+anims/intro_animation = ExtResource( 14 )
 
 [node name="light" type="CanvasModulate" parent="."]
 color = Color( 0.568627, 0.686275, 1, 1 )
