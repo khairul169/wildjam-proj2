@@ -15,7 +15,7 @@ func _newgame() -> void:
 	# create new savegame
 	PlayerStats.reset_data();
 	PlayerStats.save_game();
-	SceneLoader.switch_scene(SceneLoader.SCENE_INTRO);
+	SceneLoader.switch_scene(SceneLoader.SCENE_DATA_INPUT);
 
 func _quit() -> void:
 	get_tree().quit();

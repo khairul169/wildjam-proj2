@@ -5,14 +5,16 @@ enum {
 	SCENE_MAINMENU = 0,
 	SCENE_WORLD,
 	SCENE_COMBAT,
+	SCENE_DATA_INPUT,
 	SCENE_INTRO
 };
 
 var scenes = {
-	SCENE_MAINMENU: "res://scenes/main_menu.tscn",
-	SCENE_WORLD: "res://scenes/world.tscn",
-	SCENE_COMBAT: "res://scenes/combat.tscn",
-	SCENE_INTRO: "res://scenes/intro/intro_scene.tscn"
+	SCENE_MAINMENU: "main_menu",
+	SCENE_WORLD: "world",
+	SCENE_COMBAT: "combat",
+	SCENE_DATA_INPUT: "data_input",
+	SCENE_INTRO: "intro/intro_scene"
 };
 
 # refs
@@ -28,7 +30,7 @@ onready var level_basecamp = load_level('basecamp');
 func _ready():
 	# load scenes
 	for i in scenes.keys():
-		scenes[i] = load(scenes[i]);
+		scenes[i] = load("res://scenes/" + scenes[i] + ".tscn");
 	
 	# hide ui
 	ui_node.hide();
