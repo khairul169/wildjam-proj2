@@ -1,7 +1,9 @@
 extends Node
 
 func _ready():
-	pass
+	# set fullscreen on release build
+	if (!OS.is_debug_build()):
+		OS.window_fullscreen = true;
 
 func _input(event: InputEvent) -> void:
 	if (event is InputEventKey && event.pressed):
