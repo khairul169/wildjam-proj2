@@ -1,0 +1,135 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/interface/enhancement.gd" type="Script" id=1]
+[ext_resource path="res://sprites/ui/window_frame.png" type="Texture" id=2]
+[ext_resource path="res://fonts/PetitaMedium.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://sprites/gun/handgun.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 24
+use_mipmaps = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+
+size = 20
+font_data = ExtResource( 3 )
+
+[node name="enhancement" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -260.0
+margin_top = -166.0
+margin_right = 260.0
+margin_bottom = 166.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bg" type="NinePatchRect" parent="."]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+patch_margin_left = 64
+patch_margin_top = 64
+patch_margin_right = 64
+patch_margin_bottom = 64
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="title" type="Label" parent="."]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 500.0
+margin_bottom = 95.0
+custom_fonts/font = SubResource( 1 )
+text = "ENHANCEMENT"
+align = 1
+valign = 1
+
+[node name="btn_exit" type="Button" parent="."]
+margin_left = 440.0
+margin_top = 40.0
+margin_right = 480.0
+margin_bottom = 80.0
+text = "X"
+
+[node name="money" type="Label" parent="."]
+margin_left = 40.0
+margin_top = 93.0
+margin_right = 480.0
+margin_bottom = 121.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "$0"
+align = 2
+
+[node name="wpnname" type="Label" parent="."]
+margin_left = 65.0
+margin_top = 121.0
+margin_right = 219.0
+margin_bottom = 149.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Handgun"
+align = 1
+
+[node name="wpn" type="Sprite" parent="."]
+position = Vector2( 141.8, 220.5 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 4 )
+
+[node name="lbl_dmg" type="Label" parent="."]
+margin_left = 250.0
+margin_top = 171.0
+margin_right = 460.0
+margin_bottom = 194.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Damage"
+
+[node name="dmg" type="Label" parent="."]
+margin_left = 380.0
+margin_top = 171.0
+margin_right = 460.0
+margin_bottom = 194.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = ": 0"
+
+[node name="lbl_rof" type="Label" parent="."]
+margin_left = 250.0
+margin_top = 199.0
+margin_right = 460.0
+margin_bottom = 222.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Rate of Fire"
+
+[node name="rof" type="Label" parent="."]
+margin_left = 380.0
+margin_top = 199.0
+margin_right = 460.0
+margin_bottom = 222.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = ": 0"
+
+[node name="btn_enhance" type="Button" parent="."]
+margin_left = 250.0
+margin_top = 241.0
+margin_right = 430.0
+margin_bottom = 281.0
+text = "ENHANCE ($100)"
+

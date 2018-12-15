@@ -14,7 +14,7 @@ var next_think = 0.0;
 var last_pos = Vector2.ZERO;
 
 func _ready():
-	pass
+	last_pos = transform.origin;
 
 func _process(delta: float) -> void:
 	if (next_think > 0.0):
@@ -34,6 +34,7 @@ func _process(delta: float) -> void:
 	var delta_pos = transform.origin - last_pos;
 	if (delta_pos.length() > 0.1):
 		set_animation('run-hg');
+		scale.x = abs(scale.x) * sign(delta_pos.x);
 	else:
 		set_animation('idle-hg');
 	last_pos = transform.origin;

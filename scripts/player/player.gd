@@ -34,7 +34,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	# regenerate health
 	if (PlayerStats.health < PlayerStats.get_max_health()):
-		PlayerStats.health = clamp(PlayerStats.health + 1.0 * delta, 0.0, PlayerStats.get_max_health());
+		PlayerStats.health = clamp(PlayerStats.health + 2.0 * delta, 0.0, PlayerStats.get_max_health());
 
 func _unhandled_input(event: InputEvent) -> void:
 	if (OS.has_touchscreen_ui_hint()):
@@ -154,8 +154,9 @@ func execute_action(action_type, object) -> void:
 		ACTION_AREA.ActionType.SHOP:
 			print("SHOP");
 		
-		ACTION_AREA.ActionType.STATS:
-			scene.interface.stats_panel.show();
+		ACTION_AREA.ActionType.ENHANCEMENT:
+			if (scene.interface):
+				scene.interface.show_panel(scene.interface.PANEL_ENHANCEMENT);
 		
 		ACTION_AREA.ActionType.SKILLS:
 			print("SKILLS");

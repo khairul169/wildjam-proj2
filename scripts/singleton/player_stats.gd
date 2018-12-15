@@ -3,6 +3,7 @@ extends Node
 # consts
 const MAX_LEVEL = 100;
 const MAX_STATS_POINT = 10;
+const MAX_ENHANCEMENT = 25;
 
 const SAVEGAME_PATH = "user://save_game.dat";
 const SAVEGAME_ENCRYPTED = false;
@@ -18,6 +19,12 @@ enum {
 	STATS_INTELLIGENCE
 };
 
+# weapon list
+enum {
+	WPN_NONE = 0,
+	WPN_HANDGUN
+};
+
 # player data
 var player_name: String;
 var health = 0.0;
@@ -26,6 +33,8 @@ var experience: int;
 var stats_point: int;
 var stats = {};
 var quest_unlocked = {};
+var money: int;
+var weapon = [];
 var savegame_loaded = false;
 var exp_data: EXPERIENCE_DATA;
 
@@ -55,6 +64,11 @@ func reset_data() -> void:
 	stats[STATS_AGILITY] = 0;
 	stats[STATS_INTELLIGENCE] = 0;
 	quest_unlocked = {};
+	money = 0;
+	weapon = [{
+		'id': WPN_HANDGUN,
+		'enhancement': 0
+	}];
 
 func save_game() -> void:
 	var save_data = {};
@@ -72,6 +86,8 @@ func save_game() -> void:
 		'int': stats[STATS_INTELLIGENCE]
 	};
 	save_data['quest'] = quest_unlocked;
+	save_data['money'] = money;
+	save_data['weapon'] = weapon;
 	
 	var encoded = to_json(save_data);
 	var f = File.new();
@@ -146,6 +162,15 @@ func load_game() -> void:
 	
 	if (data.has('quest')):
 		quest_unlocked = data['quest'];
+	
+	if (data.has('money')):
+		money = int(data['money']);
+	
+	if (data.has('weapon')):
+		weapon = data['weapon'];
+		for i in range(0, weapon.size()):
+			weapon[i].id = int(weapon[i].id);
+			weapon[i].enhancement = int(weapon[i].enhancement);
 
 func get_stats_modifier(type: int) -> float:
 	if (!stats.has(type)):
@@ -169,6 +194,7 @@ func get_experience_cap() -> int:
 
 func get_max_health() -> float:
 	var base_health = 100.0;
+	base_health += 10 * level;
 	if (stats.has(STATS_STRENGTH)):
 		base_health = base_health + (stats[STATS_STRENGTH] * 40.0);
 	return base_health;
@@ -195,6 +221,10 @@ func combat_finished(win: bool, enemy_count: int, enemy_level: int) -> void:
 	# reduce exp if lose
 	if (!win):
 		exp_gain *= 0.2;
+	
+	# give money
+	var money_claimed = (exp_gain * 0.5) + int(rand_range(-10.0, 10.0));
+	add_money(money_claimed);
 	
 	if (exp_gain > 0):
 		add_experience(exp_gain);
@@ -296,3 +326,60 @@ func allocate_stats_point(cat: int) -> void:
 		health = get_max_health();
 	
 	emit_signal("stats_updated");
+
+func add_money(amount: int) -> void:
+	if (amount <= 0):
+		return;
+	print("got money ", amount);
+	money += amount;
+
+func remove_money(amount: int) -> bool:
+	if (amount <= 0 || money < amount):
+		return false;
+	money -= amount;
+	return true;
+
+func has_weapon(id: int) -> int:
+	return (id >= 0 && id < weapon.size());
+
+func weapon_by_id(weapon_id: int) -> int:
+	for i in range(0, weapon):
+		if (weapon[i].id == weapon_id):
+			return i;
+	return -1;
+
+func get_weapon_data(id: int) -> Dictionary:
+	if (id < 0 || id >= weapon.size()):
+		return {};
+	
+	var base_dmg = 0.0;
+	var dmg_increment = 0.0;
+	var base_rof = 1.0;
+	var rof_decrement = 0.0;
+	
+	match (weapon[id].id):
+		WPN_HANDGUN:
+			base_dmg = 8.0;
+			dmg_increment = 32.0;
+			base_rof = 1.0;
+			rof_decrement = 0.3;
+	
+	var dmg = base_dmg + (dmg_increment * (weapon[id].enhancement / float(MAX_ENHANCEMENT)));
+	var rof = base_rof - (rof_decrement * (weapon[id].enhancement / float(MAX_ENHANCEMENT)));
+	
+	return {
+		'damage': dmg,
+		'rof': rof
+	};
+
+func get_weapon_enhancement(id: int) -> int:
+	if (id < 0 || id >= weapon.size()):
+		return 0;
+	return int(clamp(weapon[id].enhancement, 0, MAX_ENHANCEMENT));
+
+func add_weapon_enhancement(id: int) -> void:
+	if (id < 0 || id >= weapon.size()):
+		return;
+	
+	if (weapon[id].enhancement < MAX_ENHANCEMENT):
+		weapon[id].enhancement += 1;

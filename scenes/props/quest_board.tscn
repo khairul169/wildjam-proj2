@@ -3,7 +3,6 @@
 [ext_resource path="res://sprites/level/winter/quest_board.png" type="Texture" id=1]
 [ext_resource path="res://scripts/npc/action_area.gd" type="Script" id=2]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 
 extents = Vector2( 60, 8 )
@@ -25,7 +24,7 @@ shape = SubResource( 1 )
 [node name="action_area" type="Area2D" parent="."]
 position = Vector2( 0, -50 )
 script = ExtResource( 2 )
-action_type = 7
+action_type = 5
 
 [node name="shape" type="CollisionShape2D" parent="action_area"]
 position = Vector2( 0, -10 )

@@ -8,10 +8,9 @@
 [ext_resource path="res://scenes/props/tree.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/npc/enemy_cat.tscn" type="PackedScene" id=7]
 
-
 [node name="level" type="Node2D"]
 script = ExtResource( 1 )
-level_name = "Test"
+level_name = "Icy Valley"
 _spawn_pos = NodePath("spawn_pos")
 _map_limit = NodePath("limit")
 _navigation = NodePath("")

@@ -10,9 +10,8 @@
 [ext_resource path="res://scenes/props/rock.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/props/bush.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/npc/trader.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scenes/npc/trainer.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/npc/enhancer.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/props/quest_board.tscn" type="PackedScene" id=12]
-
 
 [node name="campsite" type="Node2D"]
 script = ExtResource( 1 )
@@ -248,15 +247,15 @@ scale = Vector2( 0.872822, 0.925852 )
 [node name="npc_trader" parent="ysort" instance=ExtResource( 10 )]
 position = Vector2( 147.055, 606.416 )
 
-[node name="npc_enchanter" parent="ysort" instance=ExtResource( 11 )]
+[node name="npc_enhancer" parent="ysort" instance=ExtResource( 11 )]
 editor/display_folded = true
 position = Vector2( 931.209, 402.804 )
 
-[node name="body" parent="ysort/npc_enchanter" index="1"]
+[node name="body" parent="ysort/npc_enhancer" index="1"]
 scale = Vector2( -1, 1 )
 
 [node name="quest_board" parent="ysort" instance=ExtResource( 12 )]
 position = Vector2( 150.327, 787.679 )
 
 
-[editable path="ysort/npc_enchanter"]
+[editable path="ysort/npc_enhancer"]

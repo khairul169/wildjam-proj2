@@ -82,10 +82,16 @@ func spawn_cat(stats: Dictionary) -> Node2D:
 		instance.health = PlayerStats.get_max_health();
 		instance.cur_health = max(PlayerStats.health, 0.1);
 		
+		# weapon power
+		var wpn_data = PlayerStats.get_weapon_data(0);
+		if (wpn_data.has('damage')):
+			instance.damage = wpn_data.damage;
+		if (wpn_data.has('rof')):
+			instance.attack_speed = wpn_data.rof;
+		
 		# power
 		if (stats.has('pow')):
 			instance.damage = max(instance.damage * float(stats['pow']), 0.0);
-			instance.attack_speed = clamp(instance.attack_speed - (float(stats['pow']) * 0.05), 0.1, 2.0);
 		
 		# agility
 		if (stats.has('agi')):

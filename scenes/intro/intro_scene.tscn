@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://scenes/intro/intro_scene.gd" type="Script" id=1]
 [ext_resource path="res://sprites/white.png" type="Texture" id=2]
@@ -13,7 +13,8 @@
 [ext_resource path="res://scenes/intro/dummy_npc.gd" type="Script" id=11]
 [ext_resource path="res://characters/cat/grey.tscn" type="PackedScene" id=12]
 [ext_resource path="res://sprites/level/winter/gift_box.png" type="Texture" id=13]
-[ext_resource path="res://scenes/intro/intro_animation.anim" type="Animation" id=14]
+[ext_resource path="res://characters/cat/default.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/intro/intro_animation.anim" type="Animation" id=15]
 
 [sub_resource type="Animation" id=1]
 
@@ -2924,7 +2925,6 @@ tracks/14/keys = {
 
 [sub_resource type="Animation" id=20]
 
-resource_name = "corpse-fadeout"
 tracks/0/type = "value"
 tracks/0/path = NodePath("sprite:modulate")
 tracks/0/interp = 1
@@ -2940,7 +2940,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=21]
 
-resource_name = "default"
 tracks/0/type = "value"
 tracks/0/path = NodePath("sprite/head:position")
 tracks/0/interp = 1
@@ -3124,7 +3123,6 @@ tracks/14/keys = {
 
 [sub_resource type="Animation" id=22]
 
-resource_name = "dying"
 tracks/0/type = "value"
 tracks/0/path = NodePath("sprite/head:position")
 tracks/0/interp = 1
@@ -3481,7 +3479,6 @@ tracks/14/keys = {
 
 [sub_resource type="Animation" id=24]
 
-resource_name = "idle-alt"
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -3655,7 +3652,6 @@ tracks/13/keys = {
 
 [sub_resource type="Animation" id=25]
 
-resource_name = "idle-hg"
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -3829,7 +3825,6 @@ tracks/13/keys = {
 
 [sub_resource type="Animation" id=26]
 
-resource_name = "run"
 length = 0.6
 loop = true
 step = 0.05
@@ -4004,7 +3999,6 @@ tracks/13/keys = {
 
 [sub_resource type="Animation" id=27]
 
-resource_name = "run-hg"
 length = 0.6
 loop = true
 step = 0.05
@@ -4179,7 +4173,6 @@ tracks/13/keys = {
 
 [sub_resource type="Animation" id=28]
 
-resource_name = "shoot-hg"
 length = 0.3
 step = 0.05
 tracks/0/type = "value"
@@ -4468,7 +4461,6 @@ smoothing_enabled = true
 smoothing_speed = 4.0
 
 [node name="objects" type="YSort" parent="."]
-editor/display_folded = true
 
 [node name="props" type="YSort" parent="objects"]
 editor/display_folded = true
@@ -4714,13 +4706,19 @@ position = Vector2( 66.6665, -33.3334 )
 scale = Vector2( 3.32419, 3.32419 )
 texture = ExtResource( 13 )
 
+[node name="cat5" parent="objects" instance=ExtResource( 14 )]
+editor/display_folded = true
+position = Vector2( 1670, 710 )
+scale = Vector2( 0.15, 0.15 )
+script = ExtResource( 11 )
+
 [node name="gift_box" type="Sprite" parent="objects"]
 position = Vector2( 708, 610 )
 texture = ExtResource( 13 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "intro_animation"
-anims/intro_animation = ExtResource( 14 )
+anims/intro_animation = ExtResource( 15 )
 
 [node name="light" type="CanvasModulate" parent="."]
 color = Color( 0.568627, 0.686275, 1, 1 )
@@ -4739,3 +4737,5 @@ color = Color( 0.568627, 0.686275, 1, 1 )
 [editable path="objects/bandit1"]
 
 [editable path="objects/bandit2"]
+
+[editable path="objects/cat5"]

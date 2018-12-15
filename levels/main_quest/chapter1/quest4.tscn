@@ -1,0 +1,255 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/props/level.gd" type="Script" id=1]
+[ext_resource path="res://sprites/level/winter/snow_tile.png" type="Texture" id=2]
+[ext_resource path="res://sprites/level/props/stones01.png" type="Texture" id=3]
+[ext_resource path="res://scenes/props/tent.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/props/tree.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/props/rock.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/npc/enemy_cat.tscn" type="PackedScene" id=7]
+
+[node name="level" type="Node2D"]
+script = ExtResource( 1 )
+level_name = "Icy Valley"
+_spawn_pos = NodePath("spawn_pos")
+_map_limit = NodePath("limit")
+_navigation = NodePath("")
+_ysort = NodePath("ysort")
+
+[node name="bg" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 2000, 1600 )
+
+[node name="props" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="stones01" type="Sprite" parent="props"]
+position = Vector2( 230, 260 )
+texture = ExtResource( 3 )
+
+[node name="stones02" type="Sprite" parent="props"]
+position = Vector2( 700, 760 )
+texture = ExtResource( 3 )
+
+[node name="stones04" type="Sprite" parent="props"]
+position = Vector2( 300, 650 )
+texture = ExtResource( 3 )
+
+[node name="stones05" type="Sprite" parent="props"]
+position = Vector2( 710, 140 )
+texture = ExtResource( 3 )
+
+[node name="stones06" type="Sprite" parent="props"]
+position = Vector2( 1260, 780 )
+texture = ExtResource( 3 )
+
+[node name="stones07" type="Sprite" parent="props"]
+position = Vector2( 1000, 1050 )
+texture = ExtResource( 3 )
+
+[node name="stones08" type="Sprite" parent="props"]
+position = Vector2( 420, 1070 )
+texture = ExtResource( 3 )
+
+[node name="stones09" type="Sprite" parent="props"]
+position = Vector2( 170, 910 )
+texture = ExtResource( 3 )
+
+[node name="stones10" type="Sprite" parent="props"]
+position = Vector2( 1510, 1020 )
+texture = ExtResource( 3 )
+
+[node name="stones12" type="Sprite" parent="props"]
+position = Vector2( 1700, 1390 )
+texture = ExtResource( 3 )
+
+[node name="stones13" type="Sprite" parent="props"]
+position = Vector2( 1130, 1400 )
+texture = ExtResource( 3 )
+
+[node name="stones14" type="Sprite" parent="props"]
+position = Vector2( 240, 1410 )
+texture = ExtResource( 3 )
+
+[node name="stones15" type="Sprite" parent="props"]
+position = Vector2( 710, 1350 )
+texture = ExtResource( 3 )
+
+[node name="stones16" type="Sprite" parent="props"]
+position = Vector2( 1780, 720 )
+texture = ExtResource( 3 )
+
+[node name="stones17" type="Sprite" parent="props"]
+position = Vector2( 1710, 350 )
+texture = ExtResource( 3 )
+
+[node name="stones11" type="Sprite" parent="props"]
+position = Vector2( 1380, 240 )
+texture = ExtResource( 3 )
+
+[node name="stones03" type="Sprite" parent="props"]
+position = Vector2( 1090, 410 )
+texture = ExtResource( 3 )
+
+[node name="spawn_pos" type="Position2D" parent="."]
+position = Vector2( 360, 231 )
+
+[node name="limit" type="Position2D" parent="."]
+position = Vector2( 2000, 1600 )
+
+[node name="ysort" type="YSort" parent="."]
+
+[node name="props" type="YSort" parent="ysort"]
+editor/display_folded = true
+
+[node name="tent" parent="ysort/props" instance=ExtResource( 4 )]
+position = Vector2( 1070, 950 )
+
+[node name="tree" parent="ysort/props" instance=ExtResource( 5 )]
+position = Vector2( 1320, 1090 )
+
+[node name="tree2" parent="ysort/props" instance=ExtResource( 5 )]
+position = Vector2( 1200, 920 )
+
+[node name="tree3" parent="ysort/props" instance=ExtResource( 5 )]
+position = Vector2( 840, 1079 )
+
+[node name="tree4" parent="ysort/props" instance=ExtResource( 5 )]
+position = Vector2( 1000, 880 )
+
+[node name="tree5" parent="ysort/props" instance=ExtResource( 5 )]
+position = Vector2( 1520, 1040 )
+
+[node name="tree6" parent="ysort/props" instance=ExtResource( 5 )]
+position = Vector2( 1400, 820 )
+
+[node name="rock" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 1340, 1260 )
+
+[node name="tree7" parent="ysort/props" instance=ExtResource( 5 )]
+position = Vector2( 1480, 1286 )
+
+[node name="tree8" parent="ysort/props" instance=ExtResource( 5 )]
+position = Vector2( 1640, 1460 )
+
+[node name="tree9" parent="ysort/props" instance=ExtResource( 5 )]
+position = Vector2( 1470, 1540 )
+
+[node name="tree10" parent="ysort/props" instance=ExtResource( 5 )]
+position = Vector2( 1820, 1090 )
+
+[node name="tree11" parent="ysort/props" instance=ExtResource( 5 )]
+position = Vector2( 1677, 650.513 )
+
+[node name="tree12" parent="ysort/props" instance=ExtResource( 5 )]
+position = Vector2( 1110, 200 )
+
+[node name="tree13" parent="ysort/props" instance=ExtResource( 5 )]
+position = Vector2( 1270, 80 )
+
+[node name="tree14" parent="ysort/props" instance=ExtResource( 5 )]
+position = Vector2( 1413, 270 )
+
+[node name="tree15" parent="ysort/props" instance=ExtResource( 5 )]
+position = Vector2( 460, 1390 )
+
+[node name="tree16" parent="ysort/props" instance=ExtResource( 5 )]
+position = Vector2( 610, 1490 )
+
+[node name="tree17" parent="ysort/props" instance=ExtResource( 5 )]
+position = Vector2( 410, 1070 )
+
+[node name="tree18" parent="ysort/props" instance=ExtResource( 5 )]
+position = Vector2( 630, 570 )
+
+[node name="tree19" parent="ysort/props" instance=ExtResource( 5 )]
+position = Vector2( 430, 510 )
+
+[node name="tree20" parent="ysort/props" instance=ExtResource( 5 )]
+position = Vector2( 780, 460 )
+
+[node name="tree21" parent="ysort/props" instance=ExtResource( 5 )]
+position = Vector2( 260, 450 )
+
+[node name="tree27" parent="ysort/props" instance=ExtResource( 5 )]
+position = Vector2( 230, 56 )
+
+[node name="tree28" parent="ysort/props" instance=ExtResource( 5 )]
+position = Vector2( 570, 80 )
+
+[node name="tree22" parent="ysort/props" instance=ExtResource( 5 )]
+position = Vector2( 130, 560 )
+
+[node name="tree23" parent="ysort/props" instance=ExtResource( 5 )]
+position = Vector2( 90, 1340 )
+
+[node name="tree24" parent="ysort/props" instance=ExtResource( 5 )]
+position = Vector2( 90, 1510 )
+
+[node name="tree25" parent="ysort/props" instance=ExtResource( 5 )]
+position = Vector2( 250, 1550 )
+
+[node name="tree26" parent="ysort/props" instance=ExtResource( 5 )]
+position = Vector2( 70, 881 )
+
+[node name="rock2" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 980, 110 )
+
+[node name="rock3" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 370, 80 )
+
+[node name="rock16" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 600, 30 )
+
+[node name="rock17" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 760, 120 )
+
+[node name="rock18" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 80, 50 )
+
+[node name="rock19" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 90, 260 )
+
+[node name="rock4" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 80, 730 )
+
+[node name="rock5" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 430, 1570 )
+
+[node name="rock6" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 519.518, 1230 )
+
+[node name="rock7" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 600, 490 )
+
+[node name="rock8" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 1480, 120 )
+
+[node name="rock9" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 1870, 760 )
+
+[node name="rock10" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 1729.52, 1242 )
+
+[node name="rock11" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 1860, 1486 )
+
+[node name="rock12" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 1840, 379 )
+
+[node name="rock13" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 1720, 169 )
+
+[node name="rock14" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 1910, 180.513 )
+
+[node name="rock15" parent="ysort/props" instance=ExtResource( 6 )]
+position = Vector2( 1880, 516 )
+
+[node name="npc_enemycat" parent="ysort" instance=ExtResource( 7 )]
+position = Vector2( 960, 1270 )
+enemy_level = 8
+enemy_count = 3
+

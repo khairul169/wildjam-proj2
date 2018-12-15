@@ -5,6 +5,7 @@ onready var character_info = $hud/character_info;
 onready var panel_menu = $panel/menu;
 onready var panel_quest = $panel/quest;
 onready var panel_stats = $panel/stats;
+onready var panel_enhancement = $panel/enhancement;
 onready var lvl_name = $level_name;
 onready var battle_condition = $hud/battle_condition;
 
@@ -12,7 +13,8 @@ onready var battle_condition = $hud/battle_condition;
 enum {
 	PANEL_MENU = 0,
 	PANEL_QUEST,
-	PANEL_STATS
+	PANEL_STATS,
+	PANEL_ENHANCEMENT
 };
 
 func _ready():
@@ -49,6 +51,11 @@ func show_panel(panel: int) -> void:
 		panel_stats.show();
 	else:
 		panel_stats.hide();
+	
+	if (panel == PANEL_ENHANCEMENT):
+		panel_enhancement.show();
+	else:
+		panel_enhancement.hide();
 
 func _process(delta: float) -> void:
 	# player name

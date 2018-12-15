@@ -4,11 +4,9 @@ extends Area2D
 enum ActionType {
 	NONE = 0,
 	COMBAT,
-	ENCHANTMENT,
+	ENHANCEMENT,
 	SHOP,
-	STATS,
 	SKILLS,
-	HEADQUARTER,
 	QUEST
 };
 
