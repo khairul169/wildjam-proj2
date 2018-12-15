@@ -8,12 +8,12 @@ var exp_enemy_per_num = 20.0;
 # experience needed to level up
 var exp_cap = [
 	200,			# 1
-	400,
 	800,
-	1200,
-	1600,			# 5
+	1600,
 	2000,
-	4000,
+	2600,			# 5
+	3000,
+	5000,
 	8000,
 	10000,
 	12000,			# 10

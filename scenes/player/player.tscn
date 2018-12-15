@@ -3,7 +3,6 @@
 [ext_resource path="res://scripts/player/player.gd" type="Script" id=1]
 [ext_resource path="res://characters/cat/default.tscn" type="PackedScene" id=2]
 
-
 [sub_resource type="CircleShape2D" id=1]
 
 radius = 32.0
@@ -22,9 +21,6 @@ editor/display_folded = true
 position = Vector2( 8.086, -30 )
 scale = Vector2( 0.15, 0.15 )
 
-[node name="gun" parent="body/character/sprite/hand_r/attachment" index="0"]
-visible = false
-
 [node name="camera" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 0.8, 0.8 )
@@ -38,5 +34,3 @@ drag_margin_v_enabled = false
 smoothing_enabled = true
 smoothing_speed = 4.0
 
-
-[editable path="body/character"]

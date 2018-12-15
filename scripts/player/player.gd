@@ -128,10 +128,10 @@ func _physics_process(delta: float) -> void:
 			body.scale.x = sign(velocity.x);
 		
 		# play run anims
-		set_animation('run');
+		set_animation('run-hg');
 	else:
 		# idle anims
-		set_animation('idle');
+		set_animation('idle-hg');
 	
 	# move player!
 	move_and_slide(velocity * SPEED, Vector2(0, 0));
