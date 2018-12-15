@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://characters/cat/skins/default/shadow.png" type="Texture" id=1]
 [ext_resource path="res://characters/cat/skins/default/tail.png" type="Texture" id=2]
@@ -7,15 +7,16 @@
 [ext_resource path="res://characters/cat/skins/default/body.png" type="Texture" id=5]
 [ext_resource path="res://sprites/gun/handgun.png" type="Texture" id=6]
 [ext_resource path="res://characters/cat/skins/default/head.png" type="Texture" id=7]
-[ext_resource path="res://characters/cat/anims/corpse-fadeout.anim" type="Animation" id=8]
-[ext_resource path="res://characters/cat/anims/default.anim" type="Animation" id=9]
-[ext_resource path="res://characters/cat/anims/dying.anim" type="Animation" id=10]
-[ext_resource path="res://characters/cat/anims/idle.anim" type="Animation" id=11]
-[ext_resource path="res://characters/cat/anims/idle-alt.anim" type="Animation" id=12]
-[ext_resource path="res://characters/cat/anims/idle-hg.anim" type="Animation" id=13]
-[ext_resource path="res://characters/cat/anims/run.anim" type="Animation" id=14]
-[ext_resource path="res://characters/cat/anims/run-hg.anim" type="Animation" id=15]
-[ext_resource path="res://characters/cat/anims/shoot-hg.anim" type="Animation" id=16]
+[ext_resource path="res://sprites/accessories/santa_hat.png" type="Texture" id=8]
+[ext_resource path="res://characters/cat/anims/corpse-fadeout.anim" type="Animation" id=9]
+[ext_resource path="res://characters/cat/anims/default.anim" type="Animation" id=10]
+[ext_resource path="res://characters/cat/anims/dying.anim" type="Animation" id=11]
+[ext_resource path="res://characters/cat/anims/idle.anim" type="Animation" id=12]
+[ext_resource path="res://characters/cat/anims/idle-alt.anim" type="Animation" id=13]
+[ext_resource path="res://characters/cat/anims/idle-hg.anim" type="Animation" id=14]
+[ext_resource path="res://characters/cat/anims/run.anim" type="Animation" id=15]
+[ext_resource path="res://characters/cat/anims/run-hg.anim" type="Animation" id=16]
+[ext_resource path="res://characters/cat/anims/shoot-hg.anim" type="Animation" id=17]
 
 [node name="character" type="Node2D"]
 
@@ -76,15 +77,21 @@ rotation = 0.0175325
 texture = ExtResource( 7 )
 offset = Vector2( -18.3313, -193.86 )
 
+[node name="acc" type="Sprite" parent="sprite/head"]
+position = Vector2( -124.722, -319.749 )
+rotation = 0.0321263
+scale = Vector2( 0.599324, 0.599324 )
+texture = ExtResource( 8 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"
-anims/corpse-fadeout = ExtResource( 8 )
-anims/default = ExtResource( 9 )
-anims/dying = ExtResource( 10 )
-anims/idle = ExtResource( 11 )
-anims/idle-alt = ExtResource( 12 )
-anims/idle-hg = ExtResource( 13 )
-anims/run = ExtResource( 14 )
-anims/run-hg = ExtResource( 15 )
-anims/shoot-hg = ExtResource( 16 )
+anims/corpse-fadeout = ExtResource( 9 )
+anims/default = ExtResource( 10 )
+anims/dying = ExtResource( 11 )
+anims/idle = ExtResource( 12 )
+anims/idle-alt = ExtResource( 13 )
+anims/idle-hg = ExtResource( 14 )
+anims/run = ExtResource( 15 )
+anims/run-hg = ExtResource( 16 )
+anims/shoot-hg = ExtResource( 17 )
 

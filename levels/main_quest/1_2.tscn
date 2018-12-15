@@ -1,12 +1,13 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/props/level.gd" type="Script" id=1]
-[ext_resource path="res://sprites/level/tiles/grass.png" type="Texture" id=2]
+[ext_resource path="res://sprites/level/winter/snow_tile.png" type="Texture" id=2]
 [ext_resource path="res://sprites/level/props/stones01.png" type="Texture" id=3]
 [ext_resource path="res://scenes/props/bush.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/props/rock.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/props/tree.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/npc/enemy_cat.tscn" type="PackedScene" id=7]
+
 
 [node name="level" type="Node2D"]
 script = ExtResource( 1 )

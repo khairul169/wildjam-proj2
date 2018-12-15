@@ -16,4 +16,10 @@ _attack_range = 700.0
 _evasion = 0.1
 
 [node name="character" parent="body/base" index="0" instance=ExtResource( 3 )]
+editor/display_folded = true
 
+[node name="acc" parent="body/base/character/sprite/head" index="0"]
+visible = false
+
+
+[editable path="body/base/character"]

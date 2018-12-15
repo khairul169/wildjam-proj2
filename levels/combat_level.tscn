@@ -1,22 +1,21 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://sprites/white.png" type="Texture" id=1]
 [ext_resource path="res://sprites/level/combat/cloud.png" type="Texture" id=2]
 [ext_resource path="res://sprites/level/combat/cloud2.png" type="Texture" id=3]
 [ext_resource path="res://sprites/level/combat/cloud4.png" type="Texture" id=4]
 [ext_resource path="res://sprites/level/combat/cloud3.png" type="Texture" id=5]
-[ext_resource path="res://sprites/level/combat/mountain2.png" type="Texture" id=6]
-[ext_resource path="res://sprites/level/combat/mountain.png" type="Texture" id=7]
-[ext_resource path="res://sprites/level/combat/mountain3.png" type="Texture" id=8]
-[ext_resource path="res://sprites/level/tiles/grass.png" type="Texture" id=9]
-[ext_resource path="res://sprites/level/combat/bushes.png" type="Texture" id=10]
-[ext_resource path="res://sprites/level/props/stones01.png" type="Texture" id=11]
+[ext_resource path="res://sprites/level/winter/mountain.png" type="Texture" id=6]
+[ext_resource path="res://sprites/level/winter/snow_tile.png" type="Texture" id=7]
+[ext_resource path="res://sprites/level/winter/bush_big.png" type="Texture" id=8]
+[ext_resource path="res://sprites/level/props/stones01.png" type="Texture" id=9]
+[ext_resource path="res://scenes/props/tree.tscn" type="PackedScene" id=10]
 
 [node name="level" type="ParallaxBackground"]
 scroll_limit_end = Vector2( 2000, 720 )
 
 [node name="sky" type="Sprite" parent="."]
-modulate = Color( 0.870588, 0.937255, 0.952941, 1 )
+modulate = Color( 0.823529, 0.85098, 0.854902, 1 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
@@ -48,7 +47,6 @@ scale = Vector2( 0.320228, 0.320228 )
 texture = ExtResource( 5 )
 
 [node name="mountains" type="ParallaxLayer" parent="."]
-editor/display_folded = true
 motion_scale = Vector2( 0.4, 1 )
 motion_offset = Vector2( -400, 0 )
 
@@ -68,30 +66,29 @@ scale = Vector2( 0.908033, 0.878389 )
 texture = ExtResource( 6 )
 
 [node name="mountains2" type="ParallaxLayer" parent="."]
-editor/display_folded = true
 motion_scale = Vector2( 0.6, 1 )
 motion_offset = Vector2( -300, 0 )
 
 [node name="mountain" type="Sprite" parent="mountains2"]
 position = Vector2( 530, 180 )
 scale = Vector2( 0.755197, 0.755197 )
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 
 [node name="mountain6" type="Sprite" parent="mountains2"]
 position = Vector2( 1890, 190 )
 scale = Vector2( 0.755197, 0.755197 )
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 
 [node name="mountain3" type="Sprite" parent="mountains2"]
 position = Vector2( 1390, 180 )
 scale = Vector2( 0.961465, 0.961465 )
-texture = ExtResource( 8 )
+texture = ExtResource( 6 )
 
 [node name="main" type="ParallaxLayer" parent="."]
 
 [node name="terrain" type="Sprite" parent="main"]
 position = Vector2( 0, 320 )
-texture = ExtResource( 9 )
+texture = ExtResource( 7 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 2000, 400 )
@@ -101,19 +98,19 @@ editor/display_folded = true
 
 [node name="bush" type="Sprite" parent="main/bushes"]
 position = Vector2( 53, 320 )
-texture = ExtResource( 10 )
+texture = ExtResource( 8 )
 
 [node name="bush2" type="Sprite" parent="main/bushes"]
 position = Vector2( 693, 320 )
-texture = ExtResource( 10 )
+texture = ExtResource( 8 )
 
 [node name="bush3" type="Sprite" parent="main/bushes"]
 position = Vector2( 1333, 320 )
-texture = ExtResource( 10 )
+texture = ExtResource( 8 )
 
 [node name="bush4" type="Sprite" parent="main/bushes"]
 position = Vector2( 1973, 320 )
-texture = ExtResource( 10 )
+texture = ExtResource( 8 )
 
 [node name="props" type="Node2D" parent="main"]
 editor/display_folded = true
@@ -121,42 +118,58 @@ editor/display_folded = true
 [node name="stones01" type="Sprite" parent="main/props"]
 position = Vector2( 210, 460 )
 scale = Vector2( 1, 0.7 )
-texture = ExtResource( 11 )
+texture = ExtResource( 9 )
 
 [node name="stones07" type="Sprite" parent="main/props"]
 position = Vector2( 60, 670 )
 scale = Vector2( 1, 0.7 )
-texture = ExtResource( 11 )
+texture = ExtResource( 9 )
 
 [node name="stones02" type="Sprite" parent="main/props"]
 position = Vector2( 400, 560 )
 scale = Vector2( 1, 0.7 )
-texture = ExtResource( 11 )
+texture = ExtResource( 9 )
 
 [node name="stones03" type="Sprite" parent="main/props"]
 position = Vector2( 810, 450 )
 scale = Vector2( 1, 0.7 )
-texture = ExtResource( 11 )
+texture = ExtResource( 9 )
 
 [node name="stones06" type="Sprite" parent="main/props"]
 position = Vector2( 916.218, 590 )
 scale = Vector2( 1, 0.7 )
-texture = ExtResource( 11 )
+texture = ExtResource( 9 )
 
 [node name="stones04" type="Sprite" parent="main/props"]
 position = Vector2( 1140, 650 )
 scale = Vector2( 1, 0.7 )
-texture = ExtResource( 11 )
+texture = ExtResource( 9 )
 
 [node name="stones05" type="Sprite" parent="main/props"]
 position = Vector2( 1470, 450 )
 scale = Vector2( 1, 0.7 )
-texture = ExtResource( 11 )
+texture = ExtResource( 9 )
 
 [node name="stones08" type="Sprite" parent="main/props"]
 position = Vector2( 1820, 560 )
 scale = Vector2( 1, 0.7 )
-texture = ExtResource( 11 )
+texture = ExtResource( 9 )
+
+[node name="tree" parent="main/props" instance=ExtResource( 10 )]
+position = Vector2( 80, 390 )
+scale = Vector2( 0.588722, 0.588722 )
+
+[node name="tree3" parent="main/props" instance=ExtResource( 10 )]
+position = Vector2( 1090, 390 )
+scale = Vector2( 0.588722, 0.588722 )
+
+[node name="tree4" parent="main/props" instance=ExtResource( 10 )]
+position = Vector2( 1670, 390 )
+scale = Vector2( 0.588722, 0.588722 )
+
+[node name="tree2" parent="main/props" instance=ExtResource( 10 )]
+position = Vector2( 570, 390 )
+scale = Vector2( 0.510493, 0.510493 )
 
 [node name="bottom_layer" type="ParallaxLayer" parent="."]
 motion_scale = Vector2( 1.4, 1 )
@@ -169,17 +182,17 @@ z_as_relative = false
 modulate = Color( 1, 1, 1, 0.847059 )
 position = Vector2( 298.712, 680 )
 scale = Vector2( 1.544, 1.2 )
-texture = ExtResource( 10 )
+texture = ExtResource( 8 )
 
 [node name="bush2" type="Sprite" parent="bottom_layer/bushes2"]
 modulate = Color( 1, 1, 1, 0.847059 )
 position = Vector2( 1298.71, 680 )
 scale = Vector2( 1.544, 1.2 )
-texture = ExtResource( 10 )
+texture = ExtResource( 8 )
 
 [node name="bush3" type="Sprite" parent="bottom_layer/bushes2"]
 modulate = Color( 1, 1, 1, 0.847059 )
 position = Vector2( 2290, 680 )
 scale = Vector2( 1.544, 1.2 )
-texture = ExtResource( 10 )
+texture = ExtResource( 8 )
 

@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://sprites/level/props/bush01.png" type="Texture" id=1]
+[ext_resource path="res://sprites/level/winter/bush01.png" type="Texture" id=1]
+
 
 [node name="bush" type="Node2D"]
 
