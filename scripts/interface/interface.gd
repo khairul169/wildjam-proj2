@@ -25,16 +25,23 @@ func _ready():
 func _input(event: InputEvent) -> void:
 	if (event is InputEventKey && event.pressed):
 		if (event.scancode == KEY_ESCAPE):
-			if (panel_menu.visible):
-				show_panel(-1);
-			else:
-				show_panel(PANEL_MENU);
+			handle_back();
 		
 		if (event.scancode == KEY_TAB):
 			if (panel_stats.visible):
 				show_panel(-1);
 			else:
 				show_panel(PANEL_STATS);
+
+func _notification(what: int) -> void:
+	if (what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST || what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST):
+		handle_back();
+
+func handle_back() -> void:
+	if (panel_menu.visible):
+		show_panel(-1);
+	else:
+		show_panel(PANEL_MENU);
 
 func show_panel(panel: int) -> void:
 	if (panel == PANEL_MENU):
