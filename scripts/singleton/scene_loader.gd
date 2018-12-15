@@ -40,7 +40,8 @@ func switch_scene(scene_id: int, data = null) -> void:
 		return;
 	
 	# save game
-	PlayerStats.save_game();
+	if (PlayerStats.savegame_loaded):
+		PlayerStats.save_game();
 	
 	# set data
 	shared_data = data;
