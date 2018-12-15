@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/snow_tile.png-161f3128fc69588cfd320a943d1bfab6.stex"
+path="res://.import/gift_box.png-204eb6cfd12194895c78721f87de0d7d.stex"
 
 [deps]
 
-source_file="res://sprites/level/winter/snow_tile.png"
-dest_files=[ "res://.import/snow_tile.png-161f3128fc69588cfd320a943d1bfab6.stex" ]
+source_file="res://sprites/level/winter/gift_box.png"
+dest_files=[ "res://.import/gift_box.png-204eb6cfd12194895c78721f87de0d7d.stex" ]
 
 [params]
 
@@ -16,8 +16,8 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
-flags/filter=true
+flags/repeat=0
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

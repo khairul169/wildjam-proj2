@@ -4,13 +4,15 @@ extends CanvasLayer
 enum {
 	SCENE_MAINMENU = 0,
 	SCENE_WORLD,
-	SCENE_COMBAT
+	SCENE_COMBAT,
+	SCENE_INTRO
 };
 
 var scenes = {
 	SCENE_MAINMENU: "res://scenes/main_menu.tscn",
 	SCENE_WORLD: "res://scenes/world.tscn",
-	SCENE_COMBAT: "res://scenes/combat.tscn"
+	SCENE_COMBAT: "res://scenes/combat.tscn",
+	SCENE_INTRO: "res://scenes/intro/intro_scene.tscn"
 };
 
 # refs
