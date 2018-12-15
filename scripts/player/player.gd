@@ -86,13 +86,13 @@ func _physics_process(delta: float) -> void:
 	var input: Vector2 = Vector2.ZERO;
 	
 	# player movement
-	if (Input.is_key_pressed(KEY_W)):
+	if (Input.is_action_pressed("move_up")):
 		input.y -= 1;
-	if (Input.is_key_pressed(KEY_S)):
+	if (Input.is_action_pressed("move_down")):
 		input.y += 1;
-	if (Input.is_key_pressed(KEY_A)):
+	if (Input.is_action_pressed("move_left")):
 		input.x -= 1;
-	if (Input.is_key_pressed(KEY_D)):
+	if (Input.is_action_pressed("move_right")):
 		input.x += 1;
 	
 	# normalize move dir
