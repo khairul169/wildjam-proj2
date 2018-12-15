@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://scenes/intro/intro_scene.gd" type="Script" id=1]
 [ext_resource path="res://sprites/white.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://sprites/level/winter/gift_box.png" type="Texture" id=13]
 [ext_resource path="res://characters/cat/default.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/intro/intro_animation.anim" type="Animation" id=15]
+[ext_resource path="res://sounds/bgm/boss_theme.ogg" type="AudioStream" id=16]
 
 [sub_resource type="Animation" id=1]
 
@@ -4722,6 +4723,10 @@ anims/intro_animation = ExtResource( 15 )
 
 [node name="light" type="CanvasModulate" parent="."]
 color = Color( 0.568627, 0.686275, 1, 1 )
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+autoplay = true
 
 
 [editable path="objects/props/tree8"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/war_song.ogg-1d912fc7517a437c019e50b7662e6bb0.oggstr"
+
+[deps]
+
+source_file="res://sounds/bgm/war_song.ogg"
+dest_files=[ "res://.import/war_song.ogg-1d912fc7517a437c019e50b7662e6bb0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

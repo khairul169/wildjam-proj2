@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/scenes/combat.gd" type="Script" id=1]
 [ext_resource path="res://scenes/interface/battle_condition.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/interface/combat_skills.tscn" type="PackedScene" id=3]
 [ext_resource path="res://levels/combat_level.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/combat/battler_spawner.gd" type="Script" id=5]
+[ext_resource path="res://sounds/bgm/war_song.ogg" type="AudioStream" id=6]
 
 [node name="scene" type="Node"]
 script = ExtResource( 1 )
@@ -101,4 +102,8 @@ position = Vector2( 270, 101.2 )
 
 [node name="9" type="Position2D" parent="world/enemy/spawn_pos"]
 position = Vector2( 270, 1.49933 )
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
 

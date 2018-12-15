@@ -1,0 +1,12 @@
+Musics:
+boss_theme.ogg by remaxim
+https://opengameart.org/content/boss-theme
+
+peaceful_place.ogg by Alexandr Zhelanov
+https://opengameart.org/content/peaceful-place
+
+war_song.ogg by jobromedia
+https://opengameart.org/content/war-song
+
+world_map0.ogg by Scrabbit
+https://opengameart.org/content/world-map-1

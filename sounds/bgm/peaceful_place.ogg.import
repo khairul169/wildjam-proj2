@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/peaceful_place.ogg-bbf77861f810129f4fecf92b8aad21fa.oggstr"
+
+[deps]
+
+source_file="res://sounds/bgm/peaceful_place.ogg"
+dest_files=[ "res://.import/peaceful_place.ogg-bbf77861f810129f4fecf92b8aad21fa.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
