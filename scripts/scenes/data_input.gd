@@ -8,6 +8,7 @@ func _submit_data() -> void:
 	if (player_name.length() <= 0):
 		return;
 	
+	PlayerStats.reset_data();
 	PlayerStats.player_name = player_name;
 	PlayerStats.save_game();
 	SceneLoader.switch_scene(SceneLoader.SCENE_INTRO);
